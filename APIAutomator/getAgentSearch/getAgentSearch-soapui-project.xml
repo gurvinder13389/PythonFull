@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="3e86b68f-8b94-41c2-a394-95e56c7ac143" activeEnvironment="Default" name="getAgentSearch" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="7e755e7a-910c-4584-91da-2e4694bf845e" wsaVersion="NONE" name="LissiaWS_getAgentSearchSoapPort" type="wsdl" bindingName="{http://LissiaWS_getAgentSearch/}LissiaWS_getAgentSearchSoapPort" soapVersion="1_1" anonymous="optional" definition="http://10.0.0.29:7090/LissiaWS_getAgentSearch/router?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://10.0.0.29:7090/LissiaWS_getAgentSearch/router?WSDL"><con:part><con:url>http://10.0.0.29:7090/LissiaWS_getAgentSearch/router?WSDL</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.8-b13937 svn-revision#13942.-->
+<wsdl:definitions name="LissiaWS_getAgentSearch" targetNamespace="http://LissiaWS_getAgentSearch/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textmatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://LissiaWS_getAgentSearch/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:documentation>Copyright (c) 2015 IET. All rights reserved.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://LissiaWS_getAgentSearch/">
+      <s:element name="Exception" type="tns:Exception"/>
+      <s:element name="getAgentSearch" type="tns:getAgentSearch"/>
+      <s:element name="getAgentSearchResponse" type="tns:getAgentSearchResponse"/>
+      <s:complexType name="getAgentSearch">
+        <s:sequence>
+          <s:element minOccurs="0" name="getAgentSearchImport" type="tns:getAgentSearchImport"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="getAgentSearchResponse">
+        <s:sequence>
+          <s:element minOccurs="0" name="getAgentSearchExport" type="tns:getAgentSearchExport"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="getAgentSearchImport">
+        <s:sequence>
+          <s:element minOccurs="0" name="ImpUsrStatusWebService">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="SearchStatus" type="s:int"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpAgtAgents">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="FirstName" type="s:string"/>
+                <s:element minOccurs="0" name="Name" type="s:string"/>
+                <s:element minOccurs="0" name="FsaIndividualRefNo" type="s:string"/>
+                <s:element minOccurs="0" name="FsaFirmRefNo" type="s:int"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpSrvdetailsWebService">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="Srvtimings" type="s:int"/>
+                <s:element minOccurs="0" name="Pcdate" type="s:date"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpUsersUsers">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="UsrId" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpActionCommunications">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="CallFunction" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="getAgentSearchExport">
+        <s:sequence>
+          <s:element minOccurs="0" name="ExpGrpUsr">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpSelUsrIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="SelectChar" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmUsrUsers">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="UsrId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmUsrAgtAgents">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="AgtId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpErrmsgWindow">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="WinErrmsg" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="EcommsCommunications">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="User" type="s:string"/>
+                <s:element minOccurs="0" name="PrimaryServer" type="s:string"/>
+                <s:element minOccurs="0" name="SystemName" type="s:string"/>
+                <s:element minOccurs="0" name="SystemDateDisplay" type="s:string"/>
+                <s:element minOccurs="0" name="DocumentsCreated" type="s:int"/>
+                <s:element minOccurs="0" name="RecordsFound" type="s:int"/>
+                <s:element minOccurs="0" name="SystemDate" type="s:date"/>
+                <s:element minOccurs="0" name="ErrorParameters" type="s:string"/>
+                <s:element minOccurs="0" name="RecordsUpdated" type="s:int"/>
+                <s:element minOccurs="0" name="Language" type="s:int"/>
+                <s:element minOccurs="0" name="ErrorNo" type="s:string"/>
+                <s:element minOccurs="0" name="PrimaryClient" type="s:string"/>
+                <s:element minOccurs="0" name="ReleaseVersion" type="s:string"/>
+                <s:element minOccurs="0" name="SecondaryServer" type="s:string"/>
+                <s:element minOccurs="0" name="CallFunction" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpAgt">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpSelAgtIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="SelectChar" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmAgtAgents">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="AgtId" type="s:string"/>
+                            <s:element minOccurs="0" name="FirstName" type="s:string"/>
+                            <s:element minOccurs="0" name="Name" type="s:string"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="FsaIndividualRefNo" type="s:string"/>
+                            <s:element minOccurs="0" name="FsaFirmRefNo" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Exception">
+        <s:sequence>
+          <s:element minOccurs="0" name="Exception" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getAgentSearchSoapInput">
+    <wsdl:part name="parameters" element="tns:getAgentSearch"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="Exception">
+    <wsdl:part name="fault" element="tns:Exception"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAgentSearchSoapOutput">
+    <wsdl:part name="parameters" element="tns:getAgentSearchResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="LissiaWS_getAgentSearchSoapPort">
+    <wsdl:operation name="getAgentSearch">
+      <wsdl:input message="tns:getAgentSearchSoapInput"></wsdl:input>
+      <wsdl:output message="tns:getAgentSearchSoapOutput"></wsdl:output>
+      <wsdl:fault name="Exception" message="tns:Exception"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LissiaWS_getAgentSearchSoapPort" type="tns:LissiaWS_getAgentSearchSoapPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getAgentSearch">
+      <soap:operation soapAction="http://tempuri.org/Wssagtsrh/?http://LissiaWS_getAgentSearch/LissiaWS_getAgentSearch/"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LissiaWS_getAgentSearch">
+    <wsdl:port name="LissiaWS_getAgentSearchSoapPort" binding="tns:LissiaWS_getAgentSearchSoapPort">
+      <soap:address location="http://10.0.0.29:7090/LissiaWS_getAgentSearch/router"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.0.0.29:7090/LissiaWS_getAgentSearch/router</con:endpoint></con:endpoints><con:operation id="1e38f855-8b11-432a-81bf-777f563fff45" isOneWay="false" action="http://tempuri.org/Wssagtsrh/?http://LissiaWS_getAgentSearch/LissiaWS_getAgentSearch/" name="getAgentSearch" bindingOperationName="getAgentSearch" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7b302f2c-41e8-4d7c-8898-3bdca8ffe66f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.0.0.29:7090/LissiaWS_getAgentSearch/router</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lis="http://LissiaWS_getAgentSearch/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <lis:getAgentSearch>\r
+         <!--Optional:-->\r
+         <lis:getAgentSearchImport>\r
+            <!--Optional:-->\r
+            <lis:ImpUsrStatusWebService>\r
+               <!--Optional:-->\r
+               <lis:SearchStatus>?</lis:SearchStatus>\r
+            </lis:ImpUsrStatusWebService>\r
+            <!--Optional:-->\r
+            <lis:ImpAgtAgents>\r
+               <!--Optional:-->\r
+               <lis:FirstName>?</lis:FirstName>\r
+               <!--Optional:-->\r
+               <lis:Name>?</lis:Name>\r
+               <!--Optional:-->\r
+               <lis:FsaIndividualRefNo>?</lis:FsaIndividualRefNo>\r
+               <!--Optional:-->\r
+               <lis:FsaFirmRefNo>?</lis:FsaFirmRefNo>\r
+            </lis:ImpAgtAgents>\r
+            <!--Optional:-->\r
+            <lis:ImpSrvdetailsWebService>\r
+               <!--Optional:-->\r
+               <lis:Srvtimings>?</lis:Srvtimings>\r
+               <!--Optional:-->\r
+               <lis:Pcdate>?</lis:Pcdate>\r
+            </lis:ImpSrvdetailsWebService>\r
+            <!--Optional:-->\r
+            <lis:ImpUsersUsers>\r
+               <!--Optional:-->\r
+               <lis:UsrId>?</lis:UsrId>\r
+            </lis:ImpUsersUsers>\r
+            <!--Optional:-->\r
+            <lis:ImpActionCommunications>\r
+               <!--Optional:-->\r
+               <lis:CallFunction>?</lis:CallFunction>\r
+            </lis:ImpActionCommunications>\r
+         </lis:getAgentSearchImport>\r
+      </lis:getAgentSearch>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Wssagtsrh/?http://LissiaWS_getAgentSearch/LissiaWS_getAgentSearch/"/></con:call></con:operation></con:interface><con:testSuite id="cf2ddc07-58d8-4929-9a8d-4a2bcbfcb50f" name="myTestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="55933047-6879-4087-be36-05a47d35b202" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="myTestCase" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Step1" id="e35202cc-9852-44bd-aedc-a84202aa0786"><con:settings/><con:config><script>def fileList = []
+def fileListNew = []
+def projectName
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+def projectDir = groovyUtils.projectPath
+def ProjectName= testRunner.testCase.testSuite.project.getName();
+def requestDir = context.get('projectDir') + "\\Request"
+
+new File(requestDir).eachFile
+{ f ->
+	if (f.isFile()&amp;&amp; f.name.endsWith('.xml'))
+	{
+	 	def filename = f.name[0..-1]
+		log.info filename 	
+		log.info filename.substring(0,filename.length()-4)
+		fileList.add(filename)
+		fileListNew.add(filename.substring(0,filename.length()-4))
+	}
+}
+
+if (fileList.size() &lt;1)
+{
+testRunner.fail("No request files found")
+}
+context.put('fileList',fileList)
+context.put('fileListNew',fileListNew)</script></con:config></con:testStep><con:testStep type="request" id="d90aac52-8bb3-4f35-a22c-2e53e8069376" name="Step2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LissiaWS_getAgentSearchSoapPort</con:interface><con:operation>getAgentSearch</con:operation><con:request name="Step2" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="57e99f68-268f-4fda-9c51-43f554168168"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.0.0.29:7090/LissiaWS_getAgentSearch/router</con:endpoint><con:request>${=new File(context.get('projectDir') + "\\Request\\" + (context.get('fileListNew')).last() + ".xml").text}</con:request><con:assertion type="SOAP Response" id="344679d6-db65-4f4c-b994-0440c14504b4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Wssagtsrh/?http://LissiaWS_getAgentSearch/LissiaWS_getAgentSearch/"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Step3" id="56e37f7c-8a01-4411-91cd-278cc2841af2"><con:settings/><con:config><script>
+def fileList = context.get('fileListNew')
+
+def fileName = fileList.pop()
+def newname = fileName[0..-5]
+
+def response = context.expand( '${Step2#Response}' )
+def f = new File(context.get('projectDir') + "\\Response\\${fileName}_Response.xml")
+f.write(response, "UTF-8")
+
+if(fileList.size() >0)
+{
+testRunner.gotoStepByName("Step2")
+}</script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

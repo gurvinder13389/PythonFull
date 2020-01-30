@@ -1,0 +1,199 @@
+{
+    "status": "success",
+    "data": {
+        "items": [
+            {
+               "id": 16,
+                "educationLevelId": 1,
+                "category": {
+                    "id": 16,
+                    "name": "Handmade Plastic Fish"
+                },
+                "name": "Awesome Soft Shoes",
+                "provider": {
+                    "id": 4,
+                    "name": "Toys",
+                    "logo": "http://point.iat.ac.ae/images/counters/fc.png",
+                    "locations": [
+                        {
+                            "id": 2,
+                           "name": "Ajman"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Dubai"
+                        }
+                    ]
+                }
+            },
+            {
+                "id": 1,
+                "educationLevelId": 1,
+                "category": {
+                    "id": 1,
+                    "name": "Incredible Wooden Shoes"
+                },
+                "name": "Fantastic Frozen Pizza",
+                "provider": {
+                    "id": 4,
+                    "name": "Toys",
+                    "logo": "http://point.iat.ac.ae/images/counters/fc.png",
+                    "locations": [
+                        {
+                            "id": 2,
+                            "name": "Ajman"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Dubai"
+                        }
+                    ]
+                }
+            },
+            {
+                "id": 8,
+                "educationLevelId": 1,
+                "category": {
+                    "id": 8,
+                    "name": "Intelligent Steel Ball"
+                },
+                "name": "Intelligent Soft Bike",
+                "provider": {
+                    "id": 1,
+                    "name": "Home",
+                    "logo": "http://www.sts.ac.ae/wp-content/uploads/2012/05/logo.jpg",
+                    "locations": [
+                        {
+                            "id": 2,
+                            "name": "Ajman"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Dubai"
+                        }
+                   ]
+                }
+            },
+            {
+                "id": 12,
+                "educationLevelId": 1,
+                "category": {
+                    "id": 12,
+                    "name": "Tasty Frozen Computer"
+                },
+                "name": "Licensed Rubber Table",
+                "provider": {
+                    "id": 1,
+                    "name": "Home",
+                    "logo": "http://www.sts.ac.ae/wp-content/uploads/2012/05/logo.jpg",
+                    "locations": [
+                        {
+                            "id": 2,
+                            "name": "Ajman"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Dubai"
+                        }
+                    ]
+                }
+            },
+            {
+                "id": 7,
+                "educationLevelId": 1,
+                "category": {
+                    "id": 7,
+                    "name": "Rustic Cotton Sausages"
+                },
+                "name": "Rustic Concrete Pizza",
+                "provider": {
+                    "id": 4,
+                    "name": "Toys",
+                    "logo": "http://point.iat.ac.ae/images/counters/fc.png",
+                    "locations": [
+                        {
+                            "id": 2,
+                            "name": "Ajman"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Dubai"
+                        }
+                    ]
+                }
+            },
+            {
+                "id": 17,
+                "educationLevelId": 1,
+                "category": {
+                    "id": 17,
+                    "name": "Ergonomic Fresh Shoes"
+                },
+                "name": "Rustic Rubber Sausages",
+                "provider": {
+                    "id": 4,
+                    "name": "Toys",
+                    "logo": "http://point.iat.ac.ae/images/counters/fc.png",
+                    "locations": [
+                        {
+                            "id": 2,
+                            "name": "Ajman"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Dubai"
+                        }
+                    ]
+                }
+            },
+            {
+                "id": 13,
+                "educationLevelId": 1,
+                "category": {
+                    "id": 13,
+                    "name": "Handcrafted Granite Ball"
+                },
+                "name": "Small Cotton Mouse",
+                "provider": {
+                    "id": 2,
+                    "name": "Kids",
+                    "logo": "http://point.iat.ac.ae/images/counters/logo.png",
+                    "locations": [
+                        {
+                            "id": 1,
+                            "name": "Abu Dhabi"
+                        },
+                        {
+                            "id": 2,
+                            "name": "Ajman"
+                        }
+                    ]
+                }
+            },
+            {
+                "id": 10,
+                "educationLevelId": 1,
+               "category": {
+                    "id": 10,
+                    "name": "Intelligent Cotton Bacon"
+                },
+                "name": "Unbranded Plastic Cheese",
+                "provider": {
+                    "id": 4,
+                    "name": "Toys",
+                    "logo": "http://point.iat.ac.ae/images/counters/fc.png",
+                    "locations": [
+                        {
+                            "id": 2,
+                            "name": "Ajman"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Dubai"
+                        }
+                    ]
+                }
+            }
+          ]
+    }
+}

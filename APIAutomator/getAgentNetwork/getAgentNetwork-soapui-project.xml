@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="c1d8ee44-c26b-494b-a9dd-0c61bdd45deb" activeEnvironment="Default" name="getAgentNetwork" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="10a870cd-2f98-4432-b399-21e2b99a2198" wsaVersion="NONE" name="LissiaWS_getAgentNetworkSoapPort" type="wsdl" bindingName="{http://LissiaWS_getAgentNetwork/}LissiaWS_getAgentNetworkSoapPort" soapVersion="1_1" anonymous="optional" definition="http://10.0.0.29:7090/LissiaWS_getAgentNetwork/router?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://10.0.0.29:7090/LissiaWS_getAgentNetwork/router?WSDL"><con:part><con:url>http://10.0.0.29:7090/LissiaWS_getAgentNetwork/router?WSDL</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.8-b13937 svn-revision#13942.-->
+<wsdl:definitions name="LissiaWS_getAgentNetwork" targetNamespace="http://LissiaWS_getAgentNetwork/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textmatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://LissiaWS_getAgentNetwork/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:documentation>Copyright (c) 2015 IET. All rights reserved.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://LissiaWS_getAgentNetwork/">
+      <s:element name="Exception" type="tns:Exception"/>
+      <s:element name="getAgentNetwork" type="tns:getAgentNetwork"/>
+      <s:element name="getAgentNetworkResponse" type="tns:getAgentNetworkResponse"/>
+      <s:complexType name="getAgentNetwork">
+        <s:sequence>
+          <s:element minOccurs="0" name="getAgentNetworkImport" type="tns:getAgentNetworkImport"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="getAgentNetworkResponse">
+        <s:sequence>
+          <s:element minOccurs="0" name="getAgentNetworkExport" type="tns:getAgentNetworkExport"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="getAgentNetworkImport">
+        <s:sequence>
+          <s:element minOccurs="0" name="ImpToLvlHierarchyEntities">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="HierarchyLevel" type="s:int"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpFrmLvlHierarchyEntities">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="HierarchyLevel" type="s:int"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpAgtPtrHierarchyEntities">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="HreId" type="s:int"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="IcommsCommunications">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="SystemName" type="s:string"/>
+                <s:element minOccurs="0" name="SystemDateDisplay" type="s:string"/>
+                <s:element minOccurs="0" name="DocumentsCreated" type="s:int"/>
+                <s:element minOccurs="0" name="RecordsFound" type="s:int"/>
+                <s:element minOccurs="0" name="SystemDate" type="s:date"/>
+                <s:element minOccurs="0" name="RecordsUpdated" type="s:int"/>
+                <s:element minOccurs="0" name="User" type="s:string"/>
+                <s:element minOccurs="0" name="Language" type="s:int"/>
+                <s:element minOccurs="0" name="ErrorNo" type="s:string"/>
+                <s:element minOccurs="0" name="ErrorParameters" type="s:string"/>
+                <s:element minOccurs="0" name="ErrorPrl" type="s:string"/>
+                <s:element minOccurs="0" name="PrimaryClient" type="s:string"/>
+                <s:element minOccurs="0" name="ReleaseVersion" type="s:string"/>
+                <s:element minOccurs="0" name="PrimaryServer" type="s:string"/>
+                <s:element minOccurs="0" name="SecondaryServer" type="s:string"/>
+                <s:element minOccurs="0" name="CallFunction" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="getAgentNetworkExport">
+        <s:sequence>
+          <s:element minOccurs="0" name="ExpAgtPtrHierarchyEntities">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="HreId" type="s:int"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="EcommsCommunications">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="SystemName" type="s:string"/>
+                <s:element minOccurs="0" name="SystemDateDisplay" type="s:string"/>
+                <s:element minOccurs="0" name="DocumentsCreated" type="s:int"/>
+                <s:element minOccurs="0" name="RecordsFound" type="s:int"/>
+                <s:element minOccurs="0" name="SystemDate" type="s:date"/>
+                <s:element minOccurs="0" name="RecordsUpdated" type="s:int"/>
+                <s:element minOccurs="0" name="User" type="s:string"/>
+                <s:element minOccurs="0" name="Language" type="s:int"/>
+                <s:element minOccurs="0" name="ErrorNo" type="s:string"/>
+                <s:element minOccurs="0" name="ErrorParameters" type="s:string"/>
+                <s:element minOccurs="0" name="ErrorPrl" type="s:string"/>
+                <s:element minOccurs="0" name="PrimaryClient" type="s:string"/>
+                <s:element minOccurs="0" name="ReleaseVersion" type="s:string"/>
+                <s:element minOccurs="0" name="PrimaryServer" type="s:string"/>
+                <s:element minOccurs="0" name="SecondaryServer" type="s:string"/>
+                <s:element minOccurs="0" name="CallFunction" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpAgtLst">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmHieHierarchyEntities">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="HreId" type="s:int"/>
+                            <s:element minOccurs="0" name="HierarchyLevel" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmAgsAgents">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="AgtId" type="s:string"/>
+                            <s:element minOccurs="0" name="FirstName" type="s:string"/>
+                            <s:element minOccurs="0" name="Name" type="s:string"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="Branch" type="s:string"/>
+                            <s:element minOccurs="0" name="LimitCode" type="s:int"/>
+                            <s:element minOccurs="0" name="LimitCurrency" type="s:string"/>
+                            <s:element minOccurs="0" name="LimitAmount" type="s:decimal"/>
+                            <s:element minOccurs="0" name="AppointmentDate" type="s:date"/>
+                            <s:element minOccurs="0" name="LastStatementNo" type="s:int"/>
+                            <s:element minOccurs="0" name="SdateLastStmtRun" type="s:date"/>
+                            <s:element minOccurs="0" name="DateLastStmtRunTo" type="s:date"/>
+                            <s:element minOccurs="0" name="PaymentCode" type="s:int"/>
+                            <s:element minOccurs="0" name="PaymentFrequency" type="s:int"/>
+                            <s:element minOccurs="0" name="PaymentMethod" type="s:int"/>
+                            <s:element minOccurs="0" name="PaymentCcy" type="s:string"/>
+                            <s:element minOccurs="0" name="ContractNo" type="s:string"/>
+                            <s:element minOccurs="0" name="Category" type="s:string"/>
+                            <s:element minOccurs="0" name="Country" type="s:string"/>
+                            <s:element minOccurs="0" name="AddressLine1" type="s:string"/>
+                            <s:element minOccurs="0" name="AddressLine2" type="s:string"/>
+                            <s:element minOccurs="0" name="AddressLine3" type="s:string"/>
+                            <s:element minOccurs="0" name="AddressLine4" type="s:string"/>
+                            <s:element minOccurs="0" name="Town" type="s:string"/>
+                            <s:element minOccurs="0" name="County" type="s:string"/>
+                            <s:element minOccurs="0" name="Postcode" type="s:string"/>
+                            <s:element minOccurs="0" name="Fax" type="s:string"/>
+                            <s:element minOccurs="0" name="Telephone" type="s:string"/>
+                            <s:element minOccurs="0" name="Email" type="s:string"/>
+                            <s:element minOccurs="0" name="Channel" type="s:string"/>
+                            <s:element minOccurs="0" name="EffectiveDate" type="s:date"/>
+                            <s:element minOccurs="0" name="Location" type="s:string"/>
+                            <s:element minOccurs="0" name="CreatedProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifyProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="CreatedBy" type="s:string"/>
+                            <s:element minOccurs="0" name="CreatedDate" type="s:date"/>
+                            <s:element minOccurs="0" name="CreatedTime" type="s:time"/>
+                            <s:element minOccurs="0" name="ModifyBy" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifyDate" type="s:date"/>
+                            <s:element minOccurs="0" name="ModifyTime" type="s:time"/>
+                            <s:element minOccurs="0" name="ServicingAgent" type="s:string"/>
+                            <s:element minOccurs="0" name="DateOfTermination" type="s:date"/>
+                            <s:element minOccurs="0" name="TerminationBasis" type="s:int"/>
+                            <s:element minOccurs="0" name="TerminationReason" type="s:string"/>
+                            <s:element minOccurs="0" name="Banding" type="s:string"/>
+                            <s:element minOccurs="0" name="NextCategory" type="s:string"/>
+                            <s:element minOccurs="0" name="NextCategoryDate" type="s:date"/>
+                            <s:element minOccurs="0" name="LastCategoryChange" type="s:date"/>
+                            <s:element minOccurs="0" name="AdditionalData1" type="s:string"/>
+                            <s:element minOccurs="0" name="AdditionalData2" type="s:string"/>
+                            <s:element minOccurs="0" name="AdditionalData3" type="s:string"/>
+                            <s:element minOccurs="0" name="Match" type="s:string"/>
+                            <s:element minOccurs="0" name="ProductView" type="s:int"/>
+                            <s:element minOccurs="0" name="StatementView" type="s:int"/>
+                            <s:element minOccurs="0" name="FsaIndividualRefNo" type="s:string"/>
+                            <s:element minOccurs="0" name="FsaFirmRefNo" type="s:int"/>
+                            <s:element minOccurs="0" name="LicenceStatus" type="s:int"/>
+                            <s:element minOccurs="0" name="NetworkName" type="s:string"/>
+                            <s:element minOccurs="0" name="AgencyNumber" type="s:string"/>
+                            <s:element minOccurs="0" name="TobReference" type="s:string"/>
+                            <s:element minOccurs="0" name="CreditLimit" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Exception">
+        <s:sequence>
+          <s:element minOccurs="0" name="Exception" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getAgentNetworkSoapOutput">
+    <wsdl:part name="parameters" element="tns:getAgentNetworkResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="Exception">
+    <wsdl:part name="fault" element="tns:Exception"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAgentNetworkSoapInput">
+    <wsdl:part name="parameters" element="tns:getAgentNetwork"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="LissiaWS_getAgentNetworkSoapPort">
+    <wsdl:operation name="getAgentNetwork">
+      <wsdl:input message="tns:getAgentNetworkSoapInput"></wsdl:input>
+      <wsdl:output message="tns:getAgentNetworkSoapOutput"></wsdl:output>
+      <wsdl:fault name="Exception" message="tns:Exception"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LissiaWS_getAgentNetworkSoapPort" type="tns:LissiaWS_getAgentNetworkSoapPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getAgentNetwork">
+      <soap:operation soapAction="http://tempuri.org/Wssagtst/?http://LissiaWS_getAgentNetwork/LissiaWS_getAgentNetwork/"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LissiaWS_getAgentNetwork">
+    <wsdl:port name="LissiaWS_getAgentNetworkSoapPort" binding="tns:LissiaWS_getAgentNetworkSoapPort">
+      <soap:address location="http://10.0.0.29:7090/LissiaWS_getAgentNetwork/router"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.0.0.29:7090/LissiaWS_getAgentNetwork/router</con:endpoint></con:endpoints><con:operation id="8dc1e930-be19-4de6-a2ef-69b7fd09dda1" isOneWay="false" action="http://tempuri.org/Wssagtst/?http://LissiaWS_getAgentNetwork/LissiaWS_getAgentNetwork/" name="getAgentNetwork" bindingOperationName="getAgentNetwork" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c729286a-8dc6-4700-a714-074f7b879663" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.0.0.29:7090/LissiaWS_getAgentNetwork/router</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lis="http://LissiaWS_getAgentNetwork/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <lis:getAgentNetwork>\r
+         <lis:getAgentNetworkImport>\r
+            <lis:ImpToLvlHierarchyEntities>\r
+               <lis:HierarchyLevel>3</lis:HierarchyLevel>\r
+            </lis:ImpToLvlHierarchyEntities>\r
+            <lis:ImpFrmLvlHierarchyEntities>\r
+               <lis:HierarchyLevel>1</lis:HierarchyLevel>\r
+            </lis:ImpFrmLvlHierarchyEntities>\r
+            <lis:ImpAgtPtrHierarchyEntities>\r
+               <lis:HreId>161</lis:HreId>\r
+            </lis:ImpAgtPtrHierarchyEntities>\r
+            <lis:IcommsCommunications>\r
+               <lis:SystemName/>\r
+               <lis:SystemDateDisplay/>\r
+               <lis:DocumentsCreated/>\r
+               <lis:RecordsFound/>\r
+               <lis:SystemDate/>\r
+               <lis:RecordsUpdated/>\r
+               <lis:User/>\r
+               <lis:Language/>\r
+               <lis:ErrorNo/>\r
+               <lis:ErrorParameters/>\r
+               <lis:ErrorPrl/>\r
+               <lis:PrimaryClient/>\r
+               <lis:ReleaseVersion/>\r
+               <lis:PrimaryServer/>\r
+               <lis:SecondaryServer/>\r
+               <lis:CallFunction>INACTIVE</lis:CallFunction>\r
+            </lis:IcommsCommunications>\r
+         </lis:getAgentNetworkImport>\r
+      </lis:getAgentNetwork>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Wssagtst/?http://LissiaWS_getAgentNetwork/LissiaWS_getAgentNetwork/"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="c8bb01fb-47dc-46a1-bdb4-c0856e6d593e" name="myTestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="6c35a941-65b6-45e2-b0fc-bb8242a3e350" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="myTestCase" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Step1" id="8da0a7f1-45ed-45e4-9790-d1456a2ecd23"><con:settings/><con:config><script>def fileList = []
+def fileListNew = []
+def projectName
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+def projectDir = groovyUtils.projectPath
+def ProjectName= testRunner.testCase.testSuite.project.getName();
+def requestDir = context.get('projectDir') + "\\Request"
+
+new File(requestDir).eachFile
+{ f ->
+	if (f.isFile()&amp;&amp; f.name.endsWith('.xml'))
+	{
+	 	def filename = f.name[0..-1]
+		log.info filename 	
+		log.info filename.substring(0,filename.length()-4)
+		fileList.add(filename)
+		fileListNew.add(filename.substring(0,filename.length()-4))
+	}
+}
+
+if (fileList.size() &lt;1)
+{
+testRunner.fail("No request files found")
+}
+context.put('fileList',fileList)
+context.put('fileListNew',fileListNew)</script></con:config></con:testStep><con:testStep type="request" id="9e2963cc-791c-4826-b579-e7fcdb8b886c" name="Step2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LissiaWS_getAgentNetworkSoapPort</con:interface><con:operation>getAgentNetwork</con:operation><con:request name="Step2" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="c05d6011-706c-45e4-a020-7a59a68603e2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.0.0.29:7090/LissiaWS_getAgentNetwork/router</con:endpoint><con:request>${=new File(context.get('projectDir') + "\\Request\\" + (context.get('fileListNew')).last() + ".xml").text}</con:request><con:assertion type="SOAP Response" id="bfedff2c-9ed4-49f9-a82b-db4871ed55d4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Wssagtst/?http://LissiaWS_getAgentNetwork/LissiaWS_getAgentNetwork/"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Step3" id="27667760-42e8-4475-8963-ee2639c621a1"><con:settings/><con:config><script>
+def fileList = context.get('fileListNew')
+
+def fileName = fileList.pop()
+def newname = fileName[0..-5]
+
+def response = context.expand( '${Step2#Response}' )
+def f = new File(context.get('projectDir') + "\\Response\\${fileName}_Response.xml")
+f.write(response, "UTF-8")
+
+if(fileList.size() >0)
+{
+testRunner.gotoStepByName("Step2")
+}</script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

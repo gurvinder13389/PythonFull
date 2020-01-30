@@ -1,0 +1,1 @@
+http://10.0.0.29:7090/LissiaWS_getProductValues/router?wsdl

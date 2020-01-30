@@ -1,0 +1,2166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="c79aca4c-86bd-447d-bd97-ae2f50d33c70" activeEnvironment="Default" name="getDocRequestDetails" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="f740a088-125e-472e-9db4-eb96422355ce" wsaVersion="NONE" name="LissiaWS_getDocRequestDetailsSoapPort" type="wsdl" bindingName="{http://LissiaWS_getDocRequestDetails/}LissiaWS_getDocRequestDetailsSoapPort" soapVersion="1_1" anonymous="optional" definition="http://10.0.0.29:7090/LissiaWS_getDocRequestDetails/router?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://10.0.0.29:7090/LissiaWS_getDocRequestDetails/router?WSDL"><con:part><con:url>http://10.0.0.29:7090/LissiaWS_getDocRequestDetails/router?WSDL</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.8-b13937 svn-revision#13942.-->
+<wsdl:definitions name="LissiaWS_getDocRequestDetails" targetNamespace="http://LissiaWS_getDocRequestDetails/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textmatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://LissiaWS_getDocRequestDetails/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:documentation>Copyright (c) 2015 IET. All rights reserved.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://LissiaWS_getDocRequestDetails/">
+      <s:element name="Exception" type="tns:Exception"/>
+      <s:element name="getDocRequestDetails" type="tns:getDocRequestDetails"/>
+      <s:element name="getDocRequestDetailsResponse" type="tns:getDocRequestDetailsResponse"/>
+      <s:complexType name="getDocRequestDetails">
+        <s:sequence>
+          <s:element minOccurs="0" name="getDocRequestDetailsImport" type="tns:getDocRequestDetailsImport"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="getDocRequestDetailsResponse">
+        <s:sequence>
+          <s:element minOccurs="0" name="getDocRequestDetailsExport" type="tns:getDocRequestDetailsExport"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="getDocRequestDetailsImport">
+        <s:sequence>
+          <s:element minOccurs="0" name="ImpRestartAgtIdAgents">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="AgtId" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpCltClients">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="CliId" type="s:int"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpRestartActIdAccountTransactions">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="AtrId" type="s:int"/>
+                <s:element minOccurs="0" name="Details" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpSrvdetailsWebService">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="ServiceUserid" type="s:string"/>
+                <s:element minOccurs="0" name="Pcdate" type="s:date"/>
+                <s:element minOccurs="0" name="Srvtimings" type="s:int"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpDrqDocumentRequests">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="DrqId" type="s:int"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpUsersUsers">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="UsrId" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpActionCommunications">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="CallFunction" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="getDocRequestDetailsExport">
+        <s:sequence>
+          <s:element minOccurs="0" name="ExpNumExpiredCoveragesWorkspace">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="Integer1" type="s:int"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpTotalSaPolicyCoverages">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="SumAssured" type="s:decimal"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpPcpArrearsUnadjustedPolicyPremiums">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="Frequency" type="s:int"/>
+                <s:element minOccurs="0" name="ModalPremium" type="s:decimal"/>
+                <s:element minOccurs="0" name="Currency" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpPcpSuspensePolicyPremiums">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="ModalPremium" type="s:decimal"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpPrdProducts">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="Name" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpPolRel">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmDrqDocumentRequests">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="DrqId" type="s:int"/>
+                            <s:element minOccurs="0" name="Policy" type="s:string"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                            <s:element minOccurs="0" name="TransientData" type="s:string"/>
+                            <s:element minOccurs="0" name="Event" type="s:string"/>
+                            <s:element minOccurs="0" name="Document" type="s:string"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="CreatedDate" type="s:date"/>
+                            <s:element minOccurs="0" name="MatchValue" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPolRelPcpPolicyPremiums">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="ModalPremium" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPolRelPolPolicies">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PolId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpNextPcpPolicyPremiums">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="DateNextPremiumDue" type="s:date"/>
+                <s:element minOccurs="0" name="Currency" type="s:string"/>
+                <s:element minOccurs="0" name="ModalPremium" type="s:decimal"/>
+                <s:element minOccurs="0" name="BankId" type="s:int"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpNextBillsDateBills">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="Date" type="s:date"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpPolArrearsPolicyPremiums">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="ModalPremium" type="s:decimal"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpCcc">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmCccClientClaimsDetails">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="CcmId" type="s:int"/>
+                            <s:element minOccurs="0" name="DateOfPtd" type="s:date"/>
+                            <s:element minOccurs="0" name="DateDeathNotified" type="s:date"/>
+                            <s:element minOccurs="0" name="DateOfDeath" type="s:date"/>
+                            <s:element minOccurs="0" name="CauseOfDeath" type="s:string"/>
+                            <s:element minOccurs="0" name="DeathCertificate" type="s:date"/>
+                            <s:element minOccurs="0" name="PtdCertification" type="s:date"/>
+                            <s:element minOccurs="0" name="DatePtdNotified" type="s:date"/>
+                            <s:element minOccurs="0" name="CauseOfPtd" type="s:string"/>
+                            <s:element minOccurs="0" name="CreatedProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifyProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="CreatedBy" type="s:string"/>
+                            <s:element minOccurs="0" name="CreatedDate" type="s:date"/>
+                            <s:element minOccurs="0" name="CreatedTime" type="s:time"/>
+                            <s:element minOccurs="0" name="ModifyBy" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifyDate" type="s:date"/>
+                            <s:element minOccurs="0" name="ModifyTime" type="s:time"/>
+                            <s:element minOccurs="0" name="DateCiNotified" type="s:date"/>
+                            <s:element minOccurs="0" name="DateOfCi" type="s:date"/>
+                            <s:element minOccurs="0" name="CiCertification" type="s:date"/>
+                            <s:element minOccurs="0" name="CauseOfCi" type="s:string"/>
+                            <s:element minOccurs="0" name="DateTiNotified" type="s:date"/>
+                            <s:element minOccurs="0" name="DateOfTi" type="s:date"/>
+                            <s:element minOccurs="0" name="TiCertification" type="s:date"/>
+                            <s:element minOccurs="0" name="CauseOfTi" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpClaims">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmClmLnClaimLines">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="CmlId" type="s:int"/>
+                            <s:element minOccurs="0" name="Claim" type="s:int"/>
+                            <s:element minOccurs="0" name="Line" type="s:int"/>
+                            <s:element minOccurs="0" name="Coverage" type="s:int"/>
+                            <s:element minOccurs="0" name="ClientNo" type="s:int"/>
+                            <s:element minOccurs="0" name="NotificationDate" type="s:date"/>
+                            <s:element minOccurs="0" name="IncidentDate" type="s:date"/>
+                            <s:element minOccurs="0" name="Benefit" type="s:string"/>
+                            <s:element minOccurs="0" name="SubBenefit" type="s:string"/>
+                            <s:element minOccurs="0" name="Factor" type="s:int"/>
+                            <s:element minOccurs="0" name="EstimatedClaim" type="s:decimal"/>
+                            <s:element minOccurs="0" name="EstimatedClaimCcy" type="s:string"/>
+                            <s:element minOccurs="0" name="EnteredClaim" type="s:decimal"/>
+                            <s:element minOccurs="0" name="EnteredClaimCcy" type="s:string"/>
+                            <s:element minOccurs="0" name="PaidClaim" type="s:decimal"/>
+                            <s:element minOccurs="0" name="PaidClaimCcy" type="s:string"/>
+                            <s:element minOccurs="0" name="Ppo" type="s:int"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="CreatedBy" type="s:string"/>
+                            <s:element minOccurs="0" name="CreatedTime" type="s:time"/>
+                            <s:element minOccurs="0" name="CreatedDate" type="s:date"/>
+                            <s:element minOccurs="0" name="CreatedProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifyBy" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifyTime" type="s:time"/>
+                            <s:element minOccurs="0" name="ModifyDate" type="s:date"/>
+                            <s:element minOccurs="0" name="ModifyProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="RateOrPercentage" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Modifier" type="s:int"/>
+                            <s:element minOccurs="0" name="DateAccepted" type="s:date"/>
+                            <s:element minOccurs="0" name="DateBenefitStarts" type="s:date"/>
+                            <s:element minOccurs="0" name="DateBenefitEnds" type="s:date"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmClmClaims">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="ClmId" type="s:int"/>
+                            <s:element minOccurs="0" name="Policy" type="s:string"/>
+                            <s:element minOccurs="0" name="NotificationDate" type="s:date"/>
+                            <s:element minOccurs="0" name="IncidentDate" type="s:date"/>
+                            <s:element minOccurs="0" name="Settlements" type="s:int"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="CreatedBy" type="s:string"/>
+                            <s:element minOccurs="0" name="CreatedTime" type="s:time"/>
+                            <s:element minOccurs="0" name="CreatedDate" type="s:date"/>
+                            <s:element minOccurs="0" name="CreatedProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifyBy" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifyTime" type="s:time"/>
+                            <s:element minOccurs="0" name="ModifyDate" type="s:date"/>
+                            <s:element minOccurs="0" name="ModifyProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="Details" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpCtlEmailDeliveryControls">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="NumberValue" type="s:int"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpAgtSumProductValues">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="NumericValue" type="s:decimal"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpEscPols">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmTotNonEscPolicyPremiums">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="ModalPremium" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmTotPpcRecordPolicyPremiumChanges">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PpcId" type="s:string"/>
+                            <s:element minOccurs="0" name="AmountBefore" type="s:decimal"/>
+                            <s:element minOccurs="0" name="AmountAfter" type="s:decimal"/>
+                            <s:element minOccurs="0" name="AssuredBefore" type="s:decimal"/>
+                            <s:element minOccurs="0" name="AssuredAfter" type="s:decimal"/>
+                            <s:element minOccurs="0" name="TaxBefore" type="s:decimal"/>
+                            <s:element minOccurs="0" name="TaxAfter" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmTotPolPremPolicyPremiums">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PcpId" type="s:string"/>
+                            <s:element minOccurs="0" name="Policy" type="s:string"/>
+                            <s:element minOccurs="0" name="ModalPremium" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Currency" type="s:string"/>
+                            <s:element minOccurs="0" name="Frequency" type="s:int"/>
+                            <s:element minOccurs="0" name="DateNextBilledPremium" type="s:date"/>
+                            <s:element minOccurs="0" name="DateNextPremiumDue" type="s:date"/>
+                            <s:element minOccurs="0" name="CollectionMethodPremium1" type="s:int"/>
+                            <s:element minOccurs="0" name="CollectionMethod" type="s:int"/>
+                            <s:element minOccurs="0" name="CollectionSubMethod" type="s:int"/>
+                            <s:element minOccurs="0" name="BankId" type="s:int"/>
+                            <s:element minOccurs="0" name="NextEscNumber" type="s:int"/>
+                            <s:element minOccurs="0" name="ContributionPercentage" type="s:decimal"/>
+                            <s:element minOccurs="0" name="PreviousDatePaidTo" type="s:date"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="TotalPremium" type="s:decimal"/>
+                            <s:element minOccurs="0" name="EscPocAdjustment" type="s:decimal"/>
+                            <s:element minOccurs="0" name="DisableEscalation" type="s:int"/>
+                            <s:element minOccurs="0" name="TotalTax" type="s:decimal"/>
+                            <s:element minOccurs="0" name="BillingDay" type="s:int"/>
+                            <s:element minOccurs="0" name="CollectionDay" type="s:date"/>
+                            <s:element minOccurs="0" name="EarliestCollectionDate" type="s:date"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmEscStoppedWorkspace">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Text1" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmEscWorkspace">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Text1" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPolPolicies">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PolId" type="s:string"/>
+                            <s:element minOccurs="0" name="Product" type="s:string"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpRestartAgtIdAgents">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="AgtId" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpCccCliContactChanges">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="ClientId" type="s:int"/>
+                <s:element minOccurs="0" name="HouseNo" type="s:string"/>
+                <s:element minOccurs="0" name="AddressLine1" type="s:string"/>
+                <s:element minOccurs="0" name="AddressLine2" type="s:string"/>
+                <s:element minOccurs="0" name="AddressLine3" type="s:string"/>
+                <s:element minOccurs="0" name="AddressLine4" type="s:string"/>
+                <s:element minOccurs="0" name="Town" type="s:string"/>
+                <s:element minOccurs="0" name="County" type="s:string"/>
+                <s:element minOccurs="0" name="Country" type="s:string"/>
+                <s:element minOccurs="0" name="Postcode" type="s:string"/>
+                <s:element minOccurs="0" name="Fax" type="s:string"/>
+                <s:element minOccurs="0" name="HomePhone" type="s:string"/>
+                <s:element minOccurs="0" name="Email" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpServicingEmailEmailAddresses">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="Email" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpEmail">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmEmailIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="SelectChar" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmEmailEmlEmailAddresses">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="EmlId" type="s:int"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                            <s:element minOccurs="0" name="Email" type="s:string"/>
+                            <s:element minOccurs="0" name="EffectiveDate" type="s:date"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpAgtevtActualAgentEvents">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="EffectiveDate" type="s:date"/>
+                <s:element minOccurs="0" name="StatementNo" type="s:int"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpRestartActIdAccountTransactions">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="AtrId" type="s:int"/>
+                <s:element minOccurs="0" name="Details" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpMoreDataFlagIefSupplied">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="Flag" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpSummTotStillToBeEarnedIefSupplied">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="TotalCurrency" type="s:decimal"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpSummTotInitialCommEarnedIefSupplied">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="TotalCurrency" type="s:decimal"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpSummTotInitialCommPaidIefSupplied">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="TotalCurrency" type="s:decimal"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpSummTotInitialCommDueIefSupplied">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="TotalCurrency" type="s:decimal"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpAct">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmPrdLnProductLines">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmAgBranchAgents">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="AgtId" type="s:string"/>
+                            <s:element minOccurs="0" name="FirstName" type="s:string"/>
+                            <s:element minOccurs="0" name="Name" type="s:string"/>
+                            <s:element minOccurs="0" name="Branch" type="s:string"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                            <s:element minOccurs="0" name="FsaIndividualRefNo" type="s:string"/>
+                            <s:element minOccurs="0" name="FsaFirmRefNo" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmActDaAccountTransactions">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="AtrId" type="s:int"/>
+                            <s:element minOccurs="0" name="Transaction" type="s:int"/>
+                            <s:element minOccurs="0" name="Dbcr" type="s:string"/>
+                            <s:element minOccurs="0" name="Policy" type="s:string"/>
+                            <s:element minOccurs="0" name="Details" type="s:string"/>
+                            <s:element minOccurs="0" name="EffectiveDate" type="s:date"/>
+                            <s:element minOccurs="0" name="EventType" type="s:int"/>
+                            <s:element minOccurs="0" name="ReceiptType" type="s:int"/>
+                            <s:element minOccurs="0" name="EventSubType" type="s:int"/>
+                            <s:element minOccurs="0" name="Statement" type="s:int"/>
+                            <s:element minOccurs="0" name="CommissionType" type="s:int"/>
+                            <s:element minOccurs="0" name="Account" type="s:string"/>
+                            <s:element minOccurs="0" name="Centre" type="s:string"/>
+                            <s:element minOccurs="0" name="Amount" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Company" type="s:int"/>
+                            <s:element minOccurs="0" name="Branch" type="s:string"/>
+                            <s:element minOccurs="0" name="Currency" type="s:string"/>
+                            <s:element minOccurs="0" name="FinancialYear" type="s:int"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="Period" type="s:int"/>
+                            <s:element minOccurs="0" name="PreviousPaidToDate" type="s:date"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                            <s:element minOccurs="0" name="CreatedSystemDate" type="s:date"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmUddCommStyleUoptDetails">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Description" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmAssocAgtAgents">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="AgtId" type="s:string"/>
+                            <s:element minOccurs="0" name="FirstName" type="s:string"/>
+                            <s:element minOccurs="0" name="Name" type="s:string"/>
+                            <s:element minOccurs="0" name="FsaFirmRefNo" type="s:int"/>
+                            <s:element minOccurs="0" name="FsaIndividualRefNo" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmAssocPasPolicyAgentShares">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PasId" type="s:int"/>
+                            <s:element minOccurs="0" name="SacrificePercent" type="s:decimal"/>
+                            <s:element minOccurs="0" name="PrimaryAgent" type="s:int"/>
+                            <s:element minOccurs="0" name="Agent" type="s:string"/>
+                            <s:element minOccurs="0" name="Percentage" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmActAgtAgents">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="AgtId" type="s:string"/>
+                            <s:element minOccurs="0" name="FsaIndividualRefNo" type="s:string"/>
+                            <s:element minOccurs="0" name="FsaFirmRefNo" type="s:int"/>
+                            <s:element minOccurs="0" name="FirstName" type="s:string"/>
+                            <s:element minOccurs="0" name="Name" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmActPolPolicies">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PolId" type="s:string"/>
+                            <s:element minOccurs="0" name="Product" type="s:string"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="DateOfCommencement" type="s:date"/>
+                            <s:element minOccurs="0" name="SubStatus" type="s:int"/>
+                            <s:element minOccurs="0" name="PtdNotified" type="s:int"/>
+                            <s:element minOccurs="0" name="CiNotified" type="s:int"/>
+                            <s:element minOccurs="0" name="TiNotified" type="s:int"/>
+                            <s:element minOccurs="0" name="CommissionWithhold" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmActSummCommPaidThisIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="TotalCurrency" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmActSummTotCommOnPolIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="TotalCurrency" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmActPolAgtSharesPolicyAgentShares">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="SacrificePercent" type="s:decimal"/>
+                            <s:element minOccurs="0" name="PasId" type="s:int"/>
+                            <s:element minOccurs="0" name="PrimaryAgent" type="s:int"/>
+                            <s:element minOccurs="0" name="Agent" type="s:string"/>
+                            <s:element minOccurs="0" name="Percentage" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmActClawbackIndicatorIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Flag" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmActCommissionTypeIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="TextLength10" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmActCommEndDateWorkspace">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Date" type="s:date"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmActRenewalCommStartWorkspace">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Date" type="s:date"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmActEndOfEarnPeriodWorkspace">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Date" type="s:date"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmActStillToBeEarnedIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="TotalCurrency" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmActInitialCommEarnedIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="TotalCurrency" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmActInitialCommPaidIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="TotalCurrency" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmActInitialCommDueIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="TotalCurrency" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmSelActIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="SelectChar" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmActAccountTransactions">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="AtrId" type="s:int"/>
+                            <s:element minOccurs="0" name="Transaction" type="s:int"/>
+                            <s:element minOccurs="0" name="LineNo" type="s:int"/>
+                            <s:element minOccurs="0" name="Set" type="s:int"/>
+                            <s:element minOccurs="0" name="Accset" type="s:string"/>
+                            <s:element minOccurs="0" name="AuditReportNo" type="s:int"/>
+                            <s:element minOccurs="0" name="Dbcr" type="s:string"/>
+                            <s:element minOccurs="0" name="Policy" type="s:string"/>
+                            <s:element minOccurs="0" name="Details" type="s:string"/>
+                            <s:element minOccurs="0" name="EffectiveDate" type="s:date"/>
+                            <s:element minOccurs="0" name="EventType" type="s:int"/>
+                            <s:element minOccurs="0" name="Matched" type="s:int"/>
+                            <s:element minOccurs="0" name="ReceiptType" type="s:int"/>
+                            <s:element minOccurs="0" name="EventSubType" type="s:int"/>
+                            <s:element minOccurs="0" name="ReversalLineNo" type="s:int"/>
+                            <s:element minOccurs="0" name="Statement" type="s:int"/>
+                            <s:element minOccurs="0" name="CommissionType" type="s:int"/>
+                            <s:element minOccurs="0" name="Account" type="s:string"/>
+                            <s:element minOccurs="0" name="Centre" type="s:string"/>
+                            <s:element minOccurs="0" name="Amount" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Company" type="s:int"/>
+                            <s:element minOccurs="0" name="Branch" type="s:string"/>
+                            <s:element minOccurs="0" name="Currency" type="s:string"/>
+                            <s:element minOccurs="0" name="FinancialYear" type="s:int"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="CreatedBy" type="s:string"/>
+                            <s:element minOccurs="0" name="Period" type="s:int"/>
+                            <s:element minOccurs="0" name="CreatedDate" type="s:date"/>
+                            <s:element minOccurs="0" name="CreatedTime" type="s:time"/>
+                            <s:element minOccurs="0" name="CreatedProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="CreatedSystemDate" type="s:date"/>
+                            <s:element minOccurs="0" name="ModifyBy" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifyDate" type="s:date"/>
+                            <s:element minOccurs="0" name="ModifyTime" type="s:time"/>
+                            <s:element minOccurs="0" name="ModifyProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifySystemDate" type="s:date"/>
+                            <s:element minOccurs="0" name="PreviousPaidToDate" type="s:date"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmActPolCovPolicyCoverages">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PocId" type="s:string"/>
+                            <s:element minOccurs="0" name="InitialSumAssured" type="s:decimal"/>
+                            <s:element minOccurs="0" name="DateCommenced" type="s:date"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="SubStatus" type="s:int"/>
+                            <s:element minOccurs="0" name="ProductLine" type="s:string"/>
+                            <s:element minOccurs="0" name="StatusReason" type="s:int"/>
+                            <s:element minOccurs="0" name="DateOfApplication" type="s:date"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmActPolPremPolicyPremiums">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PcpId" type="s:string"/>
+                            <s:element minOccurs="0" name="ModalPremium" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Frequency" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmActPolCommPolicyCommissions">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PcmId" type="s:string"/>
+                            <s:element minOccurs="0" name="TotalIceConsultant" type="s:decimal"/>
+                            <s:element minOccurs="0" name="InitialPeriodDate" type="s:date"/>
+                            <s:element minOccurs="0" name="IceCalculation" type="s:int"/>
+                            <s:element minOccurs="0" name="TotalIce" type="s:decimal"/>
+                            <s:element minOccurs="0" name="CommissionablePremium" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Currency" type="s:string"/>
+                            <s:element minOccurs="0" name="Coverage" type="s:int"/>
+                            <s:element minOccurs="0" name="Policy" type="s:string"/>
+                            <s:element minOccurs="0" name="TotalIcSacrifice" type="s:decimal"/>
+                            <s:element minOccurs="0" name="InitialPeriodMonths" type="s:int"/>
+                            <s:element minOccurs="0" name="DiscountedTotalIce" type="s:decimal"/>
+                            <s:element minOccurs="0" name="CalculationIep" type="s:int"/>
+                            <s:element minOccurs="0" name="CreatedProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifyProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="AdvancedPayment" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Style" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmActClt1Clients">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="CliId" type="s:int"/>
+                            <s:element minOccurs="0" name="Name" type="s:string"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="SubStatus" type="s:int"/>
+                            <s:element minOccurs="0" name="OtherFornames" type="s:string"/>
+                            <s:element minOccurs="0" name="FirstName" type="s:string"/>
+                            <s:element minOccurs="0" name="Title" type="s:string"/>
+                            <s:element minOccurs="0" name="DateOfBirth" type="s:date"/>
+                            <s:element minOccurs="0" name="Sex" type="s:int"/>
+                            <s:element minOccurs="0" name="Smoker" type="s:int"/>
+                            <s:element minOccurs="0" name="Email" type="s:string"/>
+                            <s:element minOccurs="0" name="RiskCat" type="s:string"/>
+                            <s:element minOccurs="0" name="Salutation" type="s:string"/>
+                            <s:element minOccurs="0" name="MobileTelNo" type="s:string"/>
+                            <s:element minOccurs="0" name="ResidentialProfile" type="s:string"/>
+                            <s:element minOccurs="0" name="WorkTelNo" type="s:string"/>
+                            <s:element minOccurs="0" name="LeisureRiskCat" type="s:string"/>
+                            <s:element minOccurs="0" name="MaidenName" type="s:string"/>
+                            <s:element minOccurs="0" name="DocumentationLanguage" type="s:int"/>
+                            <s:element minOccurs="0" name="NameStyle" type="s:int"/>
+                            <s:element minOccurs="0" name="AgeAdmitted" type="s:int"/>
+                            <s:element minOccurs="0" name="Match" type="s:string"/>
+                            <s:element minOccurs="0" name="Weight" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Height" type="s:int"/>
+                            <s:element minOccurs="0" name="MaritalStatus" type="s:int"/>
+                            <s:element minOccurs="0" name="Nationality" type="s:string"/>
+                            <s:element minOccurs="0" name="CorrespContactType" type="s:string"/>
+                            <s:element minOccurs="0" name="Classification" type="s:string"/>
+                            <s:element minOccurs="0" name="NationalIdNo" type="s:string"/>
+                            <s:element minOccurs="0" name="TaxNumber" type="s:string"/>
+                            <s:element minOccurs="0" name="Profile" type="s:string"/>
+                            <s:element minOccurs="0" name="AgeAdmBasis" type="s:string"/>
+                            <s:element minOccurs="0" name="CreatedProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifyProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="CreatedBy" type="s:string"/>
+                            <s:element minOccurs="0" name="ChangeEffectiveDate" type="s:date"/>
+                            <s:element minOccurs="0" name="CreatedDate" type="s:date"/>
+                            <s:element minOccurs="0" name="CreatedTime" type="s:time"/>
+                            <s:element minOccurs="0" name="ModifyBy" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifyDate" type="s:date"/>
+                            <s:element minOccurs="0" name="ModifyTime" type="s:time"/>
+                            <s:element minOccurs="0" name="AdditionalData1" type="s:string"/>
+                            <s:element minOccurs="0" name="AdditionalData2" type="s:string"/>
+                            <s:element minOccurs="0" name="AdditionalData3" type="s:string"/>
+                            <s:element minOccurs="0" name="Salary" type="s:decimal"/>
+                            <s:element minOccurs="0" name="SalaryCurrency" type="s:string"/>
+                            <s:element minOccurs="0" name="KnowYourCustomer" type="s:string"/>
+                            <s:element minOccurs="0" name="KycDate" type="s:date"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmActClt2Clients">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="CliId" type="s:int"/>
+                            <s:element minOccurs="0" name="Name" type="s:string"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="SubStatus" type="s:int"/>
+                            <s:element minOccurs="0" name="OtherFornames" type="s:string"/>
+                            <s:element minOccurs="0" name="FirstName" type="s:string"/>
+                            <s:element minOccurs="0" name="Title" type="s:string"/>
+                            <s:element minOccurs="0" name="DateOfBirth" type="s:date"/>
+                            <s:element minOccurs="0" name="Sex" type="s:int"/>
+                            <s:element minOccurs="0" name="Smoker" type="s:int"/>
+                            <s:element minOccurs="0" name="Email" type="s:string"/>
+                            <s:element minOccurs="0" name="RiskCat" type="s:string"/>
+                            <s:element minOccurs="0" name="Salutation" type="s:string"/>
+                            <s:element minOccurs="0" name="MobileTelNo" type="s:string"/>
+                            <s:element minOccurs="0" name="ResidentialProfile" type="s:string"/>
+                            <s:element minOccurs="0" name="WorkTelNo" type="s:string"/>
+                            <s:element minOccurs="0" name="LeisureRiskCat" type="s:string"/>
+                            <s:element minOccurs="0" name="MaidenName" type="s:string"/>
+                            <s:element minOccurs="0" name="DocumentationLanguage" type="s:int"/>
+                            <s:element minOccurs="0" name="NameStyle" type="s:int"/>
+                            <s:element minOccurs="0" name="AgeAdmitted" type="s:int"/>
+                            <s:element minOccurs="0" name="Match" type="s:string"/>
+                            <s:element minOccurs="0" name="Weight" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Height" type="s:int"/>
+                            <s:element minOccurs="0" name="MaritalStatus" type="s:int"/>
+                            <s:element minOccurs="0" name="Nationality" type="s:string"/>
+                            <s:element minOccurs="0" name="CorrespContactType" type="s:string"/>
+                            <s:element minOccurs="0" name="Classification" type="s:string"/>
+                            <s:element minOccurs="0" name="NationalIdNo" type="s:string"/>
+                            <s:element minOccurs="0" name="TaxNumber" type="s:string"/>
+                            <s:element minOccurs="0" name="Profile" type="s:string"/>
+                            <s:element minOccurs="0" name="AgeAdmBasis" type="s:string"/>
+                            <s:element minOccurs="0" name="CreatedProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifyProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="CreatedBy" type="s:string"/>
+                            <s:element minOccurs="0" name="ChangeEffectiveDate" type="s:date"/>
+                            <s:element minOccurs="0" name="CreatedDate" type="s:date"/>
+                            <s:element minOccurs="0" name="CreatedTime" type="s:time"/>
+                            <s:element minOccurs="0" name="ModifyBy" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifyDate" type="s:date"/>
+                            <s:element minOccurs="0" name="ModifyTime" type="s:time"/>
+                            <s:element minOccurs="0" name="AdditionalData1" type="s:string"/>
+                            <s:element minOccurs="0" name="AdditionalData2" type="s:string"/>
+                            <s:element minOccurs="0" name="AdditionalData3" type="s:string"/>
+                            <s:element minOccurs="0" name="Salary" type="s:decimal"/>
+                            <s:element minOccurs="0" name="SalaryCurrency" type="s:string"/>
+                            <s:element minOccurs="0" name="KnowYourCustomer" type="s:string"/>
+                            <s:element minOccurs="0" name="KycDate" type="s:date"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmActPolCommSchedPolicyCommissionSchedules">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PcsId" type="s:string"/>
+                            <s:element minOccurs="0" name="Clawback" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Policy" type="s:string"/>
+                            <s:element minOccurs="0" name="Coverage" type="s:int"/>
+                            <s:element minOccurs="0" name="Year" type="s:int"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                            <s:element minOccurs="0" name="Set" type="s:int"/>
+                            <s:element minOccurs="0" name="Agent" type="s:string"/>
+                            <s:element minOccurs="0" name="PeriodPaid" type="s:int"/>
+                            <s:element minOccurs="0" name="Currency" type="s:string"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="AdvancePayment" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmAdviserNameAgtAgents">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="AgtId" type="s:string"/>
+                            <s:element minOccurs="0" name="FirstName" type="s:string"/>
+                            <s:element minOccurs="0" name="Name" type="s:string"/>
+                            <s:element minOccurs="0" name="AdditionalData1" type="s:string"/>
+                            <s:element minOccurs="0" name="AdditionalData2" type="s:string"/>
+                            <s:element minOccurs="0" name="AdditionalData3" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmAdviserCaseRefPolPolicies">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="ReferrerId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpAgtAgents">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="AgtId" type="s:string"/>
+                <s:element minOccurs="0" name="FirstName" type="s:string"/>
+                <s:element minOccurs="0" name="Name" type="s:string"/>
+                <s:element minOccurs="0" name="Branch" type="s:string"/>
+                <s:element minOccurs="0" name="Type" type="s:int"/>
+                <s:element minOccurs="0" name="LimitCode" type="s:int"/>
+                <s:element minOccurs="0" name="LimitCurrency" type="s:string"/>
+                <s:element minOccurs="0" name="LimitAmount" type="s:decimal"/>
+                <s:element minOccurs="0" name="AppointmentDate" type="s:date"/>
+                <s:element minOccurs="0" name="LastStatementNo" type="s:int"/>
+                <s:element minOccurs="0" name="SdateLastStmtRun" type="s:date"/>
+                <s:element minOccurs="0" name="DateLastStmtRunTo" type="s:date"/>
+                <s:element minOccurs="0" name="PaymentCode" type="s:int"/>
+                <s:element minOccurs="0" name="PaymentFrequency" type="s:int"/>
+                <s:element minOccurs="0" name="PaymentMethod" type="s:int"/>
+                <s:element minOccurs="0" name="PaymentCcy" type="s:string"/>
+                <s:element minOccurs="0" name="ContractNo" type="s:string"/>
+                <s:element minOccurs="0" name="Category" type="s:string"/>
+                <s:element minOccurs="0" name="Country" type="s:string"/>
+                <s:element minOccurs="0" name="AddressLine1" type="s:string"/>
+                <s:element minOccurs="0" name="AddressLine2" type="s:string"/>
+                <s:element minOccurs="0" name="AddressLine3" type="s:string"/>
+                <s:element minOccurs="0" name="AddressLine4" type="s:string"/>
+                <s:element minOccurs="0" name="Town" type="s:string"/>
+                <s:element minOccurs="0" name="County" type="s:string"/>
+                <s:element minOccurs="0" name="Postcode" type="s:string"/>
+                <s:element minOccurs="0" name="Fax" type="s:string"/>
+                <s:element minOccurs="0" name="Telephone" type="s:string"/>
+                <s:element minOccurs="0" name="Email" type="s:string"/>
+                <s:element minOccurs="0" name="Channel" type="s:string"/>
+                <s:element minOccurs="0" name="EffectiveDate" type="s:date"/>
+                <s:element minOccurs="0" name="Location" type="s:string"/>
+                <s:element minOccurs="0" name="CreatedProcess" type="s:string"/>
+                <s:element minOccurs="0" name="ModifyProcess" type="s:string"/>
+                <s:element minOccurs="0" name="Status" type="s:int"/>
+                <s:element minOccurs="0" name="CreatedBy" type="s:string"/>
+                <s:element minOccurs="0" name="CreatedDate" type="s:date"/>
+                <s:element minOccurs="0" name="CreatedTime" type="s:time"/>
+                <s:element minOccurs="0" name="ModifyBy" type="s:string"/>
+                <s:element minOccurs="0" name="ModifyDate" type="s:date"/>
+                <s:element minOccurs="0" name="ModifyTime" type="s:time"/>
+                <s:element minOccurs="0" name="ServicingAgent" type="s:string"/>
+                <s:element minOccurs="0" name="DateOfTermination" type="s:date"/>
+                <s:element minOccurs="0" name="TerminationBasis" type="s:int"/>
+                <s:element minOccurs="0" name="TerminationReason" type="s:string"/>
+                <s:element minOccurs="0" name="Banding" type="s:string"/>
+                <s:element minOccurs="0" name="NextCategory" type="s:string"/>
+                <s:element minOccurs="0" name="NextCategoryDate" type="s:date"/>
+                <s:element minOccurs="0" name="LastCategoryChange" type="s:date"/>
+                <s:element minOccurs="0" name="AdditionalData1" type="s:string"/>
+                <s:element minOccurs="0" name="AdditionalData2" type="s:string"/>
+                <s:element minOccurs="0" name="AdditionalData3" type="s:string"/>
+                <s:element minOccurs="0" name="Match" type="s:string"/>
+                <s:element minOccurs="0" name="ProductView" type="s:int"/>
+                <s:element minOccurs="0" name="FsaIndividualRefNo" type="s:string"/>
+                <s:element minOccurs="0" name="FsaFirmRefNo" type="s:int"/>
+                <s:element minOccurs="0" name="LicenceStatus" type="s:int"/>
+                <s:element minOccurs="0" name="NetworkName" type="s:string"/>
+                <s:element minOccurs="0" name="AgencyNumber" type="s:string"/>
+                <s:element minOccurs="0" name="TobReference" type="s:string"/>
+                <s:element minOccurs="0" name="CreditLimit" type="s:decimal"/>
+                <s:element minOccurs="0" name="DocnStyle" type="s:int"/>
+                <s:element minOccurs="0" name="StatementDelivery" type="s:int"/>
+                <s:element minOccurs="0" name="MinimumStatementValue" type="s:decimal"/>
+                <s:element minOccurs="0" name="MinimumStatementValueCcy" type="s:string"/>
+                <s:element minOccurs="0" name="DisplayDetails" type="s:int"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpSvcgAgtAgents">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="AgtId" type="s:string"/>
+                <s:element minOccurs="0" name="FirstName" type="s:string"/>
+                <s:element minOccurs="0" name="Name" type="s:string"/>
+                <s:element minOccurs="0" name="Branch" type="s:string"/>
+                <s:element minOccurs="0" name="Type" type="s:int"/>
+                <s:element minOccurs="0" name="LimitCode" type="s:int"/>
+                <s:element minOccurs="0" name="LimitCurrency" type="s:string"/>
+                <s:element minOccurs="0" name="LimitAmount" type="s:decimal"/>
+                <s:element minOccurs="0" name="AppointmentDate" type="s:date"/>
+                <s:element minOccurs="0" name="LastStatementNo" type="s:int"/>
+                <s:element minOccurs="0" name="SdateLastStmtRun" type="s:date"/>
+                <s:element minOccurs="0" name="DateLastStmtRunTo" type="s:date"/>
+                <s:element minOccurs="0" name="PaymentCode" type="s:int"/>
+                <s:element minOccurs="0" name="PaymentFrequency" type="s:int"/>
+                <s:element minOccurs="0" name="PaymentMethod" type="s:int"/>
+                <s:element minOccurs="0" name="PaymentCcy" type="s:string"/>
+                <s:element minOccurs="0" name="ContractNo" type="s:string"/>
+                <s:element minOccurs="0" name="Category" type="s:string"/>
+                <s:element minOccurs="0" name="Country" type="s:string"/>
+                <s:element minOccurs="0" name="AddressLine1" type="s:string"/>
+                <s:element minOccurs="0" name="AddressLine2" type="s:string"/>
+                <s:element minOccurs="0" name="AddressLine3" type="s:string"/>
+                <s:element minOccurs="0" name="AddressLine4" type="s:string"/>
+                <s:element minOccurs="0" name="Town" type="s:string"/>
+                <s:element minOccurs="0" name="County" type="s:string"/>
+                <s:element minOccurs="0" name="Postcode" type="s:string"/>
+                <s:element minOccurs="0" name="Fax" type="s:string"/>
+                <s:element minOccurs="0" name="Telephone" type="s:string"/>
+                <s:element minOccurs="0" name="Email" type="s:string"/>
+                <s:element minOccurs="0" name="Channel" type="s:string"/>
+                <s:element minOccurs="0" name="EffectiveDate" type="s:date"/>
+                <s:element minOccurs="0" name="Location" type="s:string"/>
+                <s:element minOccurs="0" name="CreatedProcess" type="s:string"/>
+                <s:element minOccurs="0" name="ModifyProcess" type="s:string"/>
+                <s:element minOccurs="0" name="Status" type="s:int"/>
+                <s:element minOccurs="0" name="CreatedBy" type="s:string"/>
+                <s:element minOccurs="0" name="CreatedDate" type="s:date"/>
+                <s:element minOccurs="0" name="CreatedTime" type="s:time"/>
+                <s:element minOccurs="0" name="ModifyBy" type="s:string"/>
+                <s:element minOccurs="0" name="ModifyDate" type="s:date"/>
+                <s:element minOccurs="0" name="ModifyTime" type="s:time"/>
+                <s:element minOccurs="0" name="ServicingAgent" type="s:string"/>
+                <s:element minOccurs="0" name="DateOfTermination" type="s:date"/>
+                <s:element minOccurs="0" name="TerminationBasis" type="s:int"/>
+                <s:element minOccurs="0" name="TerminationReason" type="s:string"/>
+                <s:element minOccurs="0" name="Banding" type="s:string"/>
+                <s:element minOccurs="0" name="NextCategory" type="s:string"/>
+                <s:element minOccurs="0" name="NextCategoryDate" type="s:date"/>
+                <s:element minOccurs="0" name="LastCategoryChange" type="s:date"/>
+                <s:element minOccurs="0" name="AdditionalData1" type="s:string"/>
+                <s:element minOccurs="0" name="AdditionalData2" type="s:string"/>
+                <s:element minOccurs="0" name="AdditionalData3" type="s:string"/>
+                <s:element minOccurs="0" name="Match" type="s:string"/>
+                <s:element minOccurs="0" name="ProductView" type="s:int"/>
+                <s:element minOccurs="0" name="StatementView" type="s:int"/>
+                <s:element minOccurs="0" name="FsaIndividualRefNo" type="s:string"/>
+                <s:element minOccurs="0" name="FsaFirmRefNo" type="s:int"/>
+                <s:element minOccurs="0" name="LicenceStatus" type="s:int"/>
+                <s:element minOccurs="0" name="NetworkName" type="s:string"/>
+                <s:element minOccurs="0" name="AgencyNumber" type="s:string"/>
+                <s:element minOccurs="0" name="TobReference" type="s:string"/>
+                <s:element minOccurs="0" name="CreditLimit" type="s:decimal"/>
+                <s:element minOccurs="0" name="DocnStyle" type="s:int"/>
+                <s:element minOccurs="0" name="BlankStatementSuppress" type="s:int"/>
+                <s:element minOccurs="0" name="StatementDelivery" type="s:int"/>
+                <s:element minOccurs="0" name="NextContractNo" type="s:string"/>
+                <s:element minOccurs="0" name="NextContractDate" type="s:date"/>
+                <s:element minOccurs="0" name="LastContractChange" type="s:date"/>
+                <s:element minOccurs="0" name="CommissionWithhold" type="s:int"/>
+                <s:element minOccurs="0" name="PreviousId" type="s:string"/>
+                <s:element minOccurs="0" name="CutoffFreq" type="s:int"/>
+                <s:element minOccurs="0" name="CutoffDay" type="s:int"/>
+                <s:element minOccurs="0" name="MinimumStatementValue" type="s:decimal"/>
+                <s:element minOccurs="0" name="MinimumStatementValueCcy" type="s:string"/>
+                <s:element minOccurs="0" name="Region" type="s:string"/>
+                <s:element minOccurs="0" name="ContractsAvailable" type="s:string"/>
+                <s:element minOccurs="0" name="Wealth" type="s:int"/>
+                <s:element minOccurs="0" name="ReceiveAnnualStatement" type="s:int"/>
+                <s:element minOccurs="0" name="DisplayDetails" type="s:int"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpDrqDocumentRequests">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="DrqId" type="s:int"/>
+                <s:element minOccurs="0" name="ProductLine" type="s:string"/>
+                <s:element minOccurs="0" name="ErrorNo" type="s:string"/>
+                <s:element minOccurs="0" name="Coverage" type="s:int"/>
+                <s:element minOccurs="0" name="Client" type="s:int"/>
+                <s:element minOccurs="0" name="Policy" type="s:string"/>
+                <s:element minOccurs="0" name="Type" type="s:int"/>
+                <s:element minOccurs="0" name="PrintedProcess" type="s:string"/>
+                <s:element minOccurs="0" name="PrintedBy" type="s:string"/>
+                <s:element minOccurs="0" name="PrintedDate" type="s:date"/>
+                <s:element minOccurs="0" name="PrintedTime" type="s:time"/>
+                <s:element minOccurs="0" name="TransientData" type="s:string"/>
+                <s:element minOccurs="0" name="Event" type="s:string"/>
+                <s:element minOccurs="0" name="Document" type="s:string"/>
+                <s:element minOccurs="0" name="LastPrintedDate" type="s:date"/>
+                <s:element minOccurs="0" name="LastPrintedBy" type="s:string"/>
+                <s:element minOccurs="0" name="Description" type="s:string"/>
+                <s:element minOccurs="0" name="Pathname" type="s:string"/>
+                <s:element minOccurs="0" name="Transaction" type="s:int"/>
+                <s:element minOccurs="0" name="CreatedProcess" type="s:string"/>
+                <s:element minOccurs="0" name="Status" type="s:int"/>
+                <s:element minOccurs="0" name="CreatedBy" type="s:string"/>
+                <s:element minOccurs="0" name="CreatedDate" type="s:date"/>
+                <s:element minOccurs="0" name="CreatedTime" type="s:time"/>
+                <s:element minOccurs="0" name="Printer" type="s:string"/>
+                <s:element minOccurs="0" name="Occurrence" type="s:int"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpPolPolicies">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="PolId" type="s:string"/>
+                <s:element minOccurs="0" name="Product" type="s:string"/>
+                <s:element minOccurs="0" name="Status" type="s:int"/>
+                <s:element minOccurs="0" name="SubStatus" type="s:int"/>
+                <s:element minOccurs="0" name="Currency" type="s:string"/>
+                <s:element minOccurs="0" name="DateOfApplication" type="s:date"/>
+                <s:element minOccurs="0" name="DateOfCommencement" type="s:date"/>
+                <s:element minOccurs="0" name="UnitHoldings" type="s:int"/>
+                <s:element minOccurs="0" name="Type" type="s:int"/>
+                <s:element minOccurs="0" name="AccountingBranch" type="s:string"/>
+                <s:element minOccurs="0" name="PlanDebt" type="s:decimal"/>
+                <s:element minOccurs="0" name="SegmentsNo" type="s:int"/>
+                <s:element minOccurs="0" name="Segments" type="s:int"/>
+                <s:element minOccurs="0" name="AdditionalId" type="s:string"/>
+                <s:element minOccurs="0" name="UserStatus" type="s:string"/>
+                <s:element minOccurs="0" name="Classification" type="s:string"/>
+                <s:element minOccurs="0" name="PreviousStatus" type="s:int"/>
+                <s:element minOccurs="0" name="StatusChangeNo" type="s:int"/>
+                <s:element minOccurs="0" name="Category" type="s:string"/>
+                <s:element minOccurs="0" name="LockTime" type="s:time"/>
+                <s:element minOccurs="0" name="LockProcess" type="s:string"/>
+                <s:element minOccurs="0" name="LockUser" type="s:string"/>
+                <s:element minOccurs="0" name="LockDate" type="s:date"/>
+                <s:element minOccurs="0" name="CreatedProcess" type="s:string"/>
+                <s:element minOccurs="0" name="CreatedBy" type="s:string"/>
+                <s:element minOccurs="0" name="CreatedDate" type="s:date"/>
+                <s:element minOccurs="0" name="CreatedTime" type="s:time"/>
+                <s:element minOccurs="0" name="ModifyBy" type="s:string"/>
+                <s:element minOccurs="0" name="ModifyDate" type="s:date"/>
+                <s:element minOccurs="0" name="ModifyProcess" type="s:string"/>
+                <s:element minOccurs="0" name="ModifyTime" type="s:time"/>
+                <s:element minOccurs="0" name="SuspendEftCollection" type="s:int"/>
+                <s:element minOccurs="0" name="SuspendPayments" type="s:int"/>
+                <s:element minOccurs="0" name="Endorsements" type="s:int"/>
+                <s:element minOccurs="0" name="PtdNotified" type="s:int"/>
+                <s:element minOccurs="0" name="CustomerSegment" type="s:string"/>
+                <s:element minOccurs="0" name="SourceChannel" type="s:string"/>
+                <s:element minOccurs="0" name="ReferralSource" type="s:string"/>
+                <s:element minOccurs="0" name="ReferrerId" type="s:string"/>
+                <s:element minOccurs="0" name="AdditionalData1" type="s:string"/>
+                <s:element minOccurs="0" name="AdditionalData2" type="s:string"/>
+                <s:element minOccurs="0" name="AdditionalData3" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpPolAgtShares">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmEmailEmailAddresses">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Email" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmSelPolAgtSharesIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="SelectChar" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPolAgtSharesPolicyAgentShares">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PasId" type="s:int"/>
+                            <s:element minOccurs="0" name="SacrificePercent" type="s:decimal"/>
+                            <s:element minOccurs="0" name="SacrificeAmount" type="s:decimal"/>
+                            <s:element minOccurs="0" name="PrimaryAgent" type="s:int"/>
+                            <s:element minOccurs="0" name="SpecificIce" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Agent" type="s:string"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="CreatedBy" type="s:string"/>
+                            <s:element minOccurs="0" name="Coverage" type="s:int"/>
+                            <s:element minOccurs="0" name="Percentage" type="s:decimal"/>
+                            <s:element minOccurs="0" name="SacrificeType" type="s:int"/>
+                            <s:element minOccurs="0" name="RenewalSacrificePcg" type="s:decimal"/>
+                            <s:element minOccurs="0" name="CreatedDate" type="s:date"/>
+                            <s:element minOccurs="0" name="CreatedTime" type="s:time"/>
+                            <s:element minOccurs="0" name="CreatedProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifyBy" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifyDate" type="s:date"/>
+                            <s:element minOccurs="0" name="ModifyTime" type="s:time"/>
+                            <s:element minOccurs="0" name="ModifyProcess" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPolAgtAgents">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="AgtId" type="s:string"/>
+                            <s:element minOccurs="0" name="FirstName" type="s:string"/>
+                            <s:element minOccurs="0" name="Name" type="s:string"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                            <s:element minOccurs="0" name="Email" type="s:string"/>
+                            <s:element minOccurs="0" name="FsaFirmRefNo" type="s:int"/>
+                            <s:element minOccurs="0" name="DisplayDetails" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpPolCov">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmAssumedCollBills">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Date" type="s:date"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmLatestRejBills">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Date" type="s:date"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPrlProductLines">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PrlId" type="s:string"/>
+                            <s:element minOccurs="0" name="Name" type="s:string"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmAmtEarnedWorkspace">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Number1" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmRejCntWorkspace">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Integer1" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPotClwckWorkspace">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Number1" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmBillsBills">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Date" type="s:date"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmCli2CovClients">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="CliId" type="s:int"/>
+                            <s:element minOccurs="0" name="Name" type="s:string"/>
+                            <s:element minOccurs="0" name="OtherFornames" type="s:string"/>
+                            <s:element minOccurs="0" name="FirstName" type="s:string"/>
+                            <s:element minOccurs="0" name="Title" type="s:string"/>
+                            <s:element minOccurs="0" name="DateOfBirth" type="s:date"/>
+                            <s:element minOccurs="0" name="Salutation" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPpcCovPolicyPremiumChanges">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PpcId" type="s:string"/>
+                            <s:element minOccurs="0" name="ChangeNum" type="s:int"/>
+                            <s:element minOccurs="0" name="DateDue" type="s:date"/>
+                            <s:element minOccurs="0" name="PeriodDue" type="s:int"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                            <s:element minOccurs="0" name="Source" type="s:int"/>
+                            <s:element minOccurs="0" name="ChangeType" type="s:int"/>
+                            <s:element minOccurs="0" name="ChangeIndex" type="s:decimal"/>
+                            <s:element minOccurs="0" name="ChangeValue" type="s:decimal"/>
+                            <s:element minOccurs="0" name="AmountSet" type="s:int"/>
+                            <s:element minOccurs="0" name="AmountBefore" type="s:decimal"/>
+                            <s:element minOccurs="0" name="AmountAfter" type="s:decimal"/>
+                            <s:element minOccurs="0" name="AssuredSet" type="s:int"/>
+                            <s:element minOccurs="0" name="AssuredBefore" type="s:decimal"/>
+                            <s:element minOccurs="0" name="AssuredAfter" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="EscCoverage" type="s:int"/>
+                            <s:element minOccurs="0" name="PpcType" type="s:int"/>
+                            <s:element minOccurs="0" name="TaxBefore" type="s:decimal"/>
+                            <s:element minOccurs="0" name="TaxAfter" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmSelPolCovIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="SelectChar" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPolCovPolicyCoverages">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PocId" type="s:string"/>
+                            <s:element minOccurs="0" name="Policy" type="s:string"/>
+                            <s:element minOccurs="0" name="Coverage" type="s:int"/>
+                            <s:element minOccurs="0" name="ProductLine" type="s:string"/>
+                            <s:element minOccurs="0" name="Currency" type="s:string"/>
+                            <s:element minOccurs="0" name="InitialSumAssured" type="s:decimal"/>
+                            <s:element minOccurs="0" name="SumAssured" type="s:decimal"/>
+                            <s:element minOccurs="0" name="DateSaSet" type="s:date"/>
+                            <s:element minOccurs="0" name="DateOfValuation" type="s:date"/>
+                            <s:element minOccurs="0" name="MajorCoverage" type="s:int"/>
+                            <s:element minOccurs="0" name="SoldBasis" type="s:int"/>
+                            <s:element minOccurs="0" name="Multiplier" type="s:decimal"/>
+                            <s:element minOccurs="0" name="CoverLevel" type="s:string"/>
+                            <s:element minOccurs="0" name="LivesType" type="s:int"/>
+                            <s:element minOccurs="0" name="HoldingNo" type="s:int"/>
+                            <s:element minOccurs="0" name="Term" type="s:decimal"/>
+                            <s:element minOccurs="0" name="RetirementAge" type="s:int"/>
+                            <s:element minOccurs="0" name="TermAge" type="s:int"/>
+                            <s:element minOccurs="0" name="DateOfTermination" type="s:date"/>
+                            <s:element minOccurs="0" name="DateOfApplication" type="s:date"/>
+                            <s:element minOccurs="0" name="DateOfReqCommencement" type="s:date"/>
+                            <s:element minOccurs="0" name="DateCommenced" type="s:date"/>
+                            <s:element minOccurs="0" name="LocalValues" type="s:int"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="SubStatus" type="s:int"/>
+                            <s:element minOccurs="0" name="PrevMajorStatus" type="s:int"/>
+                            <s:element minOccurs="0" name="PrevMajorSubStatus" type="s:int"/>
+                            <s:element minOccurs="0" name="PreviousStatus" type="s:int"/>
+                            <s:element minOccurs="0" name="StatusChangeEffDate" type="s:date"/>
+                            <s:element minOccurs="0" name="StatusChangeNo" type="s:int"/>
+                            <s:element minOccurs="0" name="CreatedBy" type="s:string"/>
+                            <s:element minOccurs="0" name="CreatedProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="CreatedDate" type="s:date"/>
+                            <s:element minOccurs="0" name="CreatedTime" type="s:time"/>
+                            <s:element minOccurs="0" name="ModifyBy" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifyDate" type="s:date"/>
+                            <s:element minOccurs="0" name="ModifyTime" type="s:time"/>
+                            <s:element minOccurs="0" name="ModifyProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="PptAge" type="s:decimal"/>
+                            <s:element minOccurs="0" name="InterestRate" type="s:decimal"/>
+                            <s:element minOccurs="0" name="CoolOffDays" type="s:int"/>
+                            <s:element minOccurs="0" name="Valuation" type="s:decimal"/>
+                            <s:element minOccurs="0" name="PttYrs" type="s:decimal"/>
+                            <s:element minOccurs="0" name="DatePremiumTerm" type="s:date"/>
+                            <s:element minOccurs="0" name="NetInvestment" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Independence" type="s:int"/>
+                            <s:element minOccurs="0" name="DataCaptureCompleted" type="s:int"/>
+                            <s:element minOccurs="0" name="ActFundingTermDate" type="s:date"/>
+                            <s:element minOccurs="0" name="Stream" type="s:int"/>
+                            <s:element minOccurs="0" name="DateNextSaChange" type="s:date"/>
+                            <s:element minOccurs="0" name="StatusBasis" type="s:int"/>
+                            <s:element minOccurs="0" name="ProcessingType" type="s:int"/>
+                            <s:element minOccurs="0" name="AllocationRate" type="s:decimal"/>
+                            <s:element minOccurs="0" name="BenefitBasis" type="s:string"/>
+                            <s:element minOccurs="0" name="QuotationDate" type="s:date"/>
+                            <s:element minOccurs="0" name="QuotationTime" type="s:time"/>
+                            <s:element minOccurs="0" name="Income" type="s:decimal"/>
+                            <s:element minOccurs="0" name="StatusReason" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPolPremPolicyPremiums">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PcpId" type="s:string"/>
+                            <s:element minOccurs="0" name="LapseWarning1" type="s:int"/>
+                            <s:element minOccurs="0" name="LapseWarning2" type="s:int"/>
+                            <s:element minOccurs="0" name="LapseWarning3" type="s:int"/>
+                            <s:element minOccurs="0" name="Policy" type="s:string"/>
+                            <s:element minOccurs="0" name="Coverage" type="s:int"/>
+                            <s:element minOccurs="0" name="ModalPremium" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Currency" type="s:string"/>
+                            <s:element minOccurs="0" name="Frequency" type="s:int"/>
+                            <s:element minOccurs="0" name="DateNextBilledPremium" type="s:date"/>
+                            <s:element minOccurs="0" name="DateNextPremiumDue" type="s:date"/>
+                            <s:element minOccurs="0" name="CollectionMethodPremium1" type="s:int"/>
+                            <s:element minOccurs="0" name="CollectionMethod" type="s:int"/>
+                            <s:element minOccurs="0" name="CollectionSubMethod" type="s:int"/>
+                            <s:element minOccurs="0" name="BankId" type="s:int"/>
+                            <s:element minOccurs="0" name="NextEscNumber" type="s:int"/>
+                            <s:element minOccurs="0" name="ContributionPercentage" type="s:decimal"/>
+                            <s:element minOccurs="0" name="PreviousDatePaidTo" type="s:date"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="TotalPremium" type="s:decimal"/>
+                            <s:element minOccurs="0" name="CreatedBy" type="s:string"/>
+                            <s:element minOccurs="0" name="CreatedDate" type="s:date"/>
+                            <s:element minOccurs="0" name="CreatedTime" type="s:time"/>
+                            <s:element minOccurs="0" name="CreatedProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifyBy" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifyDate" type="s:date"/>
+                            <s:element minOccurs="0" name="ModifyTime" type="s:time"/>
+                            <s:element minOccurs="0" name="ModifyProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="EscPocAdjustment" type="s:decimal"/>
+                            <s:element minOccurs="0" name="DisableEscalation" type="s:int"/>
+                            <s:element minOccurs="0" name="TotalTax" type="s:decimal"/>
+                            <s:element minOccurs="0" name="BillingDay" type="s:int"/>
+                            <s:element minOccurs="0" name="CollectionDay" type="s:date"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmBankAcctBankAccounts">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="BkaId" type="s:int"/>
+                            <s:element minOccurs="0" name="Client" type="s:int"/>
+                            <s:element minOccurs="0" name="AccountNo" type="s:int"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                            <s:element minOccurs="0" name="AccountName" type="s:string"/>
+                            <s:element minOccurs="0" name="SortCode" type="s:string"/>
+                            <s:element minOccurs="0" name="AccountCode" type="s:string"/>
+                            <s:element minOccurs="0" name="SupplementaryCode" type="s:string"/>
+                            <s:element minOccurs="0" name="BankName" type="s:string"/>
+                            <s:element minOccurs="0" name="BankAddress1" type="s:string"/>
+                            <s:element minOccurs="0" name="BankAddress2" type="s:string"/>
+                            <s:element minOccurs="0" name="CollectionMethod" type="s:int"/>
+                            <s:element minOccurs="0" name="Classification" type="s:string"/>
+                            <s:element minOccurs="0" name="BillingDay" type="s:int"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="CreatedBy" type="s:string"/>
+                            <s:element minOccurs="0" name="CreatedTime" type="s:time"/>
+                            <s:element minOccurs="0" name="CreatedDate" type="s:date"/>
+                            <s:element minOccurs="0" name="CreatedProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifiedBy" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifiedTime" type="s:time"/>
+                            <s:element minOccurs="0" name="ModifiedDate" type="s:date"/>
+                            <s:element minOccurs="0" name="ModifiedProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="CardExpiryDate" type="s:int"/>
+                            <s:element minOccurs="0" name="SeriesNo" type="s:int"/>
+                            <s:element minOccurs="0" name="CardType" type="s:int"/>
+                            <s:element minOccurs="0" name="MandateExpiryDate" type="s:date"/>
+                            <s:element minOccurs="0" name="ClientReference" type="s:string"/>
+                            <s:element minOccurs="0" name="PremiumSource" type="s:string"/>
+                            <s:element minOccurs="0" name="MandateReference" type="s:string"/>
+                            <s:element minOccurs="0" name="DateUsed" type="s:date"/>
+                            <s:element minOccurs="0" name="SuspensionReason" type="s:string"/>
+                            <s:element minOccurs="0" name="SuspensionDate" type="s:date"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPolPlloadWorkspace">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Integer1" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpCltPolRel">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmChgCltConDetCliContactChanges">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="ClientId" type="s:int"/>
+                            <s:element minOccurs="0" name="HouseNo" type="s:string"/>
+                            <s:element minOccurs="0" name="AddressLine1" type="s:string"/>
+                            <s:element minOccurs="0" name="AddressLine2" type="s:string"/>
+                            <s:element minOccurs="0" name="AddressLine3" type="s:string"/>
+                            <s:element minOccurs="0" name="AddressLine4" type="s:string"/>
+                            <s:element minOccurs="0" name="Town" type="s:string"/>
+                            <s:element minOccurs="0" name="County" type="s:string"/>
+                            <s:element minOccurs="0" name="Country" type="s:string"/>
+                            <s:element minOccurs="0" name="Postcode" type="s:string"/>
+                            <s:element minOccurs="0" name="Fax" type="s:string"/>
+                            <s:element minOccurs="0" name="HomePhone" type="s:string"/>
+                            <s:element minOccurs="0" name="Email" type="s:string"/>
+                            <s:element minOccurs="0" name="CccId" type="s:int"/>
+                            <s:element minOccurs="0" name="ContactType" type="s:string"/>
+                            <s:element minOccurs="0" name="Salutation" type="s:string"/>
+                            <s:element minOccurs="0" name="CreatedProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="CreatedBy" type="s:string"/>
+                            <s:element minOccurs="0" name="CreatedDate" type="s:date"/>
+                            <s:element minOccurs="0" name="CreatedTime" type="s:time"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmSelCltPolRelIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="SelectChar" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmCltPolRelCliPolRelationships">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="CprId" type="s:string"/>
+                            <s:element minOccurs="0" name="TypeNumber" type="s:int"/>
+                            <s:element minOccurs="0" name="EndDate" type="s:date"/>
+                            <s:element minOccurs="0" name="ActiveDate" type="s:date"/>
+                            <s:element minOccurs="0" name="PercentageSplit" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                            <s:element minOccurs="0" name="Coverage" type="s:int"/>
+                            <s:element minOccurs="0" name="Client" type="s:int"/>
+                            <s:element minOccurs="0" name="Policy" type="s:string"/>
+                            <s:element minOccurs="0" name="CreatedProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifyProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="CreatedBy" type="s:string"/>
+                            <s:element minOccurs="0" name="CreatedDate" type="s:date"/>
+                            <s:element minOccurs="0" name="CreatedTime" type="s:time"/>
+                            <s:element minOccurs="0" name="ModifyBy" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifyDate" type="s:date"/>
+                            <s:element minOccurs="0" name="ModifyTime" type="s:time"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmCltClients">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="CliId" type="s:int"/>
+                            <s:element minOccurs="0" name="Name" type="s:string"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="SubStatus" type="s:int"/>
+                            <s:element minOccurs="0" name="OtherFornames" type="s:string"/>
+                            <s:element minOccurs="0" name="FirstName" type="s:string"/>
+                            <s:element minOccurs="0" name="Title" type="s:string"/>
+                            <s:element minOccurs="0" name="DateOfBirth" type="s:date"/>
+                            <s:element minOccurs="0" name="Sex" type="s:int"/>
+                            <s:element minOccurs="0" name="Smoker" type="s:int"/>
+                            <s:element minOccurs="0" name="Email" type="s:string"/>
+                            <s:element minOccurs="0" name="RiskCat" type="s:string"/>
+                            <s:element minOccurs="0" name="Salutation" type="s:string"/>
+                            <s:element minOccurs="0" name="MobileTelNo" type="s:string"/>
+                            <s:element minOccurs="0" name="ResidentialProfile" type="s:string"/>
+                            <s:element minOccurs="0" name="WorkTelNo" type="s:string"/>
+                            <s:element minOccurs="0" name="LeisureRiskCat" type="s:string"/>
+                            <s:element minOccurs="0" name="MaidenName" type="s:string"/>
+                            <s:element minOccurs="0" name="DocumentationLanguage" type="s:int"/>
+                            <s:element minOccurs="0" name="NameStyle" type="s:int"/>
+                            <s:element minOccurs="0" name="AgeAdmitted" type="s:int"/>
+                            <s:element minOccurs="0" name="Match" type="s:string"/>
+                            <s:element minOccurs="0" name="Weight" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Height" type="s:int"/>
+                            <s:element minOccurs="0" name="MaritalStatus" type="s:int"/>
+                            <s:element minOccurs="0" name="Nationality" type="s:string"/>
+                            <s:element minOccurs="0" name="CorrespContactType" type="s:string"/>
+                            <s:element minOccurs="0" name="Classification" type="s:string"/>
+                            <s:element minOccurs="0" name="NationalIdNo" type="s:string"/>
+                            <s:element minOccurs="0" name="TaxNumber" type="s:string"/>
+                            <s:element minOccurs="0" name="Profile" type="s:string"/>
+                            <s:element minOccurs="0" name="AgeAdmBasis" type="s:string"/>
+                            <s:element minOccurs="0" name="CreatedProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifyProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="CreatedBy" type="s:string"/>
+                            <s:element minOccurs="0" name="ChangeEffectiveDate" type="s:date"/>
+                            <s:element minOccurs="0" name="CreatedDate" type="s:date"/>
+                            <s:element minOccurs="0" name="CreatedTime" type="s:time"/>
+                            <s:element minOccurs="0" name="ModifyBy" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifyDate" type="s:date"/>
+                            <s:element minOccurs="0" name="ModifyTime" type="s:time"/>
+                            <s:element minOccurs="0" name="AdditionalData1" type="s:string"/>
+                            <s:element minOccurs="0" name="AdditionalData2" type="s:string"/>
+                            <s:element minOccurs="0" name="AdditionalData3" type="s:string"/>
+                            <s:element minOccurs="0" name="Salary" type="s:decimal"/>
+                            <s:element minOccurs="0" name="SalaryCurrency" type="s:string"/>
+                            <s:element minOccurs="0" name="KnowYourCustomer" type="s:string"/>
+                            <s:element minOccurs="0" name="KycDate" type="s:date"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmCltConDetClientContactDetails">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="ClcId" type="s:string"/>
+                            <s:element minOccurs="0" name="State" type="s:string"/>
+                            <s:element minOccurs="0" name="Salutation" type="s:string"/>
+                            <s:element minOccurs="0" name="CreatedProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifyProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="CreatedBy" type="s:string"/>
+                            <s:element minOccurs="0" name="CreatedDate" type="s:date"/>
+                            <s:element minOccurs="0" name="ContactType" type="s:string"/>
+                            <s:element minOccurs="0" name="CreatedTime" type="s:time"/>
+                            <s:element minOccurs="0" name="ModifyBy" type="s:string"/>
+                            <s:element minOccurs="0" name="ModifyDate" type="s:date"/>
+                            <s:element minOccurs="0" name="ModifyTime" type="s:time"/>
+                            <s:element minOccurs="0" name="Client" type="s:int"/>
+                            <s:element minOccurs="0" name="HouseNo" type="s:string"/>
+                            <s:element minOccurs="0" name="AddressLine1" type="s:string"/>
+                            <s:element minOccurs="0" name="AddressLine2" type="s:string"/>
+                            <s:element minOccurs="0" name="AddressLine3" type="s:string"/>
+                            <s:element minOccurs="0" name="AddressLine4" type="s:string"/>
+                            <s:element minOccurs="0" name="Town" type="s:string"/>
+                            <s:element minOccurs="0" name="County" type="s:string"/>
+                            <s:element minOccurs="0" name="Country" type="s:string"/>
+                            <s:element minOccurs="0" name="Postcode" type="s:string"/>
+                            <s:element minOccurs="0" name="Fax" type="s:string"/>
+                            <s:element minOccurs="0" name="HomePhone" type="s:string"/>
+                            <s:element minOccurs="0" name="Email" type="s:string"/>
+                            <s:element minOccurs="0" name="ExpiryDate" type="s:date"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpErrmsgWindow">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="WinErrmsg" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="EcommsCommunications">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="SystemName" type="s:string"/>
+                <s:element minOccurs="0" name="SystemDateDisplay" type="s:string"/>
+                <s:element minOccurs="0" name="DocumentsCreated" type="s:int"/>
+                <s:element minOccurs="0" name="RecordsFound" type="s:int"/>
+                <s:element minOccurs="0" name="SystemDate" type="s:date"/>
+                <s:element minOccurs="0" name="ErrorParameters" type="s:string"/>
+                <s:element minOccurs="0" name="RecordsUpdated" type="s:int"/>
+                <s:element minOccurs="0" name="User" type="s:string"/>
+                <s:element minOccurs="0" name="Language" type="s:int"/>
+                <s:element minOccurs="0" name="ErrorNo" type="s:string"/>
+                <s:element minOccurs="0" name="PrimaryClient" type="s:string"/>
+                <s:element minOccurs="0" name="ReleaseVersion" type="s:string"/>
+                <s:element minOccurs="0" name="PrimaryServer" type="s:string"/>
+                <s:element minOccurs="0" name="SecondaryServer" type="s:string"/>
+                <s:element minOccurs="0" name="CallFunction" type="s:string"/>
+                <s:element minOccurs="0" name="DisplayUserName" type="s:string"/>
+                <s:element minOccurs="0" name="ErrorPrl" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpAgtLimitReachedWorkspace">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="Integer1" type="s:int"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Exception">
+        <s:sequence>
+          <s:element minOccurs="0" name="Exception" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Exception">
+    <wsdl:part name="fault" element="tns:Exception"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDocRequestDetailsSoapOutput">
+    <wsdl:part name="parameters" element="tns:getDocRequestDetailsResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDocRequestDetailsSoapInput">
+    <wsdl:part name="parameters" element="tns:getDocRequestDetails"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="LissiaWS_getDocRequestDetailsSoapPort">
+    <wsdl:operation name="getDocRequestDetails">
+      <wsdl:input message="tns:getDocRequestDetailsSoapInput"></wsdl:input>
+      <wsdl:output message="tns:getDocRequestDetailsSoapOutput"></wsdl:output>
+      <wsdl:fault name="Exception" message="tns:Exception"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LissiaWS_getDocRequestDetailsSoapPort" type="tns:LissiaWS_getDocRequestDetailsSoapPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getDocRequestDetails">
+      <soap:operation soapAction="http://tempuri.org/Wssdocdat/?http://LissiaWS_getDocRequestDetails/LissiaWS_getDocRequestDetails/"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LissiaWS_getDocRequestDetails">
+    <wsdl:port name="LissiaWS_getDocRequestDetailsSoapPort" binding="tns:LissiaWS_getDocRequestDetailsSoapPort">
+      <soap:address location="http://10.0.0.29:7090/LissiaWS_getDocRequestDetails/router"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.0.0.29:7090/LissiaWS_getDocRequestDetails/router</con:endpoint></con:endpoints><con:operation id="7e4ad7ab-81bd-447d-8273-14ac83624355" isOneWay="false" action="http://tempuri.org/Wssdocdat/?http://LissiaWS_getDocRequestDetails/LissiaWS_getDocRequestDetails/" name="getDocRequestDetails" bindingOperationName="getDocRequestDetails" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="25e738d6-1f4e-417a-a6c6-cc9edcf538d9" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.0.0.29:7090/LissiaWS_getDocRequestDetails/router</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lis="http://LissiaWS_getDocRequestDetails/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <lis:getDocRequestDetails>\r
+         <!--Optional:-->\r
+         <lis:getDocRequestDetailsImport>\r
+            <!--Optional:-->\r
+            <lis:ImpRestartAgtIdAgents>\r
+               <!--Optional:-->\r
+               <lis:AgtId>?</lis:AgtId>\r
+            </lis:ImpRestartAgtIdAgents>\r
+            <!--Optional:-->\r
+            <lis:ImpCltClients>\r
+               <!--Optional:-->\r
+               <lis:CliId></lis:CliId>\r
+            </lis:ImpCltClients>\r
+            <!--Optional:-->\r
+            <lis:ImpRestartActIdAccountTransactions>\r
+               <!--Optional:-->\r
+               <lis:AtrId>?</lis:AtrId>\r
+               <!--Optional:-->\r
+               <lis:Details>?</lis:Details>\r
+            </lis:ImpRestartActIdAccountTransactions>\r
+            <!--Optional:-->\r
+            <lis:ImpSrvdetailsWebService>\r
+               <!--Optional:-->\r
+               <lis:ServiceUserid>?</lis:ServiceUserid>\r
+               <!--Optional:-->\r
+               <lis:Pcdate>?</lis:Pcdate>\r
+               <!--Optional:-->\r
+               <lis:Srvtimings>?</lis:Srvtimings>\r
+            </lis:ImpSrvdetailsWebService>\r
+            <!--Optional:-->\r
+            <lis:ImpDrqDocumentRequests>\r
+               <!--Optional:-->\r
+               <lis:DrqId>?</lis:DrqId>\r
+            </lis:ImpDrqDocumentRequests>\r
+            <!--Optional:-->\r
+            <lis:ImpUsersUsers>\r
+               <!--Optional:-->\r
+               <lis:UsrId>?</lis:UsrId>\r
+            </lis:ImpUsersUsers>\r
+            <!--Optional:-->\r
+            <lis:ImpActionCommunications>\r
+               <!--Optional:-->\r
+               <lis:CallFunction>?</lis:CallFunction>\r
+            </lis:ImpActionCommunications>\r
+         </lis:getDocRequestDetailsImport>\r
+      </lis:getDocRequestDetails>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Wssdocdat/?http://LissiaWS_getDocRequestDetails/LissiaWS_getDocRequestDetails/"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="0aea8f64-13dd-4c7f-97e2-931421f49961" name="myTestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="94f2fb26-cf60-4125-bd1e-6b9b5129861c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="myTestCase" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Step1" id="8700f84d-89db-40fe-9ffe-1b962105c547"><con:settings/><con:config><script>def fileList = []
+def fileListNew = []
+def projectName
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+def projectDir = groovyUtils.projectPath
+def ProjectName= testRunner.testCase.testSuite.project.getName();
+def requestDir = context.get('projectDir') + "\\Request"
+
+new File(requestDir).eachFile
+{ f ->
+if (f.isFile()&amp;&amp; f.name.endsWith('.xml'))
+	{
+	 	def filename = f.name[0..-1]
+		log.info filename 	
+		log.info filename.substring(0,filename.length()-4)
+		fileList.add(filename)
+		fileListNew.add(filename.substring(0,filename.length()-4))
+	}
+}
+
+if (fileList.size() &lt;1)
+{
+testRunner.fail("No request files found")
+}
+context.put('fileList',fileList)
+context.put('fileListNew',fileListNew)</script></con:config></con:testStep><con:testStep type="request" id="84f39c85-62dd-4e8f-807c-46b43f2115a8" name="Step2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LissiaWS_getDocRequestDetailsSoapPort</con:interface><con:operation>getDocRequestDetails</con:operation><con:request name="Step2" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="d980d421-665b-453c-a573-43bebb2919f6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.0.0.29:7090/LissiaWS_getDocRequestDetails/router</con:endpoint><con:request>${=new File(context.get('projectDir') + "\\Request\\" + (context.get('fileListNew')).last() + ".xml").text}</con:request><con:assertion type="SOAP Response" id="025dc06a-d250-4345-afb2-9cfb7e844180" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Wssdocdat/?http://LissiaWS_getDocRequestDetails/LissiaWS_getDocRequestDetails/"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Step3" id="b6e29ea2-78ed-46c1-b463-b5b90af7659a"><con:settings/><con:config><script>
+def fileList = context.get('fileListNew')
+
+def fileName = fileList.pop()
+def newname = fileName[0..-5]
+
+def response = context.expand( '${Step2#Response}' )
+def f = new File(context.get('projectDir') + "\\Response\\${fileName}_Response.xml")
+f.write(response, "UTF-8")
+
+if(fileList.size() >0)
+{
+testRunner.gotoStepByName("Step2")
+}</script></con:config></con:testStep><con:properties><con:property><con:name>Request</con:name><con:value><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lis="http://LissiaWS_getQuote/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <lis:getQuote>
+         <!--Optional:-->
+         <lis:getQuoteImport>
+            <!--Optional:-->
+            <lis:ImpPrlrqmWebService>
+               <!--Optional:-->
+               <lis:Prlrqm>2</lis:Prlrqm>
+            </lis:ImpPrlrqmWebService>
+            <!--Optional:-->
+            <lis:ImpGrpPlc>
+               <!--Zero or more repetitions:-->
+               <lis:row>
+                  <!--Optional:-->
+                  <lis:ImpItmPlcPolicyCvgLifeConditions>
+                     <!--Optional:-->
+                     <lis:Condition/>
+                     <!--Optional:-->
+                     <lis:ApplicabilityDate>20181115</lis:ApplicabilityDate>
+                     <!--Optional:-->
+                     <lis:EndOfApplicability>20180101</lis:EndOfApplicability>
+                     <!--Optional:-->
+                     <lis:RateOrValue>1</lis:RateOrValue>
+                     <!--Optional:-->
+                     <lis:Type>0</lis:Type>
+                  </lis:ImpItmPlcPolicyCvgLifeConditions>
+                  <!--Optional:-->
+                  <lis:ImpItmPlcCprtypeCliPolRelationships>
+                     <!--Optional:-->
+                     <lis:Type>0</lis:Type>
+                  </lis:ImpItmPlcCprtypeCliPolRelationships>
+                  <!--Optional:-->
+                  <lis:ImpItmPlcPrlProductLines>
+                     <!--Optional:-->
+                     <lis:PrlId/>
+                  </lis:ImpItmPlcPrlProductLines>
+                  <!--Optional:-->
+                  <lis:ImpItmPlcQrefWebService>
+                     <!--Optional:-->
+                     <lis:BenLine/>
+                     <!--Optional:-->
+                     <lis:QuoteRef/>
+                     <!--Optional:-->
+                     <lis:Primaryprdid/>
+                  </lis:ImpItmPlcQrefWebService>
+               </lis:row>
+            </lis:ImpGrpPlc>
+            <!--Optional:-->
+            <lis:ImpGrpPas>
+               <!--Zero or more repetitions:-->
+               <lis:row>
+                  <!--Optional:-->
+                  <lis:ImpItmPasQrefWebService>
+                     <!--Optional:-->
+                     <lis:QuoteRef>wsdl2</lis:QuoteRef>
+                     <!--Optional:-->
+                     <lis:BenLine>1</lis:BenLine>
+                     <!--Optional:-->
+                     <lis:Primaryprdid>rb1</lis:Primaryprdid>
+                  </lis:ImpItmPasQrefWebService>
+                  <!--Optional:-->
+                  <lis:ImpItmPasPrlProductLines>
+                     <!--Optional:-->
+                     <lis:PrlId>TALT</lis:PrlId>
+                  </lis:ImpItmPasPrlProductLines>
+                  <!--Optional:-->
+                  <lis:ImpItmPasPolicyAgentShares>
+                     <!--Optional:-->
+                     <lis:Status>0</lis:Status>
+                     <!--Optional:-->
+                     <lis:Coverage>0</lis:Coverage>
+                     <!--Optional:-->
+                     <lis:Agent>A00042</lis:Agent>
+                     <!--Optional:-->
+                     <lis:PasId>0.0</lis:PasId>
+                     <!--Optional:-->
+                     <lis:Percentage>100</lis:Percentage>
+                     <!--Optional:-->
+                     <lis:Type>0</lis:Type>
+                     <!--Optional:-->
+                     <lis:SpecificIce>0</lis:SpecificIce>
+                     <!--Optional:-->
+                     <lis:SacrificeAmount>0</lis:SacrificeAmount>
+                     <!--Optional:-->
+                     <lis:SacrificePercent>0</lis:SacrificePercent>
+                     <!--Optional:-->
+                     <lis:PrimaryAgent>42</lis:PrimaryAgent>
+                     <!--Optional:-->
+                     <lis:SacrificeType>0</lis:SacrificeType>
+                     <!--Optional:-->
+                     <lis:RenewalSacrificePcg>2.5</lis:RenewalSacrificePcg>
+                  </lis:ImpItmPasPolicyAgentShares>
+                  <!--Optional:-->
+                  <lis:ImpItmAgtAgents>
+                     <!--Optional:-->
+                     <lis:AgtId>A00042</lis:AgtId>
+                  </lis:ImpItmAgtAgents>
+               </lis:row>
+            </lis:ImpGrpPas>
+            <!--Optional:-->
+            <lis:ImpGrpCliCpr>
+               <!--Zero or more repetitions:-->
+               <lis:row>
+                  <!--Optional:-->
+                  <lis:ImpItmCliMxCeaseAgeProductValueLookup>
+                     <!--Optional:-->
+                     <lis:Age1>26</lis:Age1>
+                  </lis:ImpItmCliMxCeaseAgeProductValueLookup>
+                  <!--Optional:-->
+                  <lis:ImpItmCprQrefWebService>
+                     <!--Optional:-->
+                     <lis:QuoteRef>wsdl2</lis:QuoteRef>
+                     <!--Optional:-->
+                     <lis:BenLine>1</lis:BenLine>
+                     <!--Optional:-->
+                     <lis:Primaryprdid>rb1</lis:Primaryprdid>
+                  </lis:ImpItmCprQrefWebService>
+                  <!--Optional:-->
+                  <lis:ImpItmCliAgeProductValueLookup>
+                     <!--Optional:-->
+                     <lis:Age1>26</lis:Age1>
+                     <!--Optional:-->
+                     <lis:Age1Months>0</lis:Age1Months>
+                     <!--Optional:-->
+                     <lis:ExpAge1/>
+                  </lis:ImpItmCliAgeProductValueLookup>
+                  <!--Optional:-->
+                  <lis:ImpItmPclLoadingsPolicyCvgLives>
+                     <!--Optional:-->
+                     <lis:AgeRating>0</lis:AgeRating>
+                     <!--Optional:-->
+                     <lis:AddnFactor/>
+                     <!--Optional:-->
+                     <lis:AddnRpm/>
+                     <!--Optional:-->
+                     <lis:RatingReason/>
+                     <!--Optional:-->
+                     <lis:RatingTerm>0</lis:RatingTerm>
+                     <!--Optional:-->
+                     <lis:UnderwriterRiskCategory>?</lis:UnderwriterRiskCategory>
+                  </lis:ImpItmPclLoadingsPolicyCvgLives>
+                  <!--Optional:-->
+                  <lis:ImpItmCprPrlProductLines>
+                     <!--Optional:-->
+                     <lis:PrlId>TALT</lis:PrlId>
+                  </lis:ImpItmCprPrlProductLines>
+                  <!--Optional:-->
+                  <lis:ImpItmCprTypeCliPolRelationships>
+                     <!--Optional:-->
+                     <lis:TypeNumber>0</lis:TypeNumber>
+                     <!--Optional:-->
+                     <lis:Type>4</lis:Type>
+                  </lis:ImpItmCprTypeCliPolRelationships>
+                  <!--Optional:-->
+                  <lis:ImpItmCliClients>
+                     <!--Optional:-->
+                     <lis:DateOfBirth>19801201</lis:DateOfBirth>
+                     <!--Optional:-->
+                     <lis:Sex>2</lis:Sex>
+                     <!--Optional:-->
+                     <lis:Smoker>3</lis:Smoker>
+                     <!--Optional:-->
+                     <lis:RiskCat>1</lis:RiskCat>
+                     <!--Optional:-->
+                     <lis:Weight/>
+                     <!--Optional:-->
+                     <lis:Height>0</lis:Height>
+                     <!--Optional:-->
+                     <lis:Nationality/>
+                     <!--Optional:-->
+                     <lis:Type>4</lis:Type>
+                     <!--Optional:-->
+                     <lis:LeisureRiskCat/>
+                     <!--Optional:-->
+                     <lis:Classification/>
+                     <!--Optional:-->
+                     <lis:CliId>0</lis:CliId>
+                     <!--Optional:-->
+                     <lis:Salary>0</lis:Salary>
+                     <!--Optional:-->
+                     <lis:SalaryCurrency>GBP</lis:SalaryCurrency>
+                  </lis:ImpItmCliClients>
+               </lis:row>
+            </lis:ImpGrpCliCpr>
+            <!--Optional:-->
+            <lis:ImpGrpCvgs>
+               <!--Zero or more repetitions:-->
+               <lis:row>
+                  <!--Optional:-->
+                  <lis:ImpItmQInstructionQuotation>
+                     <!--Optional:-->
+                     <lis:QuoteInstruction>1</lis:QuoteInstruction>
+                  </lis:ImpItmQInstructionQuotation>
+                  <!--Optional:-->
+                  <lis:ImpItmOverridePolicyCoverages>
+                     <!--Optional:-->
+                     <lis:SumAssured/>
+                  </lis:ImpItmOverridePolicyCoverages>
+                  <!--Optional:-->
+                  <lis:ImpItmTargetPremiumCvgsPolicyPremiums>
+                     <!--Optional:-->
+                     <lis:ModalPremium/>
+                     <!--Optional:-->
+                     <lis:Frequency>0</lis:Frequency>
+                  </lis:ImpItmTargetPremiumCvgsPolicyPremiums>
+                  <!--Optional:-->
+                  <lis:ImpItmCvgQrefWebService>
+                     <!--Optional:-->
+                     <lis:QuoteRef>wsdl2</lis:QuoteRef>
+                     <!--Optional:-->
+                     <lis:BenLine>1</lis:BenLine>
+                     <!--Optional:-->
+                     <lis:Primaryprdid>rb1</lis:Primaryprdid>
+                     <!--Optional:-->
+                     <lis:DiscountActivity>0</lis:DiscountActivity>
+                  </lis:ImpItmCvgQrefWebService>
+                  <!--Optional:-->
+                  <lis:ImpItmPcpCvgsPolicyPremiums>
+                     <!--Optional:-->
+                     <lis:Frequency>5</lis:Frequency>
+                     <!--Optional:-->
+                     <lis:ContributionPercentage/>
+                     <!--Optional:-->
+                     <lis:ModalPremium/>
+                  </lis:ImpItmPcpCvgsPolicyPremiums>
+                  <!--Optional:-->
+                  <lis:ImpItmPocCvgsPolicyCoverages>
+                     <!--Optional:-->
+                     <lis:ProductLine>TALT</lis:ProductLine>
+                     <!--Optional:-->
+                     <lis:Currency>GBP</lis:Currency>
+                     <!--Optional:-->
+                     <lis:InitialSumAssured>100000.00</lis:InitialSumAssured>
+                     <!--Optional:-->
+                     <lis:SoldBasis>3</lis:SoldBasis>
+                     <!--Optional:-->
+                     <lis:Multiplier/>
+                     <!--Optional:-->
+                     <lis:CoverLevel/>
+                     <!--Optional:-->
+                     <lis:LivesType>1</lis:LivesType>
+                     <!--Optional:-->
+                     <lis:HoldingNo>0</lis:HoldingNo>
+                     <!--Optional:-->
+                     <lis:Term>20</lis:Term>
+                     <!--Optional:-->
+                     <lis:RetirementAge>0</lis:RetirementAge>
+                     <!--Optional:-->
+                     <lis:TermAge>0</lis:TermAge>
+                     <!--Optional:-->
+                     <lis:DateOfApplication/>
+                     <!--Optional:-->
+                     <lis:DateOfReqCommencement/>
+                     <!--Optional:-->
+                     <lis:PptAge/>
+                     <!--Optional:-->
+                     <lis:InterestRate/>
+                     <!--Optional:-->
+                     <lis:PttYrs/>
+                     <!--Optional:-->
+                     <lis:DatePremiumTerm/>
+                     <!--Optional:-->
+                     <lis:BenefitBasis/>
+                     <!--Optional:-->
+                     <lis:QuotationDate>20180101</lis:QuotationDate>
+                     <!--Optional:-->
+                     <lis:QuotationTime/>
+                     <!--Optional:-->
+                     <lis:MajorCoverage>0</lis:MajorCoverage>
+                     <!--Optional:-->
+                     <lis:Income/>
+                     <!--Optional:-->
+                     <lis:ProductVersion>0</lis:ProductVersion>
+                     <!--Optional:-->
+                     <lis:BenefitTerm/>
+                     <!--Optional:-->
+                     <lis:Rulebookid/>
+                     <!--Optional:-->
+                     <lis:Rulebooktype>1</lis:Rulebooktype>
+                     <!--Optional:-->
+                     <lis:Rulebookprodver/>
+                  </lis:ImpItmPocCvgsPolicyCoverages>
+                  <!--Optional:-->
+                  <lis:ImpItmPocPcmPolicyCommissions>
+                     <!--Optional:-->
+                     <lis:Style>INDEM</lis:Style>
+                  </lis:ImpItmPocPcmPolicyCommissions>
+               </lis:row>
+            </lis:ImpGrpCvgs>
+            <!--Optional:-->
+            <lis:ImpWebserviceWebService>
+               <!--Optional:-->
+               <lis:ServiceUserid/>
+               <!--Optional:-->
+               <lis:TraceRates>0</lis:TraceRates>
+               <!--Optional:-->
+               <lis:RecordImport>0</lis:RecordImport>
+               <!--Optional:-->
+               <lis:Requote>0</lis:Requote>
+               <!--Optional:-->
+               <lis:DiscountActivity>0</lis:DiscountActivity>
+               <!--Optional:-->
+               <lis:QuoteCallOrigin/>
+            </lis:ImpWebserviceWebService>
+            <!--Optional:-->
+            <lis:ImpUserUsers>
+               <!--Optional:-->
+               <lis:UsrId/>
+            </lis:ImpUserUsers>
+            <!--Optional:-->
+            <lis:ImpAswcalcqAswcalcq>
+               <!--Optional:-->
+               <lis:Comcalclvl>2</lis:Comcalclvl>
+               <!--Optional:-->
+               <lis:Pcdate></lis:Pcdate>
+               <!--Optional:-->
+               <lis:Srvtimings>0</lis:Srvtimings>
+            </lis:ImpAswcalcqAswcalcq>
+         </lis:getQuoteImport>
+      </lis:getQuote>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:value></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

@@ -1,0 +1,14 @@
+{
+  "chromePath": "/Drivers/chromedriver.exe",
+  "url": "http://10.0.0.29:7090/Edison/xclissia",
+  "userName": "anitarai1",
+  "password": "Sep_2018",
+  "commonFrame": "AppWindow",
+  "testDataFile": "/TestData/TestData.xlsx",
+  "locatorsFile": "/Resources/locators.json",
+  "DDRejectionAIGFileLocation": "/UserInput/DDRejectionAIGFile",
+  "DDRejectionProdFile": {
+    "Path": "C:/Users/anita107554/workspace/branches/AIG/E2E/MTAF/Resources",
+    "FileName": "DD Errors Prod 20180523 New.csv"
+  }
+}

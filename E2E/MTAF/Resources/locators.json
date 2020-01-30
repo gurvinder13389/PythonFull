@@ -1,0 +1,420 @@
+{
+  "LoginPage": {
+    "txtUsername": {
+      "locatorType": "id",
+      "locatorValue": "PR_LOGINID"
+    },
+    "txtPassword": {
+      "locatorType": "id",
+      "locatorValue": "Field2"
+    },
+    "btnLogin": {
+      "locatorType": "id",
+      "locatorValue": "Button1"
+    }
+  },
+  "HomePage": {
+    "Setup": {
+      "locatorType": "xpath",
+      "locatorValue": "//span[text()='Setup']"
+    },
+    "Controls": {
+      "locatorType": "xpath",
+      "locatorValue": "//span[text()='Controls']"
+    },
+    "Operations": {
+      "locatorType": "xpath",
+      "locatorValue": "//span[text()='Operations']"
+    },
+    "Collection": {
+      "locatorType": "xpath",
+      "locatorValue": "//span[text()='Collection']"
+    },
+    "Tasks": {
+      "locatorType": "xpath",
+      "locatorValue": "//span[text()='Tasks']"
+    },
+    "Exit": {
+      "locatorType": "xpath",
+      "locatorValue": "//span[text()='Exit']"
+    },
+    "Policy": {
+      "locatorType": "xpath",
+      "locatorValue": "//span[text()='Policy']"
+    }
+  },
+  "ControlsPage": {
+    "SystemDate": {
+      "locatorType": "xpath",
+      "locatorValue": "//a[contains(text(),'System') and contains(text(),'Date')]"
+    },
+    "ChangeControlValue": {
+      "locatorType": "xpath",
+      "locatorValue": "//a[contains(text(),'Change Control Value')]"
+    },
+    "Accounting": {
+      "locatorType": "xpath",
+      "locatorValue": "//a[text()='Accounting']"
+    },
+    "CurrentPostingSetValue": {
+      "locatorType": "xpath",
+      "locatorValue": "//a[contains(text(),'Current')][contains(text(),'Posting')][contains(text(),'Set')]//following::a[1]"
+    }
+  },
+  "TaskRequestPage": {
+    "DirectDebitRunRequest": {
+      "locatorType": "xpath",
+      "locatorValue": "//a[contains(text(),'Direct') and contains(text(),'Debit') and contains(text(),'Request') and contains(text(),'Run')]"
+    },
+    "DDRejectionFileSetup": {
+      "locatorType": "xpath",
+      "locatorValue": "//a[contains(text(),'DD') and contains(text(),'Rejection') and contains(text(),'File') and contains(text(),'setup')]"
+    },
+    "AgentStatement": {
+      "locatorType": "xpath",
+      "locatorValue": "//a[contains(text(),'Agent') and contains(text(),'Statement')]"
+    },
+    "NominalLedgerExport": {
+      "locatorType": "xpath",
+      "locatorValue": "//a[contains(text(),'Nominal') and contains(text(),'Ledger') and contains(text(),'Export')]"
+    },
+    "PolicyEventProcessing": {
+      "locatorType": "xpath",
+      "locatorValue": "//a[contains(text(),'Policy') and contains(text(),'Event') and contains(text(),'Processing')]"
+    },
+    "PremiumWaiverPayment": {
+      "locatorType": "xpath",
+      "locatorValue": "//a[contains(text(),'Premium') and contains(text(),'Waiver') and contains(text(),'Payment')]"
+    },
+    "LapseProcessing": {
+      "locatorType": "xpath",
+      "locatorValue": "//a[contains(text(),'Lapse') and contains(text(),'Processing')]"
+    },
+    "txtBank": {
+      "locatorType": "xpath",
+      "locatorValue": "//input[@id='PR_SUPPNO']"
+    },
+    "txtAgent": {
+      "locatorType": "id",
+      "locatorValue": "Field7"
+    },
+    "txtPostSet": {
+      "locatorType": "xpath",
+      "locatorValue": "//input[@id='PR_SUPPNO']"
+    },
+    "btnOkImmediate": {
+      "locatorType": "xpath",
+      "locatorValue": "//button[@id='Button3']"
+    },
+    "BatchComplete": {
+      "locatorType": "xpath",
+      "locatorValue": "//a[contains(text(),'Batch') and contains(text(),'Complete')]"
+    },
+    "Task_Job": {
+      "locatorType": "id",
+      "locatorValue": "pr_id"
+    }
+  },
+  "QueuedTaskDiaryPage": {
+    "Request_a_Task": {
+      "locatorType": "xpath",
+      "locatorValue": "//a[contains(text(),'Request a Task')]"
+    },
+    "QueuedTasksTable": {
+      "locatorType": "id",
+      "locatorValue": "LS_DETAILS"
+    },
+    "QueuedTasksRunTable": {
+      "locatorType": "id",
+      "locatorValue": "ListBox1"
+    },
+    "btnTaskId": {
+      "locatorType": "id",
+      "locatorValue": "Button1"
+    },
+    "btnJob": {
+      "locatorType": "id",
+      "locatorValue": "PB_JOB"
+    },
+    "chkOutstanding": {
+      "locatorType": "xpath",
+      "locatorValue": "//input[@alt='Outstanding']"
+    },
+    "btnQueuedTaskPaginationNext": {
+      "locatorType": "id",
+      "locatorValue": "Button4"
+    },
+    "btnQueuedTaskPaginationFirstPage": {
+      "locatorType": "id",
+      "locatorValue": "Button7"
+    }
+  },
+  "CollectionPage": {
+    "ManualRejection": {
+      "locatorType": "xpath",
+      "locatorValue": "//a[contains(text(),'Manual Rejection')]"
+    },
+    "DirectDebitUpdate": {
+      "locatorType": "xpath",
+      "locatorValue": "//a[contains(text(),'Direct Debit Update')]"
+    },
+    "selectCollectionMethod": {
+      "locatorType": "id",
+      "locatorValue": "LS_METHOD"
+    },
+    "selectCollectionRunStatus": {
+      "locatorType": "id",
+      "locatorValue": "lb_status"
+    },
+    "txtFromRunDate": {
+      "locatorType": "id",
+      "locatorValue": "pr_frdat"
+    },
+    "CollectionRunTable": {
+      "locatorType": "id",
+      "locatorValue": "LS_BILLRUNTbl"
+    },
+    "btnRunNo": {
+      "locatorType": "id",
+      "locatorValue": "PB_RUNNO"
+    }
+  },
+  "BillingRunDetailsPage": {
+    "lnkClose": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='pb_close']"
+    }
+  },
+  "TaskDetailsPage": {
+    "lnkClose": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[normalize-space(text())='Close']"
+    }
+  },
+  "RejectionPage": {
+    "txtEnterPolicy": {
+      "locatorType": "id",
+      "locatorValue": "FD_POLNO"
+    },
+    "tblIdentifySpecificCollection": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='ListBox3']/table"
+    },
+    "selectRejectionReason": {
+      "locatorType": "id",
+      "locatorValue": "LS_REJRSN"
+    },
+    "btnRejectPolicyCreation": {
+      "locatorType": "id",
+      "locatorValue": "PB_OK"
+    },
+    "txtReference": {
+      "locatorType": "id",
+      "locatorValue": "pr_bkref"
+    },
+    "txtBankAccountNumber": {
+      "locatorType": "id",
+      "locatorValue": "pr_bkacct"
+    },
+    "txtSortCode": {
+      "locatorType": "id",
+      "locatorValue": "pr_bkstcd"
+    },
+    "txtSuspensionReason": {
+      "locatorType": "id",
+      "locatorValue": "pr_bkrsn"
+    },
+    "txtAmount": {
+      "locatorType": "id",
+      "locatorValue": "pr_bkamt"
+    },
+    "txtTransactionCode": {
+      "locatorType": "id",
+      "locatorValue": "PR_TRNCD"
+    },
+    "tblRejectionType": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='ListBox4']/table"
+    },
+    "btnRejectBankCollection": {
+      "locatorType": "id",
+      "locatorValue": "Button1"
+    },
+    "ManualRejectionComplete": {
+      "locatorType": "id",
+      "locatorValue": "PR_ERRMSG"
+    },
+    "lnkClose": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='PB_CANCEL']"
+    }
+  },
+  "SystemDatePage": {
+    "txtSystemDate": {
+      "locatorType": "id",
+      "locatorValue": "ALPHA_VALUE"
+    },
+    "txtLissiaSystemDate": {
+      "locatorType": "id",
+      "locatorValue": "PR_SYSDATE"
+    },
+    "btnOK": {
+      "locatorType": "id",
+      "locatorValue": "Button1"
+    }
+  },
+  "PolicyServicingandEnquiriesPage": {
+    "txtEnterPolicy": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='Number']"
+    },
+    "lnkClaims": {
+      "locatorType": "xpath",
+      "locatorValue": "//a[contains(text(),'Claims')]"
+    },
+    "lnkStatus": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='lb_poldet']//*[text()='Status']//following::a[1]"
+    },
+    "lnkTransactions": {
+      "locatorType": "xpath",
+      "locatorValue": "//a[contains(text(),'Transactions')]"
+    },
+    "tblApplicationDetails": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='lb_poldetTbl']"
+    },
+    "lnkLapse": {
+      "locatorType": "xpath",
+      "locatorValue": "//a[contains(text(),'Lapse')]"
+    }
+  },
+  "ClaimsPage": {
+    "lnkAddaNewClaim": {
+      "locatorType": "xpath",
+      "locatorValue": "//a[contains(text(),'Add a new Claim (or a new Claim Element to an existing Claim')]"
+    },
+    "txtStatus": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='pr_polst']"
+    },
+    "tblClaimDetails": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='ListBox1Tbl']"
+    },
+    "lnkVieworChangeDetails": {
+      "locatorType": "xpath",
+      "locatorValue": "//a[contains(text(),'View or change Details')]"
+    },
+    "lnkClose": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='pb_close']"
+    }
+  },
+  "ClaimElementPage": {
+    "tblClaimant": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='lb_pclTbl']"
+    },
+    "tblBenefit": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='LB_POCTbl']"
+    },
+    "tblSubBenefit": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='ListBox1Tbl']"
+    },
+    "txtNotifiedDate": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='pr_notdt']"
+    },
+    "txtClaimDate": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='pr_incdt']"
+    },
+    "btnEnterorUpdateClaim": {
+      "locatorType": "xpath",
+      "locatorValue": "//button[contains(text(),'Enter or Update Claim')]"
+    },
+    "lnkEnterAmendClaimPayment": {
+      "locatorType": "xpath",
+      "locatorValue": "//a[normalize-space(text())='Enter/Amend Claim Payment']"
+    },
+    "selectChangeStatus": {
+      "locatorType": "xpath",
+      "locatorValue": "//button[text()='Accept Status Change']//preceding::select[1]"
+    },
+    "btnAcceptStatusChange": {
+      "locatorType": "xpath",
+      "locatorValue": "//button[text()='Accept Status Change']"
+    },
+    "lnkClose": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='pb_close']"
+    }
+  },
+  "ClaimPaymentPage": {
+    "selectBeneficiary": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='ListBox6']"
+    },
+    "tblBankDetails": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='ListBox8Tbl']"
+    },
+    "btnAcceptChanges": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='pb_chg']"
+    },
+    "btnAcceptChangesandExit": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='accept_pb']"
+    },
+    "btnAuthorisePayment": {
+      "locatorType": "xpath",
+      "locatorValue": "//button[contains(text(),'Authorise Payment')]"
+    },
+    "tblClaimPayment": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='ListBox4Tbl']"
+    },
+    "txtAuthorisedDate": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='AUTHORISED_DATE1']"
+    },
+    "txtAuthorisedTime": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='AUTHORISED_TIME1']"
+    },
+    "selectPaymentStatus": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='ListBox2']"
+    },
+    "lnkClose": {
+      "locatorType": "xpath",
+      "locatorValue": "//a[normalize-space(text())='Close']"
+    },
+    "txtPaymentAmount": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='PAYMENT_AMOUNT']"
+    }
+  },
+  "TransactionsPage": {
+    "tblTransactions": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='ListBox1Tbl']"
+    }
+  },
+  "TransactionEnquiryPage": {
+    "tblAccountingPostings": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='lb_atrTbl']"
+    }
+  },
+  "LapsePage": {
+    "btnOkProceed": {
+      "locatorType": "xpath",
+      "locatorValue": "//*[@id='PB_OK']"
+    }
+  }
+}

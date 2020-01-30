@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="920a189b-455f-43a6-805c-be18a2689380" activeEnvironment="Default" name="maintHierarchy" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="bbbca7f0-c24a-48c9-9717-ffbd4586c11c" wsaVersion="NONE" name="LissiaWS_maintHierarchySoapPort" type="wsdl" bindingName="{http://LissiaWS_maintHierarchy/}LissiaWS_maintHierarchySoapPort" soapVersion="1_1" anonymous="optional" definition="http://10.0.0.29:7090/LissiaWS_maintHierarchy/router?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://10.0.0.29:7090/LissiaWS_maintHierarchy/router?WSDL"><con:part><con:url>http://10.0.0.29:7090/LissiaWS_maintHierarchy/router?WSDL</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.8-b13937 svn-revision#13942.-->
+<wsdl:definitions name="LissiaWS_maintHierarchy" targetNamespace="http://LissiaWS_maintHierarchy/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textmatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://LissiaWS_maintHierarchy/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:documentation>Copyright (c) 2015 IET. All rights reserved.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://LissiaWS_maintHierarchy/">
+      <s:element name="Exception" type="tns:Exception"/>
+      <s:element name="maintHierarchy" type="tns:maintHierarchy"/>
+      <s:element name="maintHierarchyResponse" type="tns:maintHierarchyResponse"/>
+      <s:complexType name="maintHierarchy">
+        <s:sequence>
+          <s:element minOccurs="0" name="maintHierarchyImport" type="tns:maintHierarchyImport"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="maintHierarchyResponse">
+        <s:sequence>
+          <s:element minOccurs="0" name="maintHierarchyExport" type="tns:maintHierarchyExport"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="maintHierarchyImport">
+        <s:sequence>
+          <s:element minOccurs="0" name="ImpLightqueryWebService">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="Lightquery" type="s:int"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpGrpRelated">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ImpSelRelatedIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="SelectChar" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ImpItmHreHierarchyEntities">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="HreId" type="s:int"/>
+                            <s:element minOccurs="0" name="HierarchyLevel" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ImpItmUsrUsers">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="UsrId" type="s:string"/>
+                            <s:element minOccurs="0" name="UserType" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ImpItmAgtAgents">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="AgtId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpHrmHierarchyMappings">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="LinkType" type="s:int"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpHreHierarchyEntities">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="HreId" type="s:int"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpAgtAgents">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="AgtId" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpUsrUsers">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="UsrId" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="IcommsCommunications">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="CallFunction" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpSrvdetailsWebService">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="Pcdate" type="s:date"/>
+                <s:element minOccurs="0" name="Srvtimings" type="s:int"/>
+                <s:element minOccurs="0" name="ServiceUserid" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="maintHierarchyExport">
+        <s:sequence>
+          <s:element minOccurs="0" name="ExpGrpRelated">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpSelRelatedIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="SelectChar" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmHreHierarchyEntities">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="HreId" type="s:int"/>
+                            <s:element minOccurs="0" name="HierarchyLevel" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmUsrUsers">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="UsrId" type="s:string"/>
+                            <s:element minOccurs="0" name="UserType" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmAgtAgents">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="AgtId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="EcommsCommunications">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="ErrorParameters" type="s:string"/>
+                <s:element minOccurs="0" name="ErrorNo" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpErrmsgWindow">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="WinErrmsg" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Exception">
+        <s:sequence>
+          <s:element minOccurs="0" name="Exception" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Exception">
+    <wsdl:part name="fault" element="tns:Exception"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="maintHierarchySoapOutput">
+    <wsdl:part name="parameters" element="tns:maintHierarchyResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="maintHierarchySoapInput">
+    <wsdl:part name="parameters" element="tns:maintHierarchy"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="LissiaWS_maintHierarchySoapPort">
+    <wsdl:operation name="maintHierarchy">
+      <wsdl:input message="tns:maintHierarchySoapInput"></wsdl:input>
+      <wsdl:output message="tns:maintHierarchySoapOutput"></wsdl:output>
+      <wsdl:fault name="Exception" message="tns:Exception"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LissiaWS_maintHierarchySoapPort" type="tns:LissiaWS_maintHierarchySoapPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="maintHierarchy">
+      <soap:operation soapAction="http://tempuri.org/Wsshrchy/?http://LissiaWS_maintHierarchy/LissiaWS_maintHierarchy/"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LissiaWS_maintHierarchy">
+    <wsdl:port name="LissiaWS_maintHierarchySoapPort" binding="tns:LissiaWS_maintHierarchySoapPort">
+      <soap:address location="http://10.0.0.29:7090/LissiaWS_maintHierarchy/router"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.0.0.29:7090/LissiaWS_maintHierarchy/router</con:endpoint></con:endpoints><con:operation id="d318fe75-5ba6-4afd-a9d4-0f9b3cecc6d1" isOneWay="false" action="http://tempuri.org/Wsshrchy/?http://LissiaWS_maintHierarchy/LissiaWS_maintHierarchy/" name="maintHierarchy" bindingOperationName="maintHierarchy" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="aeb3121c-08c5-4cde-9ada-9db854b937ca" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.0.0.29:7090/LissiaWS_maintHierarchy/router</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lis="http://LissiaWS_maintHierarchy/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <lis:maintHierarchy>\r
+         <!--Optional:-->\r
+         <lis:maintHierarchyImport>\r
+            <!--Optional:-->\r
+            <lis:ImpLightqueryWebService>\r
+               <!--Optional:-->\r
+               <lis:Lightquery></lis:Lightquery>\r
+            </lis:ImpLightqueryWebService>\r
+            <!--Optional:-->\r
+            <lis:ImpGrpRelated>\r
+               <!--Zero or more repetitions:-->\r
+               <lis:row>\r
+                  <!--Optional:-->\r
+                  <lis:ImpSelRelatedIefSupplied>\r
+                     <!--Optional:-->\r
+                     <lis:SelectChar></lis:SelectChar>\r
+                  </lis:ImpSelRelatedIefSupplied>\r
+                  <!--Optional:-->\r
+                  <lis:ImpItmHreHierarchyEntities>\r
+                     <!--Optional:-->\r
+                     <lis:HreId></lis:HreId>\r
+                     <!--Optional:-->\r
+                     <lis:HierarchyLevel></lis:HierarchyLevel>\r
+                  </lis:ImpItmHreHierarchyEntities>\r
+                  <!--Optional:-->\r
+                  <lis:ImpItmUsrUsers>\r
+                     <!--Optional:-->\r
+                     <lis:UsrId></lis:UsrId>\r
+                     <!--Optional:-->\r
+                     <lis:UserType></lis:UserType>\r
+                  </lis:ImpItmUsrUsers>\r
+                  <!--Optional:-->\r
+                  <lis:ImpItmAgtAgents>\r
+                     <!--Optional:-->\r
+                     <lis:AgtId></lis:AgtId>\r
+                  </lis:ImpItmAgtAgents>\r
+               </lis:row>\r
+            </lis:ImpGrpRelated>\r
+            <!--Optional:-->\r
+            <lis:ImpHrmHierarchyMappings>\r
+               <!--Optional:-->\r
+               <lis:LinkType></lis:LinkType>\r
+            </lis:ImpHrmHierarchyMappings>\r
+            <!--Optional:-->\r
+            <lis:ImpHreHierarchyEntities>\r
+               <!--Optional:-->\r
+               <lis:HreId></lis:HreId>\r
+            </lis:ImpHreHierarchyEntities>\r
+            <!--Optional:-->\r
+            <lis:ImpAgtAgents>\r
+               <!--Optional:-->\r
+               <lis:AgtId>A00196</lis:AgtId>\r
+            </lis:ImpAgtAgents>\r
+            <!--Optional:-->\r
+            <lis:ImpUsrUsers>\r
+               <!--Optional:-->\r
+               <lis:UsrId></lis:UsrId>\r
+            </lis:ImpUsrUsers>\r
+            <!--Optional:-->\r
+            <lis:IcommsCommunications>\r
+               <!--Optional:-->\r
+               <lis:CallFunction>CHILDREN</lis:CallFunction>\r
+            </lis:IcommsCommunications>\r
+            <!--Optional:-->\r
+            <lis:ImpSrvdetailsWebService>\r
+               <!--Optional:-->\r
+               <lis:Pcdate></lis:Pcdate>\r
+               <!--Optional:-->\r
+               <lis:Srvtimings></lis:Srvtimings>\r
+               <!--Optional:-->\r
+               <lis:ServiceUserid></lis:ServiceUserid>\r
+            </lis:ImpSrvdetailsWebService>\r
+         </lis:maintHierarchyImport>\r
+      </lis:maintHierarchy>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Wsshrchy/?http://LissiaWS_maintHierarchy/LissiaWS_maintHierarchy/"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="200f2797-7fc2-4e2b-a4d3-bb6625e21f47" name="myTestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="27a2632e-a5ad-485b-9d07-c02dcca3e1ca" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="myTestCase" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Step1" id="11cd13d0-2788-43d1-b875-9ea66ca0c0ea"><con:settings/><con:config><script>def fileList = []
+def fileListNew = []
+def projectName
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+def projectDir = groovyUtils.projectPath
+def ProjectName= testRunner.testCase.testSuite.project.getName();
+def requestDir = context.get('projectDir') + "\\Request"
+
+new File(requestDir).eachFile
+{ f ->
+if (f.isFile()&amp;&amp; f.name.endsWith('.xml'))
+{
+ 	def filename = f.name[0..-1]
+ 	log.info filename 	
+ 	fileList.add(filename)
+ 	fileListNew.add(filename.substring(0,filename.length()-4))
+}
+}
+
+if (fileList.size() &lt;1)
+{
+	testRunner.fail("No request files found")
+}
+
+context.put('fileList',fileList)
+context.put('fileListNew',fileListNew)</script></con:config></con:testStep><con:testStep type="request" id="6b603b0f-f9f1-41f5-b28f-0f02eff9a8cd" name="Step2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LissiaWS_maintHierarchySoapPort</con:interface><con:operation>maintHierarchy</con:operation><con:request name="Step2" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="9f0991ed-63b6-4e47-b68c-5e330735fa2d"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.0.0.29:7090/LissiaWS_maintHierarchy/router</con:endpoint><con:request>${=new File(context.get('projectDir') + "\\Request\\" + (context.get('fileListNew')).last() + ".xml").text}</con:request><con:assertion type="SOAP Response" id="74c1d105-cbef-4c95-af67-bacfc53e852b" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Wsshrchy/?http://LissiaWS_maintHierarchy/LissiaWS_maintHierarchy/"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Step3" id="87bb7d6d-74fb-4708-83e1-3e38dec73fc7"><con:settings/><con:config><script>
+def fileList = context.get('fileListNew')
+
+def fileName = fileList.pop()
+def newname = fileName[0..-5]
+
+def response = context.expand( '${Step2#Response}' )
+def f = new File(context.get('projectDir') + "\\Response\\${fileName}_Response.xml")
+f.write(response, "UTF-8")
+
+if(fileList.size() >0)
+{
+testRunner.gotoStepByName("Step2")
+}</script></con:config></con:testStep><con:properties><con:property><con:name>Request</con:name><con:value><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lis="http://LissiaWS_getQuote/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <lis:getQuote>
+         <!--Optional:-->
+         <lis:getQuoteImport>
+            <!--Optional:-->
+            <lis:ImpPrlrqmWebService>
+               <!--Optional:-->
+               <lis:Prlrqm>2</lis:Prlrqm>
+            </lis:ImpPrlrqmWebService>
+            <!--Optional:-->
+            <lis:ImpGrpPlc>
+               <!--Zero or more repetitions:-->
+               <lis:row>
+                  <!--Optional:-->
+                  <lis:ImpItmPlcPolicyCvgLifeConditions>
+                     <!--Optional:-->
+                     <lis:Condition/>
+                     <!--Optional:-->
+                     <lis:ApplicabilityDate>20181115</lis:ApplicabilityDate>
+                     <!--Optional:-->
+                     <lis:EndOfApplicability>20180101</lis:EndOfApplicability>
+                     <!--Optional:-->
+                     <lis:RateOrValue>1</lis:RateOrValue>
+                     <!--Optional:-->
+                     <lis:Type>0</lis:Type>
+                  </lis:ImpItmPlcPolicyCvgLifeConditions>
+                  <!--Optional:-->
+                  <lis:ImpItmPlcCprtypeCliPolRelationships>
+                     <!--Optional:-->
+                     <lis:Type>0</lis:Type>
+                  </lis:ImpItmPlcCprtypeCliPolRelationships>
+                  <!--Optional:-->
+                  <lis:ImpItmPlcPrlProductLines>
+                     <!--Optional:-->
+                     <lis:PrlId/>
+                  </lis:ImpItmPlcPrlProductLines>
+                  <!--Optional:-->
+                  <lis:ImpItmPlcQrefWebService>
+                     <!--Optional:-->
+                     <lis:BenLine/>
+                     <!--Optional:-->
+                     <lis:QuoteRef/>
+                     <!--Optional:-->
+                     <lis:Primaryprdid/>
+                  </lis:ImpItmPlcQrefWebService>
+               </lis:row>
+            </lis:ImpGrpPlc>
+            <!--Optional:-->
+            <lis:ImpGrpPas>
+               <!--Zero or more repetitions:-->
+               <lis:row>
+                  <!--Optional:-->
+                  <lis:ImpItmPasQrefWebService>
+                     <!--Optional:-->
+                     <lis:QuoteRef>wsdl2</lis:QuoteRef>
+                     <!--Optional:-->
+                     <lis:BenLine>1</lis:BenLine>
+                     <!--Optional:-->
+                     <lis:Primaryprdid>rb1</lis:Primaryprdid>
+                  </lis:ImpItmPasQrefWebService>
+                  <!--Optional:-->
+                  <lis:ImpItmPasPrlProductLines>
+                     <!--Optional:-->
+                     <lis:PrlId>TALT</lis:PrlId>
+                  </lis:ImpItmPasPrlProductLines>
+                  <!--Optional:-->
+                  <lis:ImpItmPasPolicyAgentShares>
+                     <!--Optional:-->
+                     <lis:Status>0</lis:Status>
+                     <!--Optional:-->
+                     <lis:Coverage>0</lis:Coverage>
+                     <!--Optional:-->
+                     <lis:Agent>A00042</lis:Agent>
+                     <!--Optional:-->
+                     <lis:PasId>0.0</lis:PasId>
+                     <!--Optional:-->
+                     <lis:Percentage>100</lis:Percentage>
+                     <!--Optional:-->
+                     <lis:Type>0</lis:Type>
+                     <!--Optional:-->
+                     <lis:SpecificIce>0</lis:SpecificIce>
+                     <!--Optional:-->
+                     <lis:SacrificeAmount>0</lis:SacrificeAmount>
+                     <!--Optional:-->
+                     <lis:SacrificePercent>0</lis:SacrificePercent>
+                     <!--Optional:-->
+                     <lis:PrimaryAgent>42</lis:PrimaryAgent>
+                     <!--Optional:-->
+                     <lis:SacrificeType>0</lis:SacrificeType>
+                     <!--Optional:-->
+                     <lis:RenewalSacrificePcg>2.5</lis:RenewalSacrificePcg>
+                  </lis:ImpItmPasPolicyAgentShares>
+                  <!--Optional:-->
+                  <lis:ImpItmAgtAgents>
+                     <!--Optional:-->
+                     <lis:AgtId>A00042</lis:AgtId>
+                  </lis:ImpItmAgtAgents>
+               </lis:row>
+            </lis:ImpGrpPas>
+            <!--Optional:-->
+            <lis:ImpGrpCliCpr>
+               <!--Zero or more repetitions:-->
+               <lis:row>
+                  <!--Optional:-->
+                  <lis:ImpItmCliMxCeaseAgeProductValueLookup>
+                     <!--Optional:-->
+                     <lis:Age1>26</lis:Age1>
+                  </lis:ImpItmCliMxCeaseAgeProductValueLookup>
+                  <!--Optional:-->
+                  <lis:ImpItmCprQrefWebService>
+                     <!--Optional:-->
+                     <lis:QuoteRef>wsdl2</lis:QuoteRef>
+                     <!--Optional:-->
+                     <lis:BenLine>1</lis:BenLine>
+                     <!--Optional:-->
+                     <lis:Primaryprdid>rb1</lis:Primaryprdid>
+                  </lis:ImpItmCprQrefWebService>
+                  <!--Optional:-->
+                  <lis:ImpItmCliAgeProductValueLookup>
+                     <!--Optional:-->
+                     <lis:Age1>26</lis:Age1>
+                     <!--Optional:-->
+                     <lis:Age1Months>0</lis:Age1Months>
+                     <!--Optional:-->
+                     <lis:ExpAge1/>
+                  </lis:ImpItmCliAgeProductValueLookup>
+                  <!--Optional:-->
+                  <lis:ImpItmPclLoadingsPolicyCvgLives>
+                     <!--Optional:-->
+                     <lis:AgeRating>0</lis:AgeRating>
+                     <!--Optional:-->
+                     <lis:AddnFactor/>
+                     <!--Optional:-->
+                     <lis:AddnRpm/>
+                     <!--Optional:-->
+                     <lis:RatingReason/>
+                     <!--Optional:-->
+                     <lis:RatingTerm>0</lis:RatingTerm>
+                     <!--Optional:-->
+                     <lis:UnderwriterRiskCategory>?</lis:UnderwriterRiskCategory>
+                  </lis:ImpItmPclLoadingsPolicyCvgLives>
+                  <!--Optional:-->
+                  <lis:ImpItmCprPrlProductLines>
+                     <!--Optional:-->
+                     <lis:PrlId>TALT</lis:PrlId>
+                  </lis:ImpItmCprPrlProductLines>
+                  <!--Optional:-->
+                  <lis:ImpItmCprTypeCliPolRelationships>
+                     <!--Optional:-->
+                     <lis:TypeNumber>0</lis:TypeNumber>
+                     <!--Optional:-->
+                     <lis:Type>4</lis:Type>
+                  </lis:ImpItmCprTypeCliPolRelationships>
+                  <!--Optional:-->
+                  <lis:ImpItmCliClients>
+                     <!--Optional:-->
+                     <lis:DateOfBirth>19801201</lis:DateOfBirth>
+                     <!--Optional:-->
+                     <lis:Sex>2</lis:Sex>
+                     <!--Optional:-->
+                     <lis:Smoker>3</lis:Smoker>
+                     <!--Optional:-->
+                     <lis:RiskCat>1</lis:RiskCat>
+                     <!--Optional:-->
+                     <lis:Weight/>
+                     <!--Optional:-->
+                     <lis:Height>0</lis:Height>
+                     <!--Optional:-->
+                     <lis:Nationality/>
+                     <!--Optional:-->
+                     <lis:Type>4</lis:Type>
+                     <!--Optional:-->
+                     <lis:LeisureRiskCat/>
+                     <!--Optional:-->
+                     <lis:Classification/>
+                     <!--Optional:-->
+                     <lis:CliId>0</lis:CliId>
+                     <!--Optional:-->
+                     <lis:Salary>0</lis:Salary>
+                     <!--Optional:-->
+                     <lis:SalaryCurrency>GBP</lis:SalaryCurrency>
+                  </lis:ImpItmCliClients>
+               </lis:row>
+            </lis:ImpGrpCliCpr>
+            <!--Optional:-->
+            <lis:ImpGrpCvgs>
+               <!--Zero or more repetitions:-->
+               <lis:row>
+                  <!--Optional:-->
+                  <lis:ImpItmQInstructionQuotation>
+                     <!--Optional:-->
+                     <lis:QuoteInstruction>1</lis:QuoteInstruction>
+                  </lis:ImpItmQInstructionQuotation>
+                  <!--Optional:-->
+                  <lis:ImpItmOverridePolicyCoverages>
+                     <!--Optional:-->
+                     <lis:SumAssured/>
+                  </lis:ImpItmOverridePolicyCoverages>
+                  <!--Optional:-->
+                  <lis:ImpItmTargetPremiumCvgsPolicyPremiums>
+                     <!--Optional:-->
+                     <lis:ModalPremium/>
+                     <!--Optional:-->
+                     <lis:Frequency>0</lis:Frequency>
+                  </lis:ImpItmTargetPremiumCvgsPolicyPremiums>
+                  <!--Optional:-->
+                  <lis:ImpItmCvgQrefWebService>
+                     <!--Optional:-->
+                     <lis:QuoteRef>wsdl2</lis:QuoteRef>
+                     <!--Optional:-->
+                     <lis:BenLine>1</lis:BenLine>
+                     <!--Optional:-->
+                     <lis:Primaryprdid>rb1</lis:Primaryprdid>
+                     <!--Optional:-->
+                     <lis:DiscountActivity>0</lis:DiscountActivity>
+                  </lis:ImpItmCvgQrefWebService>
+                  <!--Optional:-->
+                  <lis:ImpItmPcpCvgsPolicyPremiums>
+                     <!--Optional:-->
+                     <lis:Frequency>5</lis:Frequency>
+                     <!--Optional:-->
+                     <lis:ContributionPercentage/>
+                     <!--Optional:-->
+                     <lis:ModalPremium/>
+                  </lis:ImpItmPcpCvgsPolicyPremiums>
+                  <!--Optional:-->
+                  <lis:ImpItmPocCvgsPolicyCoverages>
+                     <!--Optional:-->
+                     <lis:ProductLine>TALT</lis:ProductLine>
+                     <!--Optional:-->
+                     <lis:Currency>GBP</lis:Currency>
+                     <!--Optional:-->
+                     <lis:InitialSumAssured>100000.00</lis:InitialSumAssured>
+                     <!--Optional:-->
+                     <lis:SoldBasis>3</lis:SoldBasis>
+                     <!--Optional:-->
+                     <lis:Multiplier/>
+                     <!--Optional:-->
+                     <lis:CoverLevel/>
+                     <!--Optional:-->
+                     <lis:LivesType>1</lis:LivesType>
+                     <!--Optional:-->
+                     <lis:HoldingNo>0</lis:HoldingNo>
+                     <!--Optional:-->
+                     <lis:Term>20</lis:Term>
+                     <!--Optional:-->
+                     <lis:RetirementAge>0</lis:RetirementAge>
+                     <!--Optional:-->
+                     <lis:TermAge>0</lis:TermAge>
+                     <!--Optional:-->
+                     <lis:DateOfApplication/>
+                     <!--Optional:-->
+                     <lis:DateOfReqCommencement/>
+                     <!--Optional:-->
+                     <lis:PptAge/>
+                     <!--Optional:-->
+                     <lis:InterestRate/>
+                     <!--Optional:-->
+                     <lis:PttYrs/>
+                     <!--Optional:-->
+                     <lis:DatePremiumTerm/>
+                     <!--Optional:-->
+                     <lis:BenefitBasis/>
+                     <!--Optional:-->
+                     <lis:QuotationDate>20180101</lis:QuotationDate>
+                     <!--Optional:-->
+                     <lis:QuotationTime/>
+                     <!--Optional:-->
+                     <lis:MajorCoverage>0</lis:MajorCoverage>
+                     <!--Optional:-->
+                     <lis:Income/>
+                     <!--Optional:-->
+                     <lis:ProductVersion>0</lis:ProductVersion>
+                     <!--Optional:-->
+                     <lis:BenefitTerm/>
+                     <!--Optional:-->
+                     <lis:Rulebookid/>
+                     <!--Optional:-->
+                     <lis:Rulebooktype>1</lis:Rulebooktype>
+                     <!--Optional:-->
+                     <lis:Rulebookprodver/>
+                  </lis:ImpItmPocCvgsPolicyCoverages>
+                  <!--Optional:-->
+                  <lis:ImpItmPocPcmPolicyCommissions>
+                     <!--Optional:-->
+                     <lis:Style>INDEM</lis:Style>
+                  </lis:ImpItmPocPcmPolicyCommissions>
+               </lis:row>
+            </lis:ImpGrpCvgs>
+            <!--Optional:-->
+            <lis:ImpWebserviceWebService>
+               <!--Optional:-->
+               <lis:ServiceUserid/>
+               <!--Optional:-->
+               <lis:TraceRates>0</lis:TraceRates>
+               <!--Optional:-->
+               <lis:RecordImport>0</lis:RecordImport>
+               <!--Optional:-->
+               <lis:Requote>0</lis:Requote>
+               <!--Optional:-->
+               <lis:DiscountActivity>0</lis:DiscountActivity>
+               <!--Optional:-->
+               <lis:QuoteCallOrigin/>
+            </lis:ImpWebserviceWebService>
+            <!--Optional:-->
+            <lis:ImpUserUsers>
+               <!--Optional:-->
+               <lis:UsrId/>
+            </lis:ImpUserUsers>
+            <!--Optional:-->
+            <lis:ImpAswcalcqAswcalcq>
+               <!--Optional:-->
+               <lis:Comcalclvl>2</lis:Comcalclvl>
+               <!--Optional:-->
+               <lis:Pcdate></lis:Pcdate>
+               <!--Optional:-->
+               <lis:Srvtimings>0</lis:Srvtimings>
+            </lis:ImpAswcalcqAswcalcq>
+         </lis:getQuoteImport>
+      </lis:getQuote>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:value></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

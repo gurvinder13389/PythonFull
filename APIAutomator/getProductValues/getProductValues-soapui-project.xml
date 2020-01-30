@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="0bdbeb3e-0ca7-4979-8f2f-88ece00c146d" activeEnvironment="Default" name="getProductValues" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="e3f5b903-b8dc-4be3-9848-fc75ee1e7b15" wsaVersion="NONE" name="LissiaWS_getProductValuesSoapPort" type="wsdl" bindingName="{http://LissiaWS_getProductValues/}LissiaWS_getProductValuesSoapPort" soapVersion="1_1" anonymous="optional" definition="http://10.0.0.29:7090/LissiaWS_getProductValues/router?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://10.0.0.29:7090/LissiaWS_getProductValues/router?wsdl"><con:part><con:url>http://10.0.0.29:7090/LissiaWS_getProductValues/router?wsdl</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.8-b13937 svn-revision#13942.-->
+<wsdl:definitions name="LissiaWS_getProductValues" targetNamespace="http://LissiaWS_getProductValues/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textmatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://LissiaWS_getProductValues/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:documentation>Copyright (c) 2015 IET. All rights reserved.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://LissiaWS_getProductValues/">
+      <s:element name="Exception" type="tns:Exception"/>
+      <s:element name="getProductValues" type="tns:getProductValues"/>
+      <s:element name="getProductValuesResponse" type="tns:getProductValuesResponse"/>
+      <s:complexType name="getProductValues">
+        <s:sequence>
+          <s:element minOccurs="0" name="getProductValuesImport" type="tns:getProductValuesImport"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="getProductValuesResponse">
+        <s:sequence>
+          <s:element minOccurs="0" name="getProductValuesExport" type="tns:getProductValuesExport"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="getProductValuesImport">
+        <s:sequence>
+          <s:element minOccurs="0" name="ImpGrpPrc">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ImpItmPrcProductValues">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Control" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpWebserviceWebService">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="ServiceUserid" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpPrlProductLines">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="PrlId" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="IcommsCommunications">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="User" type="s:string"/>
+                <s:element minOccurs="0" name="CallFunction" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="getProductValuesExport">
+        <s:sequence>
+          <s:element minOccurs="0" name="ExpErrmsgWindow">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="WinErrmsg" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpPrc">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmPrcProductValues">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="TableNumber" type="s:int"/>
+                            <s:element minOccurs="0" name="ValueFrom" type="s:int"/>
+                            <s:element minOccurs="0" name="Control" type="s:string"/>
+                            <s:element minOccurs="0" name="NumericValue" type="s:decimal"/>
+                            <s:element minOccurs="0" name="ProductLine" type="s:string"/>
+                            <s:element minOccurs="0" name="AlphaValue" type="s:string"/>
+                            <s:element minOccurs="0" name="Agent" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="EcommsCommunications">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="DisplayUserName" type="s:string"/>
+                <s:element minOccurs="0" name="SystemName" type="s:string"/>
+                <s:element minOccurs="0" name="SystemDateDisplay" type="s:string"/>
+                <s:element minOccurs="0" name="DocumentsCreated" type="s:int"/>
+                <s:element minOccurs="0" name="RecordsFound" type="s:int"/>
+                <s:element minOccurs="0" name="SystemDate" type="s:date"/>
+                <s:element minOccurs="0" name="RecordsUpdated" type="s:int"/>
+                <s:element minOccurs="0" name="User" type="s:string"/>
+                <s:element minOccurs="0" name="Language" type="s:int"/>
+                <s:element minOccurs="0" name="ErrorNo" type="s:string"/>
+                <s:element minOccurs="0" name="ErrorParameters" type="s:string"/>
+                <s:element minOccurs="0" name="ErrorPrl" type="s:string"/>
+                <s:element minOccurs="0" name="PrimaryClient" type="s:string"/>
+                <s:element minOccurs="0" name="ReleaseVersion" type="s:string"/>
+                <s:element minOccurs="0" name="PrimaryServer" type="s:string"/>
+                <s:element minOccurs="0" name="SecondaryServer" type="s:string"/>
+                <s:element minOccurs="0" name="CallFunction" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Exception">
+        <s:sequence>
+          <s:element minOccurs="0" name="Exception" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Exception">
+    <wsdl:part name="fault" element="tns:Exception"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProductValuesSoapOutput">
+    <wsdl:part name="parameters" element="tns:getProductValuesResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProductValuesSoapInput">
+    <wsdl:part name="parameters" element="tns:getProductValues"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="LissiaWS_getProductValuesSoapPort">
+    <wsdl:operation name="getProductValues">
+      <wsdl:input message="tns:getProductValuesSoapInput"></wsdl:input>
+      <wsdl:output message="tns:getProductValuesSoapOutput"></wsdl:output>
+      <wsdl:fault name="Exception" message="tns:Exception"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LissiaWS_getProductValuesSoapPort" type="tns:LissiaWS_getProductValuesSoapPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getProductValues">
+      <soap:operation soapAction="http://tempuri.org/Wssprcrt/?http://LissiaWS_getProductValues/LissiaWS_getProductValues/"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LissiaWS_getProductValues">
+    <wsdl:port name="LissiaWS_getProductValuesSoapPort" binding="tns:LissiaWS_getProductValuesSoapPort">
+      <soap:address location="http://10.0.0.29:7090/LissiaWS_getProductValues/router"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.0.0.29:7090/LissiaWS_getProductValues/router</con:endpoint></con:endpoints><con:operation id="bcb6a219-3536-45e9-a2dd-017c364538cf" isOneWay="false" action="http://tempuri.org/Wssprcrt/?http://LissiaWS_getProductValues/LissiaWS_getProductValues/" name="getProductValues" bindingOperationName="getProductValues" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8630082f-4c4d-4701-ba62-5ea4fe446b2e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.0.0.29:7090/LissiaWS_getProductValues/router</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lis="http://LissiaWS_getProductValues/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <lis:getProductValues>\r
+         <!--Optional:-->\r
+         <lis:getProductValuesImport>\r
+            <!--Optional:-->\r
+            <lis:ImpGrpPrc>\r
+               <!--Zero or more repetitions:-->\r
+               <lis:row>\r
+                  <!--Optional:-->\r
+                  <lis:ImpItmPrcProductValues>\r
+                     <!--Optional:-->\r
+                     <lis:Control>?</lis:Control>\r
+                  </lis:ImpItmPrcProductValues>\r
+               </lis:row>\r
+            </lis:ImpGrpPrc>\r
+            <!--Optional:-->\r
+            <lis:ImpWebserviceWebService>\r
+               <!--Optional:-->\r
+               <lis:ServiceUserid>?</lis:ServiceUserid>\r
+            </lis:ImpWebserviceWebService>\r
+            <!--Optional:-->\r
+            <lis:ImpPrlProductLines>\r
+               <!--Optional:-->\r
+               <lis:PrlId>ILP</lis:PrlId>\r
+            </lis:ImpPrlProductLines>\r
+            <!--Optional:-->\r
+            <lis:IcommsCommunications>\r
+               <!--Optional:-->\r
+               <lis:User>?</lis:User>\r
+               <!--Optional:-->\r
+               <lis:CallFunction>?</lis:CallFunction>\r
+            </lis:IcommsCommunications>\r
+         </lis:getProductValuesImport>\r
+      </lis:getProductValues>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Wssprcrt/?http://LissiaWS_getProductValues/LissiaWS_getProductValues/"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="9b06b4f4-c8f7-4da4-93e7-b07a5165eca7" name="myTestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="bb3f4c9e-a225-429a-bb0c-3baa5397a603" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="myTestCase" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Step1" id="eb2ffc59-66c1-4f14-bd3b-8bf749ab95e9"><con:settings/><con:config><script>def fileList = []
+def fileListNew = []
+def projectName
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+def projectDir = groovyUtils.projectPath
+def ProjectName= testRunner.testCase.testSuite.project.getName();
+def requestDir = context.get('projectDir') + "\\Request"
+
+new File(requestDir).eachFile
+{ f ->
+if (f.isFile()&amp;&amp; f.name.endsWith('.xml'))
+{
+ 	def filename = f.name[0..-1]
+ 	log.info filename 	
+ 	fileList.add(filename) 	
+ 	fileListNew.add(filename.substring(0,filename.length()-4))
+}
+}
+
+if (fileList.size() &lt;1)
+{
+testRunner.fail("No request files found")
+}
+context.put('fileList',fileList)
+context.put('fileListNew',fileListNew)</script></con:config></con:testStep><con:testStep type="request" id="e793e5ef-973d-4260-be32-ab8a4f42f2ff" name="Step2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LissiaWS_getProductValuesSoapPort</con:interface><con:operation>getProductValues</con:operation><con:request name="Step2" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="239a25c8-f10f-4e6c-9437-5ad4da19a9d5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.0.0.29:7090/LissiaWS_getProductValues/router</con:endpoint><con:request>${=new File(context.get('projectDir') + "\\Request\\" + (context.get('fileListNew')).last() + ".xml").text}</con:request><con:assertion type="SOAP Response" id="10d64ea5-9d8d-4132-982b-293e2d6e9be0" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Wssprcrt/?http://LissiaWS_getProductValues/LissiaWS_getProductValues/"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Step3" id="86c6be3a-5b2d-491f-a989-7fe1dd9aac4c"><con:settings/><con:config><script>
+def fileList = context.get('fileListNew')
+
+def fileName = fileList.pop()
+def newname = fileName[0..-5]
+
+def response = context.expand( '${Step2#Response}' )
+def f = new File(context.get('projectDir') + "\\Response\\${fileName}_Response.xml")
+f.write(response, "UTF-8")
+
+if(fileList.size() >0)
+{
+testRunner.gotoStepByName("Step2")
+}</script></con:config></con:testStep><con:properties><con:property><con:name>Request</con:name><con:value><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lis="http://LissiaWS_getQuote/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <lis:getQuote>
+         <!--Optional:-->
+         <lis:getQuoteImport>
+            <!--Optional:-->
+            <lis:ImpPrlrqmWebService>
+               <!--Optional:-->
+               <lis:Prlrqm>2</lis:Prlrqm>
+            </lis:ImpPrlrqmWebService>
+            <!--Optional:-->
+            <lis:ImpGrpPlc>
+               <!--Zero or more repetitions:-->
+               <lis:row>
+                  <!--Optional:-->
+                  <lis:ImpItmPlcPolicyCvgLifeConditions>
+                     <!--Optional:-->
+                     <lis:Condition/>
+                     <!--Optional:-->
+                     <lis:ApplicabilityDate>20181115</lis:ApplicabilityDate>
+                     <!--Optional:-->
+                     <lis:EndOfApplicability>20180101</lis:EndOfApplicability>
+                     <!--Optional:-->
+                     <lis:RateOrValue>1</lis:RateOrValue>
+                     <!--Optional:-->
+                     <lis:Type>0</lis:Type>
+                  </lis:ImpItmPlcPolicyCvgLifeConditions>
+                  <!--Optional:-->
+                  <lis:ImpItmPlcCprtypeCliPolRelationships>
+                     <!--Optional:-->
+                     <lis:Type>0</lis:Type>
+                  </lis:ImpItmPlcCprtypeCliPolRelationships>
+                  <!--Optional:-->
+                  <lis:ImpItmPlcPrlProductLines>
+                     <!--Optional:-->
+                     <lis:PrlId/>
+                  </lis:ImpItmPlcPrlProductLines>
+                  <!--Optional:-->
+                  <lis:ImpItmPlcQrefWebService>
+                     <!--Optional:-->
+                     <lis:BenLine/>
+                     <!--Optional:-->
+                     <lis:QuoteRef/>
+                     <!--Optional:-->
+                     <lis:Primaryprdid/>
+                  </lis:ImpItmPlcQrefWebService>
+               </lis:row>
+            </lis:ImpGrpPlc>
+            <!--Optional:-->
+            <lis:ImpGrpPas>
+               <!--Zero or more repetitions:-->
+               <lis:row>
+                  <!--Optional:-->
+                  <lis:ImpItmPasQrefWebService>
+                     <!--Optional:-->
+                     <lis:QuoteRef>wsdl2</lis:QuoteRef>
+                     <!--Optional:-->
+                     <lis:BenLine>1</lis:BenLine>
+                     <!--Optional:-->
+                     <lis:Primaryprdid>rb1</lis:Primaryprdid>
+                  </lis:ImpItmPasQrefWebService>
+                  <!--Optional:-->
+                  <lis:ImpItmPasPrlProductLines>
+                     <!--Optional:-->
+                     <lis:PrlId>TALT</lis:PrlId>
+                  </lis:ImpItmPasPrlProductLines>
+                  <!--Optional:-->
+                  <lis:ImpItmPasPolicyAgentShares>
+                     <!--Optional:-->
+                     <lis:Status>0</lis:Status>
+                     <!--Optional:-->
+                     <lis:Coverage>0</lis:Coverage>
+                     <!--Optional:-->
+                     <lis:Agent>A00042</lis:Agent>
+                     <!--Optional:-->
+                     <lis:PasId>0.0</lis:PasId>
+                     <!--Optional:-->
+                     <lis:Percentage>100</lis:Percentage>
+                     <!--Optional:-->
+                     <lis:Type>0</lis:Type>
+                     <!--Optional:-->
+                     <lis:SpecificIce>0</lis:SpecificIce>
+                     <!--Optional:-->
+                     <lis:SacrificeAmount>0</lis:SacrificeAmount>
+                     <!--Optional:-->
+                     <lis:SacrificePercent>0</lis:SacrificePercent>
+                     <!--Optional:-->
+                     <lis:PrimaryAgent>42</lis:PrimaryAgent>
+                     <!--Optional:-->
+                     <lis:SacrificeType>0</lis:SacrificeType>
+                     <!--Optional:-->
+                     <lis:RenewalSacrificePcg>2.5</lis:RenewalSacrificePcg>
+                  </lis:ImpItmPasPolicyAgentShares>
+                  <!--Optional:-->
+                  <lis:ImpItmAgtAgents>
+                     <!--Optional:-->
+                     <lis:AgtId>A00042</lis:AgtId>
+                  </lis:ImpItmAgtAgents>
+               </lis:row>
+            </lis:ImpGrpPas>
+            <!--Optional:-->
+            <lis:ImpGrpCliCpr>
+               <!--Zero or more repetitions:-->
+               <lis:row>
+                  <!--Optional:-->
+                  <lis:ImpItmCliMxCeaseAgeProductValueLookup>
+                     <!--Optional:-->
+                     <lis:Age1>26</lis:Age1>
+                  </lis:ImpItmCliMxCeaseAgeProductValueLookup>
+                  <!--Optional:-->
+                  <lis:ImpItmCprQrefWebService>
+                     <!--Optional:-->
+                     <lis:QuoteRef>wsdl2</lis:QuoteRef>
+                     <!--Optional:-->
+                     <lis:BenLine>1</lis:BenLine>
+                     <!--Optional:-->
+                     <lis:Primaryprdid>rb1</lis:Primaryprdid>
+                  </lis:ImpItmCprQrefWebService>
+                  <!--Optional:-->
+                  <lis:ImpItmCliAgeProductValueLookup>
+                     <!--Optional:-->
+                     <lis:Age1>26</lis:Age1>
+                     <!--Optional:-->
+                     <lis:Age1Months>0</lis:Age1Months>
+                     <!--Optional:-->
+                     <lis:ExpAge1/>
+                  </lis:ImpItmCliAgeProductValueLookup>
+                  <!--Optional:-->
+                  <lis:ImpItmPclLoadingsPolicyCvgLives>
+                     <!--Optional:-->
+                     <lis:AgeRating>0</lis:AgeRating>
+                     <!--Optional:-->
+                     <lis:AddnFactor/>
+                     <!--Optional:-->
+                     <lis:AddnRpm/>
+                     <!--Optional:-->
+                     <lis:RatingReason/>
+                     <!--Optional:-->
+                     <lis:RatingTerm>0</lis:RatingTerm>
+                     <!--Optional:-->
+                     <lis:UnderwriterRiskCategory>?</lis:UnderwriterRiskCategory>
+                  </lis:ImpItmPclLoadingsPolicyCvgLives>
+                  <!--Optional:-->
+                  <lis:ImpItmCprPrlProductLines>
+                     <!--Optional:-->
+                     <lis:PrlId>TALT</lis:PrlId>
+                  </lis:ImpItmCprPrlProductLines>
+                  <!--Optional:-->
+                  <lis:ImpItmCprTypeCliPolRelationships>
+                     <!--Optional:-->
+                     <lis:TypeNumber>0</lis:TypeNumber>
+                     <!--Optional:-->
+                     <lis:Type>4</lis:Type>
+                  </lis:ImpItmCprTypeCliPolRelationships>
+                  <!--Optional:-->
+                  <lis:ImpItmCliClients>
+                     <!--Optional:-->
+                     <lis:DateOfBirth>19801201</lis:DateOfBirth>
+                     <!--Optional:-->
+                     <lis:Sex>2</lis:Sex>
+                     <!--Optional:-->
+                     <lis:Smoker>3</lis:Smoker>
+                     <!--Optional:-->
+                     <lis:RiskCat>1</lis:RiskCat>
+                     <!--Optional:-->
+                     <lis:Weight/>
+                     <!--Optional:-->
+                     <lis:Height>0</lis:Height>
+                     <!--Optional:-->
+                     <lis:Nationality/>
+                     <!--Optional:-->
+                     <lis:Type>4</lis:Type>
+                     <!--Optional:-->
+                     <lis:LeisureRiskCat/>
+                     <!--Optional:-->
+                     <lis:Classification/>
+                     <!--Optional:-->
+                     <lis:CliId>0</lis:CliId>
+                     <!--Optional:-->
+                     <lis:Salary>0</lis:Salary>
+                     <!--Optional:-->
+                     <lis:SalaryCurrency>GBP</lis:SalaryCurrency>
+                  </lis:ImpItmCliClients>
+               </lis:row>
+            </lis:ImpGrpCliCpr>
+            <!--Optional:-->
+            <lis:ImpGrpCvgs>
+               <!--Zero or more repetitions:-->
+               <lis:row>
+                  <!--Optional:-->
+                  <lis:ImpItmQInstructionQuotation>
+                     <!--Optional:-->
+                     <lis:QuoteInstruction>1</lis:QuoteInstruction>
+                  </lis:ImpItmQInstructionQuotation>
+                  <!--Optional:-->
+                  <lis:ImpItmOverridePolicyCoverages>
+                     <!--Optional:-->
+                     <lis:SumAssured/>
+                  </lis:ImpItmOverridePolicyCoverages>
+                  <!--Optional:-->
+                  <lis:ImpItmTargetPremiumCvgsPolicyPremiums>
+                     <!--Optional:-->
+                     <lis:ModalPremium/>
+                     <!--Optional:-->
+                     <lis:Frequency>0</lis:Frequency>
+                  </lis:ImpItmTargetPremiumCvgsPolicyPremiums>
+                  <!--Optional:-->
+                  <lis:ImpItmCvgQrefWebService>
+                     <!--Optional:-->
+                     <lis:QuoteRef>wsdl2</lis:QuoteRef>
+                     <!--Optional:-->
+                     <lis:BenLine>1</lis:BenLine>
+                     <!--Optional:-->
+                     <lis:Primaryprdid>rb1</lis:Primaryprdid>
+                     <!--Optional:-->
+                     <lis:DiscountActivity>0</lis:DiscountActivity>
+                  </lis:ImpItmCvgQrefWebService>
+                  <!--Optional:-->
+                  <lis:ImpItmPcpCvgsPolicyPremiums>
+                     <!--Optional:-->
+                     <lis:Frequency>5</lis:Frequency>
+                     <!--Optional:-->
+                     <lis:ContributionPercentage/>
+                     <!--Optional:-->
+                     <lis:ModalPremium/>
+                  </lis:ImpItmPcpCvgsPolicyPremiums>
+                  <!--Optional:-->
+                  <lis:ImpItmPocCvgsPolicyCoverages>
+                     <!--Optional:-->
+                     <lis:ProductLine>TALT</lis:ProductLine>
+                     <!--Optional:-->
+                     <lis:Currency>GBP</lis:Currency>
+                     <!--Optional:-->
+                     <lis:InitialSumAssured>100000.00</lis:InitialSumAssured>
+                     <!--Optional:-->
+                     <lis:SoldBasis>3</lis:SoldBasis>
+                     <!--Optional:-->
+                     <lis:Multiplier/>
+                     <!--Optional:-->
+                     <lis:CoverLevel/>
+                     <!--Optional:-->
+                     <lis:LivesType>1</lis:LivesType>
+                     <!--Optional:-->
+                     <lis:HoldingNo>0</lis:HoldingNo>
+                     <!--Optional:-->
+                     <lis:Term>20</lis:Term>
+                     <!--Optional:-->
+                     <lis:RetirementAge>0</lis:RetirementAge>
+                     <!--Optional:-->
+                     <lis:TermAge>0</lis:TermAge>
+                     <!--Optional:-->
+                     <lis:DateOfApplication/>
+                     <!--Optional:-->
+                     <lis:DateOfReqCommencement/>
+                     <!--Optional:-->
+                     <lis:PptAge/>
+                     <!--Optional:-->
+                     <lis:InterestRate/>
+                     <!--Optional:-->
+                     <lis:PttYrs/>
+                     <!--Optional:-->
+                     <lis:DatePremiumTerm/>
+                     <!--Optional:-->
+                     <lis:BenefitBasis/>
+                     <!--Optional:-->
+                     <lis:QuotationDate>20180101</lis:QuotationDate>
+                     <!--Optional:-->
+                     <lis:QuotationTime/>
+                     <!--Optional:-->
+                     <lis:MajorCoverage>0</lis:MajorCoverage>
+                     <!--Optional:-->
+                     <lis:Income/>
+                     <!--Optional:-->
+                     <lis:ProductVersion>0</lis:ProductVersion>
+                     <!--Optional:-->
+                     <lis:BenefitTerm/>
+                     <!--Optional:-->
+                     <lis:Rulebookid/>
+                     <!--Optional:-->
+                     <lis:Rulebooktype>1</lis:Rulebooktype>
+                     <!--Optional:-->
+                     <lis:Rulebookprodver/>
+                  </lis:ImpItmPocCvgsPolicyCoverages>
+                  <!--Optional:-->
+                  <lis:ImpItmPocPcmPolicyCommissions>
+                     <!--Optional:-->
+                     <lis:Style>INDEM</lis:Style>
+                  </lis:ImpItmPocPcmPolicyCommissions>
+               </lis:row>
+            </lis:ImpGrpCvgs>
+            <!--Optional:-->
+            <lis:ImpWebserviceWebService>
+               <!--Optional:-->
+               <lis:ServiceUserid/>
+               <!--Optional:-->
+               <lis:TraceRates>0</lis:TraceRates>
+               <!--Optional:-->
+               <lis:RecordImport>0</lis:RecordImport>
+               <!--Optional:-->
+               <lis:Requote>0</lis:Requote>
+               <!--Optional:-->
+               <lis:DiscountActivity>0</lis:DiscountActivity>
+               <!--Optional:-->
+               <lis:QuoteCallOrigin/>
+            </lis:ImpWebserviceWebService>
+            <!--Optional:-->
+            <lis:ImpUserUsers>
+               <!--Optional:-->
+               <lis:UsrId/>
+            </lis:ImpUserUsers>
+            <!--Optional:-->
+            <lis:ImpAswcalcqAswcalcq>
+               <!--Optional:-->
+               <lis:Comcalclvl>2</lis:Comcalclvl>
+               <!--Optional:-->
+               <lis:Pcdate></lis:Pcdate>
+               <!--Optional:-->
+               <lis:Srvtimings>0</lis:Srvtimings>
+            </lis:ImpAswcalcqAswcalcq>
+         </lis:getQuoteImport>
+      </lis:getQuote>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:value></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

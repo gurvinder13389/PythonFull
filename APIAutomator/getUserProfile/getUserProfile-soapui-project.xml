@@ -1,0 +1,1441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="c79aca4c-86bd-447d-bd97-ae2f50d33c70" activeEnvironment="Default" name="getUserProfile" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="b2104ca1-d832-4a59-8317-064f7f93059d" wsaVersion="NONE" name="LissiaWS_getUserProfileSoapPort" type="wsdl" bindingName="{http://LissiaWS_getUserProfile/}LissiaWS_getUserProfileSoapPort" soapVersion="1_1" anonymous="optional" definition="http://10.0.0.29:7090/LissiaWS_getUserProfile/router?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://10.0.0.29:7090/LissiaWS_getUserProfile/router?WSDL"><con:part><con:url>http://10.0.0.29:7090/LissiaWS_getUserProfile/router?WSDL</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.8-b13937 svn-revision#13942.-->
+<wsdl:definitions name="LissiaWS_getUserProfile" targetNamespace="http://LissiaWS_getUserProfile/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textmatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://LissiaWS_getUserProfile/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:documentation>Copyright (c) 2015 IET. All rights reserved.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://LissiaWS_getUserProfile/">
+      <s:element name="Exception" type="tns:Exception"/>
+      <s:element name="getUProfile" type="tns:getUProfile"/>
+      <s:element name="getUProfileResponse" type="tns:getUProfileResponse"/>
+      <s:complexType name="getUProfile">
+        <s:sequence>
+          <s:element minOccurs="0" name="getUProfileImport" type="tns:getUProfileImport"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="getUProfileResponse">
+        <s:sequence>
+          <s:element minOccurs="0" name="getUProfileExport" type="tns:getUProfileExport"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="getUProfileImport">
+        <s:sequence>
+          <s:element minOccurs="0" name="IcommsCommunications">
+            <s:complexType>
+              <s:sequence/>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpGrpCdf">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ImpItmCdfAllAvailableWorkspace">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Integer1" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ImpSelCdfIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="SelectChar" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ImpItmCdfControlDefinitions">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="CdfId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpUpsUserProfileService">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="UserProfileKeys" type="s:int"/>
+                <s:element minOccurs="0" name="UserHrExclusive" type="s:int"/>
+                <s:element minOccurs="0" name="UserHrInclusive" type="s:int"/>
+                <s:element minOccurs="0" name="UserProductValueInfo" type="s:int"/>
+                <s:element minOccurs="0" name="UserRelatedDistributor" type="s:int"/>
+                <s:element minOccurs="0" name="UserPermissions" type="s:int"/>
+                <s:element minOccurs="0" name="VersionsValidProducts" type="s:int"/>
+                <s:element minOccurs="0" name="UsersValidProducts" type="s:int"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpGrpPfs">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ImpSelPfsIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="SelectChar" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ImpItmPfsPfkProfileKeys">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PfkId" type="s:string"/>
+                            <s:element minOccurs="0" name="Description" type="s:string"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ImpItmPfsPfvProfileValues">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Value" type="s:string"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpActionCommunications">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="CallFunction" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpGrpEml">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ImpItmEmlSelIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="SelectChar" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ImpItmEml1EmailAddresses">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="EmlId" type="s:int"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                            <s:element minOccurs="0" name="Email" type="s:string"/>
+                            <s:element minOccurs="0" name="EffectiveDate" type="s:date"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpAgtEmlAgents">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="Email" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpAgtAgents">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="AgtId" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpSrvitemsWebService">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="Srvtimings" type="s:int"/>
+                <s:element minOccurs="0" name="Pcdate" type="s:date"/>
+                <s:element minOccurs="0" name="ServiceUserid" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpUsrUsers">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="UsrId" type="s:string"/>
+                <s:element minOccurs="0" name="LoginId" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="getUProfileExport">
+        <s:sequence>
+          <s:element minOccurs="0" name="ExpErrmsgWindow">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="WinErrmsg" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="EcommsCommunications">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="ErrorParameters" type="s:string"/>
+                <s:element minOccurs="0" name="ErrorNo" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpOldEmail">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="EmpItmOldEmlSelIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="SelectChar" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmOldEmlEmailAddresses">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="EmlId" type="s:int"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                            <s:element minOccurs="0" name="Email" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpType5EmailEmailAddresses">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="Email" type="s:string"/>
+                <s:element minOccurs="0" name="EmlId" type="s:int"/>
+                <s:element minOccurs="0" name="Status" type="s:int"/>
+                <s:element minOccurs="0" name="Type" type="s:int"/>
+                <s:element minOccurs="0" name="EffectiveDate" type="s:date"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpType4EmailEmailAddresses">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="Email" type="s:string"/>
+                <s:element minOccurs="0" name="EmlId" type="s:int"/>
+                <s:element minOccurs="0" name="Status" type="s:int"/>
+                <s:element minOccurs="0" name="Type" type="s:int"/>
+                <s:element minOccurs="0" name="EffectiveDate" type="s:date"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpCorresEmailEmailAddresses">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="Email" type="s:string"/>
+                <s:element minOccurs="0" name="EmlId" type="s:int"/>
+                <s:element minOccurs="0" name="Status" type="s:int"/>
+                <s:element minOccurs="0" name="Type" type="s:int"/>
+                <s:element minOccurs="0" name="EffectiveDate" type="s:date"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpServEmailEmailAddresses">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="Email" type="s:string"/>
+                <s:element minOccurs="0" name="EmlId" type="s:int"/>
+                <s:element minOccurs="0" name="Status" type="s:int"/>
+                <s:element minOccurs="0" name="Type" type="s:int"/>
+                <s:element minOccurs="0" name="EffectiveDate" type="s:date"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpCommEmail">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmComEmlSelIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="SelectChar" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmCommEmlEmailAddresses">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="EmlId" type="s:int"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                            <s:element minOccurs="0" name="Email" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpUsrUsers">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="UserType" type="s:int"/>
+                <s:element minOccurs="0" name="ForcePasswordChange" type="s:int"/>
+                <s:element minOccurs="0" name="UsrId" type="s:string"/>
+                <s:element minOccurs="0" name="LoginId" type="s:string"/>
+                <s:element minOccurs="0" name="DatePasswordChanged" type="s:date"/>
+                <s:element minOccurs="0" name="PswdExpiryDate" type="s:date"/>
+                <s:element minOccurs="0" name="Status" type="s:int"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpUsrExcluded">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpSelUsrExcludedIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="SelectChar" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmUsrExcludedUsers">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="UsrId" type="s:string"/>
+                            <s:element minOccurs="0" name="UserType" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpUsrIncluded">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpSelUsrIncludedIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="SelectChar" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmUsrIncludedUsers">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="UsrId" type="s:string"/>
+                            <s:element minOccurs="0" name="UserType" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpPrc">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpSelPrcIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="SelectChar" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPrcPrlProductLines">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PrlId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPrcPrdProducts">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PrdId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPrcProductValues">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Control" type="s:string"/>
+                            <s:element minOccurs="0" name="NumericValue" type="s:decimal"/>
+                            <s:element minOccurs="0" name="ProductLine" type="s:string"/>
+                            <s:element minOccurs="0" name="Agent" type="s:string"/>
+                            <s:element minOccurs="0" name="AlphaValue" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmAlphaWorkspace">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Integer1" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpFrnHolders">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmHreFrnHolderHierarchyEntities">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="HreId" type="s:int"/>
+                            <s:element minOccurs="0" name="HierarchyLevel" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpSelFrnHolderIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="SelectChar" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmUsrFrnHolderUsers">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="UsrId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmAgtFrnHolderAgents">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="AgtId" type="s:string"/>
+                            <s:element minOccurs="0" name="FsaFirmRefNo" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpUsers">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmUsersOrderWorkspace">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Integer1" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmUsersHreHierarchyEntities">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="HreId" type="s:int"/>
+                            <s:element minOccurs="0" name="HierarchyLevel" type="s:int"/>
+                            <s:element minOccurs="0" name="Name" type="s:string"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmUsersAgtAgents">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="AgtId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmUsersUsrUsers">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="UsrId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpUrg">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmUrgUrgUserGroups">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="UrgId" type="s:int"/>
+                            <s:element minOccurs="0" name="Name" type="s:string"/>
+                            <s:element minOccurs="0" name="Priority" type="s:int"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmUrgUsrUsers">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="UsrId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpUpr">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmUprUsrUsers">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="UsrId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmUprPrsProcesses">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PrsId" type="s:string"/>
+                            <s:element minOccurs="0" name="CreateDisable" type="s:string"/>
+                            <s:element minOccurs="0" name="AmendDisable" type="s:string"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="Name" type="s:string"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                            <s:element minOccurs="0" name="ExtData1" type="s:string"/>
+                            <s:element minOccurs="0" name="ExtData2" type="s:string"/>
+                            <s:element minOccurs="0" name="ExtData3" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmUprUrgUserGroups">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="UrgId" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmUprUprUserPermissions">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="UrpId" type="s:string"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="Access" type="s:int"/>
+                            <s:element minOccurs="0" name="CreateAccess" type="s:int"/>
+                            <s:element minOccurs="0" name="AmendAccess" type="s:int"/>
+                            <s:element minOccurs="0" name="Process" type="s:string"/>
+                            <s:element minOccurs="0" name="ExecutionAccess" type="s:int"/>
+                            <s:element minOccurs="0" name="ProcessLevel" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpPrv">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmPrvProductVersions">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PrvId" type="s:int"/>
+                            <s:element minOccurs="0" name="Version" type="s:int"/>
+                            <s:element minOccurs="0" name="ValidityEndDate" type="s:date"/>
+                            <s:element minOccurs="0" name="ValidityStartDate" type="s:date"/>
+                            <s:element minOccurs="0" name="WarningEndDate" type="s:date"/>
+                            <s:element minOccurs="0" name="WarningStartDate" type="s:date"/>
+                            <s:element minOccurs="0" name="ProductLine" type="s:string"/>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="VersionDisplay" type="s:string"/>
+                            <s:element minOccurs="0" name="Description" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpPrl">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmRqmforProductLines">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PrlId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmReltoPrimaryProductLines">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PrlId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPrdlinePrdProducts">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PrdId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPrdlineProductLines">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PrlId" type="s:string"/>
+                            <s:element minOccurs="0" name="Name" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPrlDflDefinitionLinks">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="NbAllowed" type="s:int"/>
+                            <s:element minOccurs="0" name="QuoteAllowed" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpPrd">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmPrdProducts">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PrdId" type="s:string"/>
+                            <s:element minOccurs="0" name="Name" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPrdDflDefinitionLinks">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="NbAllowed" type="s:int"/>
+                            <s:element minOccurs="0" name="QuoteAllowed" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpPfs">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpSelPfsIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="SelectChar" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPfsPfkProfileKeys">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PfkId" type="s:string"/>
+                            <s:element minOccurs="0" name="Description" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPfsPfvProfileValues">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Value" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpContactDetailsWebContacts">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="FirstName" type="s:string"/>
+                <s:element minOccurs="0" name="Name" type="s:string"/>
+                <s:element minOccurs="0" name="AddressLine1" type="s:string"/>
+                <s:element minOccurs="0" name="AddressLine2" type="s:string"/>
+                <s:element minOccurs="0" name="AddressLine3" type="s:string"/>
+                <s:element minOccurs="0" name="AddressLine4" type="s:string"/>
+                <s:element minOccurs="0" name="Email" type="s:string"/>
+                <s:element minOccurs="0" name="Postcode" type="s:string"/>
+                <s:element minOccurs="0" name="Agtid" type="s:string"/>
+                <s:element minOccurs="0" name="HouseNo" type="s:string"/>
+                <s:element minOccurs="0" name="FsaIndividualRefNo" type="s:string"/>
+                <s:element minOccurs="0" name="FsaFirmRefNo" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpUrgSingle">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpSelUrgSingleIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="SelectChar" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmUrgSingleUserGroups">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="UrgId" type="s:int"/>
+                            <s:element minOccurs="0" name="Name" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpUrpSingle">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpSelUrpSingleIefSupplied">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="SelectChar" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmUrpSingleUserPermissions">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="UrpId" type="s:string"/>
+                            <s:element minOccurs="0" name="Access" type="s:int"/>
+                            <s:element minOccurs="0" name="CreateAccess" type="s:int"/>
+                            <s:element minOccurs="0" name="AmendAccess" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmUrpPrcSingleProcesses">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PrsId" type="s:string"/>
+                            <s:element minOccurs="0" name="CreateDisable" type="s:string"/>
+                            <s:element minOccurs="0" name="AmendDisable" type="s:string"/>
+                            <s:element minOccurs="0" name="CreatedProcess" type="s:string"/>
+                            <s:element minOccurs="0" name="Name" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpAgtAgents">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="AdditionalData1" type="s:string"/>
+                <s:element minOccurs="0" name="AdditionalData2" type="s:string"/>
+                <s:element minOccurs="0" name="AdditionalData3" type="s:string"/>
+                <s:element minOccurs="0" name="Status" type="s:int"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Exception">
+        <s:sequence>
+          <s:element minOccurs="0" name="Exception" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getUProfileSoapInput">
+    <wsdl:part name="parameters" element="tns:getUProfile"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="Exception">
+    <wsdl:part name="fault" element="tns:Exception"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUProfileSoapOutput">
+    <wsdl:part name="parameters" element="tns:getUProfileResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="LissiaWS_getUserProfileSoapPort">
+    <wsdl:operation name="getUProfile">
+      <wsdl:input message="tns:getUProfileSoapInput"></wsdl:input>
+      <wsdl:output message="tns:getUProfileSoapOutput"></wsdl:output>
+      <wsdl:fault name="Exception" message="tns:Exception"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LissiaWS_getUserProfileSoapPort" type="tns:LissiaWS_getUserProfileSoapPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getUProfile">
+      <soap:operation soapAction="http://tempuri.org/Wssuprof/?http://LissiaWS_getUserProfile/LissiaWS_getUserProfile/"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LissiaWS_getUserProfile">
+    <wsdl:port name="LissiaWS_getUserProfileSoapPort" binding="tns:LissiaWS_getUserProfileSoapPort">
+      <soap:address location="http://10.0.0.29:7090/LissiaWS_getUserProfile/router"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.0.0.29:7090/LissiaWS_getUserProfile/router</con:endpoint></con:endpoints><con:operation id="83efce78-a2de-42e6-93f1-27a42c50e002" isOneWay="false" action="http://tempuri.org/Wssuprof/?http://LissiaWS_getUserProfile/LissiaWS_getUserProfile/" name="getUProfile" bindingOperationName="getUProfile" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="553f116a-12dd-4ba1-8b07-b552ec8de706" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.0.0.29:7090/LissiaWS_getUserProfile/router</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lis="http://LissiaWS_getUserProfile/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <lis:getUProfile>\r
+         <!--Optional:-->\r
+         <lis:getUProfileImport>\r
+            <!--Optional:-->\r
+            <lis:IcommsCommunications/>\r
+            <!--Optional:-->\r
+            <lis:ImpGrpCdf>\r
+               <!--Zero or more repetitions:-->\r
+               <lis:row>\r
+                  <!--Optional:-->\r
+                  <lis:ImpItmCdfAllAvailableWorkspace>\r
+                     <!--Optional:-->\r
+                     <lis:Integer1>?</lis:Integer1>\r
+                  </lis:ImpItmCdfAllAvailableWorkspace>\r
+                  <!--Optional:-->\r
+                  <lis:ImpSelCdfIefSupplied>\r
+                     <!--Optional:-->\r
+                     <lis:SelectChar>?</lis:SelectChar>\r
+                  </lis:ImpSelCdfIefSupplied>\r
+                  <!--Optional:-->\r
+                  <lis:ImpItmCdfControlDefinitions>\r
+                     <!--Optional:-->\r
+                     <lis:CdfId>?</lis:CdfId>\r
+                  </lis:ImpItmCdfControlDefinitions>\r
+               </lis:row>\r
+            </lis:ImpGrpCdf>\r
+            <!--Optional:-->\r
+            <lis:ImpUpsUserProfileService>\r
+               <!--Optional:-->\r
+               <lis:UserProfileKeys>?</lis:UserProfileKeys>\r
+               <!--Optional:-->\r
+               <lis:UserHrExclusive>?</lis:UserHrExclusive>\r
+               <!--Optional:-->\r
+               <lis:UserHrInclusive>?</lis:UserHrInclusive>\r
+               <!--Optional:-->\r
+               <lis:UserProductValueInfo>?</lis:UserProductValueInfo>\r
+               <!--Optional:-->\r
+               <lis:UserRelatedDistributor>?</lis:UserRelatedDistributor>\r
+               <!--Optional:-->\r
+               <lis:UserPermissions>?</lis:UserPermissions>\r
+               <!--Optional:-->\r
+               <lis:VersionsValidProducts>?</lis:VersionsValidProducts>\r
+               <!--Optional:-->\r
+               <lis:UsersValidProducts>?</lis:UsersValidProducts>\r
+            </lis:ImpUpsUserProfileService>\r
+            <!--Optional:-->\r
+            <lis:ImpGrpPfs>\r
+               <!--Zero or more repetitions:-->\r
+               <lis:row>\r
+                  <!--Optional:-->\r
+                  <lis:ImpSelPfsIefSupplied>\r
+                     <!--Optional:-->\r
+                     <lis:SelectChar>?</lis:SelectChar>\r
+                  </lis:ImpSelPfsIefSupplied>\r
+                  <!--Optional:-->\r
+                  <lis:ImpItmPfsPfkProfileKeys>\r
+                     <!--Optional:-->\r
+                     <lis:PfkId>?</lis:PfkId>\r
+                     <!--Optional:-->\r
+                     <lis:Description>?</lis:Description>\r
+                     <!--Optional:-->\r
+                     <lis:Status>?</lis:Status>\r
+                  </lis:ImpItmPfsPfkProfileKeys>\r
+                  <!--Optional:-->\r
+                  <lis:ImpItmPfsPfvProfileValues>\r
+                     <!--Optional:-->\r
+                     <lis:Value>?</lis:Value>\r
+                     <!--Optional:-->\r
+                     <lis:Status>?</lis:Status>\r
+                  </lis:ImpItmPfsPfvProfileValues>\r
+               </lis:row>\r
+            </lis:ImpGrpPfs>\r
+            <!--Optional:-->\r
+            <lis:ImpActionCommunications>\r
+               <!--Optional:-->\r
+               <lis:CallFunction>?</lis:CallFunction>\r
+            </lis:ImpActionCommunications>\r
+            <!--Optional:-->\r
+            <lis:ImpGrpEml>\r
+               <!--Zero or more repetitions:-->\r
+               <lis:row>\r
+                  <!--Optional:-->\r
+                  <lis:ImpItmEmlSelIefSupplied>\r
+                     <!--Optional:-->\r
+                     <lis:SelectChar>?</lis:SelectChar>\r
+                  </lis:ImpItmEmlSelIefSupplied>\r
+                  <!--Optional:-->\r
+                  <lis:ImpItmEml1EmailAddresses>\r
+                     <!--Optional:-->\r
+                     <lis:EmlId>?</lis:EmlId>\r
+                     <!--Optional:-->\r
+                     <lis:Status>?</lis:Status>\r
+                     <!--Optional:-->\r
+                     <lis:Type>?</lis:Type>\r
+                     <!--Optional:-->\r
+                     <lis:Email>?</lis:Email>\r
+                     <!--Optional:-->\r
+                     <lis:EffectiveDate>?</lis:EffectiveDate>\r
+                  </lis:ImpItmEml1EmailAddresses>\r
+               </lis:row>\r
+            </lis:ImpGrpEml>\r
+            <!--Optional:-->\r
+            <lis:ImpAgtEmlAgents>\r
+               <!--Optional:-->\r
+               <lis:Email>?</lis:Email>\r
+            </lis:ImpAgtEmlAgents>\r
+            <!--Optional:-->\r
+            <lis:ImpAgtAgents>\r
+               <!--Optional:-->\r
+               <lis:AgtId>?</lis:AgtId>\r
+            </lis:ImpAgtAgents>\r
+            <!--Optional:-->\r
+            <lis:ImpSrvitemsWebService>\r
+               <!--Optional:-->\r
+               <lis:Srvtimings>?</lis:Srvtimings>\r
+               <!--Optional:-->\r
+               <lis:Pcdate>?</lis:Pcdate>\r
+               <!--Optional:-->\r
+               <lis:ServiceUserid>?</lis:ServiceUserid>\r
+            </lis:ImpSrvitemsWebService>\r
+            <!--Optional:-->\r
+            <lis:ImpUsrUsers>\r
+               <!--Optional:-->\r
+               <lis:UsrId>00009</lis:UsrId>\r
+               <!--Optional:-->\r
+               <lis:LoginId>?</lis:LoginId>\r
+            </lis:ImpUsrUsers>\r
+         </lis:getUProfileImport>\r
+      </lis:getUProfile>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Wssuprof/?http://LissiaWS_getUserProfile/LissiaWS_getUserProfile/"/><con:wsrmConfig version="1.2"/></con:call><con:call id="52189344-2233-4040-a6cc-59cf37f8fffc" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.0.0.29:7090/LissiaWS_getUserProfile/router</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lis="http://LissiaWS_getUserProfile/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <lis:getUProfile>\r
+         <lis:getUProfileImport>\r
+            <lis:ImpGrpCdf>\r
+               <lis:row>\r
+                  <lis:ImpItmCdfAllAvailableWorkspace>\r
+                     <lis:Integer1/>\r
+                  </lis:ImpItmCdfAllAvailableWorkspace>\r
+                  <lis:ImpSelCdfIefSupplied>\r
+                     <lis:SelectChar/>\r
+                  </lis:ImpSelCdfIefSupplied>\r
+                  <lis:ImpItmCdfControlDefinitions>\r
+                     <lis:CdfId/>\r
+                  </lis:ImpItmCdfControlDefinitions>\r
+               </lis:row>\r
+            </lis:ImpGrpCdf>\r
+            <lis:ImpUpsUserProfileService>\r
+               <lis:UserProfileKeys/>\r
+               <lis:UserHrExclusive/>\r
+               <lis:UserHrInclusive/>\r
+               <lis:UserProductValueInfo/>\r
+               <lis:UserRelatedDistributor/>\r
+               <lis:UserPermissions/>\r
+               <lis:VersionsValidProducts/>\r
+               <lis:UsersValidProducts/>\r
+            </lis:ImpUpsUserProfileService>\r
+            <lis:ImpGrpPfs>\r
+               <lis:row>\r
+                  <lis:ImpSelPfsIefSupplied>\r
+                     <lis:SelectChar/>\r
+                  </lis:ImpSelPfsIefSupplied>\r
+                  <lis:ImpItmPfsPfkProfileKeys>\r
+                     <lis:PfkId/>\r
+                     <lis:Description/>\r
+                     <lis:Status/>\r
+                  </lis:ImpItmPfsPfkProfileKeys>\r
+                  <lis:ImpItmPfsPfvProfileValues>\r
+                     <lis:Value/>\r
+                     <lis:Status/>\r
+                  </lis:ImpItmPfsPfvProfileValues>\r
+               </lis:row>\r
+            </lis:ImpGrpPfs>\r
+            <lis:ImpActionCommunications>\r
+               <lis:CallFunction>1</lis:CallFunction>\r
+            </lis:ImpActionCommunications>\r
+            <lis:ImpGrpEml>\r
+               <lis:row>\r
+                  <lis:ImpItmEmlSelIefSupplied>\r
+                     <lis:SelectChar/>\r
+                  </lis:ImpItmEmlSelIefSupplied>\r
+                  <lis:ImpItmEml1EmailAddresses>\r
+                     <lis:EmlId/>\r
+                     <lis:Status/>\r
+                     <lis:Type/>\r
+                     <lis:Email/>\r
+                     <lis:EffectiveDate/>\r
+                  </lis:ImpItmEml1EmailAddresses>\r
+               </lis:row>\r
+            </lis:ImpGrpEml>\r
+            <lis:ImpAgtEmlAgents>\r
+               <lis:Email/>\r
+            </lis:ImpAgtEmlAgents>\r
+            <lis:ImpAgtAgents>\r
+               <lis:AgtId/>\r
+            </lis:ImpAgtAgents>\r
+            <lis:ImpSrvitemsWebService>\r
+               <lis:Srvtimings/>\r
+               <lis:Pcdate/>\r
+               <lis:ServiceUserid/>\r
+            </lis:ImpSrvitemsWebService>\r
+            <lis:ImpUsrUsers>\r
+               <lis:UsrId>00009</lis:UsrId>\r
+               <lis:LoginId/>\r
+            </lis:ImpUsrUsers>\r
+         </lis:getUProfileImport>\r
+      </lis:getUProfile>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Wssuprof/?http://LissiaWS_getUserProfile/LissiaWS_getUserProfile/"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="0aea8f64-13dd-4c7f-97e2-931421f49961" name="myTestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="94f2fb26-cf60-4125-bd1e-6b9b5129861c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="myTestCase" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Step1" id="8700f84d-89db-40fe-9ffe-1b962105c547"><con:settings/><con:config><script>def fileList = []
+def fileListNew = []
+def projectName
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+def projectDir = groovyUtils.projectPath
+def ProjectName= testRunner.testCase.testSuite.project.getName();
+def requestDir = context.get('projectDir') + "\\Request"
+
+new File(requestDir).eachFile
+{ f ->
+	if (f.isFile()&amp;&amp; f.name.endsWith('.xml'))
+	{
+	 	def filename = f.name[0..-1]
+		log.info filename 	
+		log.info filename.substring(0,filename.length()-4)
+		fileList.add(filename)
+		fileListNew.add(filename.substring(0,filename.length()-4))
+	}
+}
+
+if (fileList.size() &lt;1)
+{
+testRunner.fail("No request files found")
+}
+context.put('fileList',fileList)
+context.put('fileListNew',fileListNew)</script></con:config></con:testStep><con:testStep type="request" id="794ee604-83a1-45bc-aa8e-ce8ddf28f243" name="Step2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LissiaWS_getUserProfileSoapPort</con:interface><con:operation>getUProfile</con:operation><con:request name="Step2" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="2e631eea-4365-4060-aef3-58c097ffd0c8"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.0.0.29:7090/LissiaWS_getUserProfile/router</con:endpoint><con:request>${=new File(context.get('projectDir') + "\\Request\\" + (context.get('fileListNew')).last() + ".xml").text}</con:request><con:assertion type="SOAP Response" id="659883ac-823c-4d60-ae7c-0ae02cc8431a" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Wssuprof/?http://LissiaWS_getUserProfile/LissiaWS_getUserProfile/"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Step3" id="b6e29ea2-78ed-46c1-b463-b5b90af7659a"><con:settings/><con:config><script>
+def fileList = context.get('fileListNew')
+
+def fileName = fileList.pop()
+def newname = fileName[0..-5]
+
+def response = context.expand( '${Step2#Response}' )
+def f = new File(context.get('projectDir') + "\\Response\\${fileName}_Response.xml")
+f.write(response, "UTF-8")
+
+if(fileList.size() >0)
+{
+testRunner.gotoStepByName("Step2")
+}</script></con:config></con:testStep><con:properties><con:property><con:name>Request</con:name><con:value><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lis="http://LissiaWS_getQuote/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <lis:getQuote>
+         <!--Optional:-->
+         <lis:getQuoteImport>
+            <!--Optional:-->
+            <lis:ImpPrlrqmWebService>
+               <!--Optional:-->
+               <lis:Prlrqm>2</lis:Prlrqm>
+            </lis:ImpPrlrqmWebService>
+            <!--Optional:-->
+            <lis:ImpGrpPlc>
+               <!--Zero or more repetitions:-->
+               <lis:row>
+                  <!--Optional:-->
+                  <lis:ImpItmPlcPolicyCvgLifeConditions>
+                     <!--Optional:-->
+                     <lis:Condition/>
+                     <!--Optional:-->
+                     <lis:ApplicabilityDate>20181115</lis:ApplicabilityDate>
+                     <!--Optional:-->
+                     <lis:EndOfApplicability>20180101</lis:EndOfApplicability>
+                     <!--Optional:-->
+                     <lis:RateOrValue>1</lis:RateOrValue>
+                     <!--Optional:-->
+                     <lis:Type>0</lis:Type>
+                  </lis:ImpItmPlcPolicyCvgLifeConditions>
+                  <!--Optional:-->
+                  <lis:ImpItmPlcCprtypeCliPolRelationships>
+                     <!--Optional:-->
+                     <lis:Type>0</lis:Type>
+                  </lis:ImpItmPlcCprtypeCliPolRelationships>
+                  <!--Optional:-->
+                  <lis:ImpItmPlcPrlProductLines>
+                     <!--Optional:-->
+                     <lis:PrlId/>
+                  </lis:ImpItmPlcPrlProductLines>
+                  <!--Optional:-->
+                  <lis:ImpItmPlcQrefWebService>
+                     <!--Optional:-->
+                     <lis:BenLine/>
+                     <!--Optional:-->
+                     <lis:QuoteRef/>
+                     <!--Optional:-->
+                     <lis:Primaryprdid/>
+                  </lis:ImpItmPlcQrefWebService>
+               </lis:row>
+            </lis:ImpGrpPlc>
+            <!--Optional:-->
+            <lis:ImpGrpPas>
+               <!--Zero or more repetitions:-->
+               <lis:row>
+                  <!--Optional:-->
+                  <lis:ImpItmPasQrefWebService>
+                     <!--Optional:-->
+                     <lis:QuoteRef>wsdl2</lis:QuoteRef>
+                     <!--Optional:-->
+                     <lis:BenLine>1</lis:BenLine>
+                     <!--Optional:-->
+                     <lis:Primaryprdid>rb1</lis:Primaryprdid>
+                  </lis:ImpItmPasQrefWebService>
+                  <!--Optional:-->
+                  <lis:ImpItmPasPrlProductLines>
+                     <!--Optional:-->
+                     <lis:PrlId>TALT</lis:PrlId>
+                  </lis:ImpItmPasPrlProductLines>
+                  <!--Optional:-->
+                  <lis:ImpItmPasPolicyAgentShares>
+                     <!--Optional:-->
+                     <lis:Status>0</lis:Status>
+                     <!--Optional:-->
+                     <lis:Coverage>0</lis:Coverage>
+                     <!--Optional:-->
+                     <lis:Agent>A00042</lis:Agent>
+                     <!--Optional:-->
+                     <lis:PasId>0.0</lis:PasId>
+                     <!--Optional:-->
+                     <lis:Percentage>100</lis:Percentage>
+                     <!--Optional:-->
+                     <lis:Type>0</lis:Type>
+                     <!--Optional:-->
+                     <lis:SpecificIce>0</lis:SpecificIce>
+                     <!--Optional:-->
+                     <lis:SacrificeAmount>0</lis:SacrificeAmount>
+                     <!--Optional:-->
+                     <lis:SacrificePercent>0</lis:SacrificePercent>
+                     <!--Optional:-->
+                     <lis:PrimaryAgent>42</lis:PrimaryAgent>
+                     <!--Optional:-->
+                     <lis:SacrificeType>0</lis:SacrificeType>
+                     <!--Optional:-->
+                     <lis:RenewalSacrificePcg>2.5</lis:RenewalSacrificePcg>
+                  </lis:ImpItmPasPolicyAgentShares>
+                  <!--Optional:-->
+                  <lis:ImpItmAgtAgents>
+                     <!--Optional:-->
+                     <lis:AgtId>A00042</lis:AgtId>
+                  </lis:ImpItmAgtAgents>
+               </lis:row>
+            </lis:ImpGrpPas>
+            <!--Optional:-->
+            <lis:ImpGrpCliCpr>
+               <!--Zero or more repetitions:-->
+               <lis:row>
+                  <!--Optional:-->
+                  <lis:ImpItmCliMxCeaseAgeProductValueLookup>
+                     <!--Optional:-->
+                     <lis:Age1>26</lis:Age1>
+                  </lis:ImpItmCliMxCeaseAgeProductValueLookup>
+                  <!--Optional:-->
+                  <lis:ImpItmCprQrefWebService>
+                     <!--Optional:-->
+                     <lis:QuoteRef>wsdl2</lis:QuoteRef>
+                     <!--Optional:-->
+                     <lis:BenLine>1</lis:BenLine>
+                     <!--Optional:-->
+                     <lis:Primaryprdid>rb1</lis:Primaryprdid>
+                  </lis:ImpItmCprQrefWebService>
+                  <!--Optional:-->
+                  <lis:ImpItmCliAgeProductValueLookup>
+                     <!--Optional:-->
+                     <lis:Age1>26</lis:Age1>
+                     <!--Optional:-->
+                     <lis:Age1Months>0</lis:Age1Months>
+                     <!--Optional:-->
+                     <lis:ExpAge1/>
+                  </lis:ImpItmCliAgeProductValueLookup>
+                  <!--Optional:-->
+                  <lis:ImpItmPclLoadingsPolicyCvgLives>
+                     <!--Optional:-->
+                     <lis:AgeRating>0</lis:AgeRating>
+                     <!--Optional:-->
+                     <lis:AddnFactor/>
+                     <!--Optional:-->
+                     <lis:AddnRpm/>
+                     <!--Optional:-->
+                     <lis:RatingReason/>
+                     <!--Optional:-->
+                     <lis:RatingTerm>0</lis:RatingTerm>
+                     <!--Optional:-->
+                     <lis:UnderwriterRiskCategory>?</lis:UnderwriterRiskCategory>
+                  </lis:ImpItmPclLoadingsPolicyCvgLives>
+                  <!--Optional:-->
+                  <lis:ImpItmCprPrlProductLines>
+                     <!--Optional:-->
+                     <lis:PrlId>TALT</lis:PrlId>
+                  </lis:ImpItmCprPrlProductLines>
+                  <!--Optional:-->
+                  <lis:ImpItmCprTypeCliPolRelationships>
+                     <!--Optional:-->
+                     <lis:TypeNumber>0</lis:TypeNumber>
+                     <!--Optional:-->
+                     <lis:Type>4</lis:Type>
+                  </lis:ImpItmCprTypeCliPolRelationships>
+                  <!--Optional:-->
+                  <lis:ImpItmCliClients>
+                     <!--Optional:-->
+                     <lis:DateOfBirth>19801201</lis:DateOfBirth>
+                     <!--Optional:-->
+                     <lis:Sex>2</lis:Sex>
+                     <!--Optional:-->
+                     <lis:Smoker>3</lis:Smoker>
+                     <!--Optional:-->
+                     <lis:RiskCat>1</lis:RiskCat>
+                     <!--Optional:-->
+                     <lis:Weight/>
+                     <!--Optional:-->
+                     <lis:Height>0</lis:Height>
+                     <!--Optional:-->
+                     <lis:Nationality/>
+                     <!--Optional:-->
+                     <lis:Type>4</lis:Type>
+                     <!--Optional:-->
+                     <lis:LeisureRiskCat/>
+                     <!--Optional:-->
+                     <lis:Classification/>
+                     <!--Optional:-->
+                     <lis:CliId>0</lis:CliId>
+                     <!--Optional:-->
+                     <lis:Salary>0</lis:Salary>
+                     <!--Optional:-->
+                     <lis:SalaryCurrency>GBP</lis:SalaryCurrency>
+                  </lis:ImpItmCliClients>
+               </lis:row>
+            </lis:ImpGrpCliCpr>
+            <!--Optional:-->
+            <lis:ImpGrpCvgs>
+               <!--Zero or more repetitions:-->
+               <lis:row>
+                  <!--Optional:-->
+                  <lis:ImpItmQInstructionQuotation>
+                     <!--Optional:-->
+                     <lis:QuoteInstruction>1</lis:QuoteInstruction>
+                  </lis:ImpItmQInstructionQuotation>
+                  <!--Optional:-->
+                  <lis:ImpItmOverridePolicyCoverages>
+                     <!--Optional:-->
+                     <lis:SumAssured/>
+                  </lis:ImpItmOverridePolicyCoverages>
+                  <!--Optional:-->
+                  <lis:ImpItmTargetPremiumCvgsPolicyPremiums>
+                     <!--Optional:-->
+                     <lis:ModalPremium/>
+                     <!--Optional:-->
+                     <lis:Frequency>0</lis:Frequency>
+                  </lis:ImpItmTargetPremiumCvgsPolicyPremiums>
+                  <!--Optional:-->
+                  <lis:ImpItmCvgQrefWebService>
+                     <!--Optional:-->
+                     <lis:QuoteRef>wsdl2</lis:QuoteRef>
+                     <!--Optional:-->
+                     <lis:BenLine>1</lis:BenLine>
+                     <!--Optional:-->
+                     <lis:Primaryprdid>rb1</lis:Primaryprdid>
+                     <!--Optional:-->
+                     <lis:DiscountActivity>0</lis:DiscountActivity>
+                  </lis:ImpItmCvgQrefWebService>
+                  <!--Optional:-->
+                  <lis:ImpItmPcpCvgsPolicyPremiums>
+                     <!--Optional:-->
+                     <lis:Frequency>5</lis:Frequency>
+                     <!--Optional:-->
+                     <lis:ContributionPercentage/>
+                     <!--Optional:-->
+                     <lis:ModalPremium/>
+                  </lis:ImpItmPcpCvgsPolicyPremiums>
+                  <!--Optional:-->
+                  <lis:ImpItmPocCvgsPolicyCoverages>
+                     <!--Optional:-->
+                     <lis:ProductLine>TALT</lis:ProductLine>
+                     <!--Optional:-->
+                     <lis:Currency>GBP</lis:Currency>
+                     <!--Optional:-->
+                     <lis:InitialSumAssured>100000.00</lis:InitialSumAssured>
+                     <!--Optional:-->
+                     <lis:SoldBasis>3</lis:SoldBasis>
+                     <!--Optional:-->
+                     <lis:Multiplier/>
+                     <!--Optional:-->
+                     <lis:CoverLevel/>
+                     <!--Optional:-->
+                     <lis:LivesType>1</lis:LivesType>
+                     <!--Optional:-->
+                     <lis:HoldingNo>0</lis:HoldingNo>
+                     <!--Optional:-->
+                     <lis:Term>20</lis:Term>
+                     <!--Optional:-->
+                     <lis:RetirementAge>0</lis:RetirementAge>
+                     <!--Optional:-->
+                     <lis:TermAge>0</lis:TermAge>
+                     <!--Optional:-->
+                     <lis:DateOfApplication/>
+                     <!--Optional:-->
+                     <lis:DateOfReqCommencement/>
+                     <!--Optional:-->
+                     <lis:PptAge/>
+                     <!--Optional:-->
+                     <lis:InterestRate/>
+                     <!--Optional:-->
+                     <lis:PttYrs/>
+                     <!--Optional:-->
+                     <lis:DatePremiumTerm/>
+                     <!--Optional:-->
+                     <lis:BenefitBasis/>
+                     <!--Optional:-->
+                     <lis:QuotationDate>20180101</lis:QuotationDate>
+                     <!--Optional:-->
+                     <lis:QuotationTime/>
+                     <!--Optional:-->
+                     <lis:MajorCoverage>0</lis:MajorCoverage>
+                     <!--Optional:-->
+                     <lis:Income/>
+                     <!--Optional:-->
+                     <lis:ProductVersion>0</lis:ProductVersion>
+                     <!--Optional:-->
+                     <lis:BenefitTerm/>
+                     <!--Optional:-->
+                     <lis:Rulebookid/>
+                     <!--Optional:-->
+                     <lis:Rulebooktype>1</lis:Rulebooktype>
+                     <!--Optional:-->
+                     <lis:Rulebookprodver/>
+                  </lis:ImpItmPocCvgsPolicyCoverages>
+                  <!--Optional:-->
+                  <lis:ImpItmPocPcmPolicyCommissions>
+                     <!--Optional:-->
+                     <lis:Style>INDEM</lis:Style>
+                  </lis:ImpItmPocPcmPolicyCommissions>
+               </lis:row>
+            </lis:ImpGrpCvgs>
+            <!--Optional:-->
+            <lis:ImpWebserviceWebService>
+               <!--Optional:-->
+               <lis:ServiceUserid/>
+               <!--Optional:-->
+               <lis:TraceRates>0</lis:TraceRates>
+               <!--Optional:-->
+               <lis:RecordImport>0</lis:RecordImport>
+               <!--Optional:-->
+               <lis:Requote>0</lis:Requote>
+               <!--Optional:-->
+               <lis:DiscountActivity>0</lis:DiscountActivity>
+               <!--Optional:-->
+               <lis:QuoteCallOrigin/>
+            </lis:ImpWebserviceWebService>
+            <!--Optional:-->
+            <lis:ImpUserUsers>
+               <!--Optional:-->
+               <lis:UsrId/>
+            </lis:ImpUserUsers>
+            <!--Optional:-->
+            <lis:ImpAswcalcqAswcalcq>
+               <!--Optional:-->
+               <lis:Comcalclvl>2</lis:Comcalclvl>
+               <!--Optional:-->
+               <lis:Pcdate></lis:Pcdate>
+               <!--Optional:-->
+               <lis:Srvtimings>0</lis:Srvtimings>
+            </lis:ImpAswcalcqAswcalcq>
+         </lis:getQuoteImport>
+      </lis:getQuote>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:value></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

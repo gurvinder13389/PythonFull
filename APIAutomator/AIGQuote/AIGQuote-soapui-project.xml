@@ -1,0 +1,1526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="c79aca4c-86bd-447d-bd97-ae2f50d33c70" activeEnvironment="Default" name="AIGQuote" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="cf542eb4-6966-4c88-b610-d6688c672a71" wsaVersion="NONE" name="LissiaWS_getQuoteSoapPort" type="wsdl" bindingName="{http://LissiaWS_getQuote/}LissiaWS_getQuoteSoapPort" soapVersion="1_1" anonymous="optional" definition="http://10.0.0.29:7090/LissiaWS_getQuote/router?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://10.0.0.29:7090/LissiaWS_getQuote/router?WSDL"><con:part><con:url>http://10.0.0.29:7090/LissiaWS_getQuote/router?WSDL</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.8-b13937 svn-revision#13942.-->
+<wsdl:definitions name="LissiaWS_getQuote" targetNamespace="http://LissiaWS_getQuote/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textmatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://LissiaWS_getQuote/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:documentation>Copyright (c) 2015 IET. All rights reserved.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://LissiaWS_getQuote/">
+      <s:element name="Exception" type="tns:Exception"/>
+      <s:element name="getQuote" type="tns:getQuote"/>
+      <s:element name="getQuoteResponse" type="tns:getQuoteResponse"/>
+      <s:complexType name="getQuote">
+        <s:sequence>
+          <s:element minOccurs="0" name="getQuoteImport" type="tns:getQuoteImport"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="getQuoteResponse">
+        <s:sequence>
+          <s:element minOccurs="0" name="getQuoteExport" type="tns:getQuoteExport"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="getQuoteImport">
+        <s:sequence>
+          <s:element minOccurs="0" name="ImpPrlrqmWebService">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="Prlrqm" type="s:int"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpGrpPlc">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ImpItmPlcPolicyCvgLifeConditions">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Condition" type="s:string"/>
+                            <s:element minOccurs="0" name="ApplicabilityDate" type="s:date"/>
+                            <s:element minOccurs="0" name="EndOfApplicability" type="s:date"/>
+                            <s:element minOccurs="0" name="RateOrValue" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ImpItmPlcCprtypeCliPolRelationships">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ImpItmPlcPrlProductLines">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PrlId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ImpItmPlcQrefWebService">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="BenLine" type="s:string"/>
+                            <s:element minOccurs="0" name="QuoteRef" type="s:string"/>
+                            <s:element minOccurs="0" name="Primaryprdid" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpGrpPas">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ImpItmPasQrefWebService">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="QuoteRef" type="s:string"/>
+                            <s:element minOccurs="0" name="BenLine" type="s:string"/>
+                            <s:element minOccurs="0" name="Primaryprdid" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ImpItmPasPrlProductLines">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PrlId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ImpItmPasPolicyAgentShares">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Status" type="s:int"/>
+                            <s:element minOccurs="0" name="Coverage" type="s:int"/>
+                            <s:element minOccurs="0" name="Agent" type="s:string"/>
+                            <s:element minOccurs="0" name="PasId" type="s:int"/>
+                            <s:element minOccurs="0" name="Percentage" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                            <s:element minOccurs="0" name="SpecificIce" type="s:decimal"/>
+                            <s:element minOccurs="0" name="SacrificeAmount" type="s:decimal"/>
+                            <s:element minOccurs="0" name="SacrificePercent" type="s:decimal"/>
+                            <s:element minOccurs="0" name="PrimaryAgent" type="s:int"/>
+                            <s:element minOccurs="0" name="SacrificeType" type="s:int"/>
+                            <s:element minOccurs="0" name="RenewalSacrificePcg" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ImpItmAgtAgents">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="AgtId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpGrpCliCpr">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ImpItmCliMxCeaseAgeProductValueLookup">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Age1" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ImpItmCprQrefWebService">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="QuoteRef" type="s:string"/>
+                            <s:element minOccurs="0" name="BenLine" type="s:string"/>
+                            <s:element minOccurs="0" name="Primaryprdid" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ImpItmCliAgeProductValueLookup">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Age1" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Age1Months" type="s:int"/>
+                            <s:element minOccurs="0" name="ExpAge1" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ImpItmPclLoadingsPolicyCvgLives">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="AgeRating" type="s:int"/>
+                            <s:element minOccurs="0" name="AddnFactor" type="s:decimal"/>
+                            <s:element minOccurs="0" name="AddnRpm" type="s:decimal"/>
+                            <s:element minOccurs="0" name="RatingReason" type="s:string"/>
+                            <s:element minOccurs="0" name="RatingTerm" type="s:int"/>
+                            <s:element minOccurs="0" name="UnderwriterRiskCategory" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ImpItmCprPrlProductLines">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PrlId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ImpItmCprTypeCliPolRelationships">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="TypeNumber" type="s:int"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ImpItmCliClients">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="DateOfBirth" type="s:date"/>
+                            <s:element minOccurs="0" name="Sex" type="s:int"/>
+                            <s:element minOccurs="0" name="Smoker" type="s:int"/>
+                            <s:element minOccurs="0" name="RiskCat" type="s:string"/>
+                            <s:element minOccurs="0" name="Weight" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Height" type="s:int"/>
+                            <s:element minOccurs="0" name="Nationality" type="s:string"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                            <s:element minOccurs="0" name="LeisureRiskCat" type="s:string"/>
+                            <s:element minOccurs="0" name="Classification" type="s:string"/>
+                            <s:element minOccurs="0" name="CliId" type="s:int"/>
+                            <s:element minOccurs="0" name="Salary" type="s:decimal"/>
+                            <s:element minOccurs="0" name="SalaryCurrency" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpGrpCvgs">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ImpItmQInstructionQuotation">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="QuoteInstruction" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ImpItmOverridePolicyCoverages">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="SumAssured" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ImpItmTargetPremiumCvgsPolicyPremiums">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="ModalPremium" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Frequency" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ImpItmCvgQrefWebService">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="QuoteRef" type="s:string"/>
+                            <s:element minOccurs="0" name="BenLine" type="s:string"/>
+                            <s:element minOccurs="0" name="Primaryprdid" type="s:string"/>
+                            <s:element minOccurs="0" name="DiscountActivity" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ImpItmPcpCvgsPolicyPremiums">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Frequency" type="s:int"/>
+                            <s:element minOccurs="0" name="ContributionPercentage" type="s:decimal"/>
+                            <s:element minOccurs="0" name="ModalPremium" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ImpItmPocCvgsPolicyCoverages">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="ProductLine" type="s:string"/>
+                            <s:element minOccurs="0" name="Currency" type="s:string"/>
+                            <s:element minOccurs="0" name="InitialSumAssured" type="s:decimal"/>
+                            <s:element minOccurs="0" name="SoldBasis" type="s:int"/>
+                            <s:element minOccurs="0" name="Multiplier" type="s:decimal"/>
+                            <s:element minOccurs="0" name="CoverLevel" type="s:string"/>
+                            <s:element minOccurs="0" name="LivesType" type="s:int"/>
+                            <s:element minOccurs="0" name="HoldingNo" type="s:int"/>
+                            <s:element minOccurs="0" name="Term" type="s:decimal"/>
+                            <s:element minOccurs="0" name="RetirementAge" type="s:int"/>
+                            <s:element minOccurs="0" name="TermAge" type="s:int"/>
+                            <s:element minOccurs="0" name="DateOfApplication" type="s:date"/>
+                            <s:element minOccurs="0" name="DateOfReqCommencement" type="s:date"/>
+                            <s:element minOccurs="0" name="PptAge" type="s:decimal"/>
+                            <s:element minOccurs="0" name="InterestRate" type="s:decimal"/>
+                            <s:element minOccurs="0" name="PttYrs" type="s:decimal"/>
+                            <s:element minOccurs="0" name="DatePremiumTerm" type="s:date"/>
+                            <s:element minOccurs="0" name="BenefitBasis" type="s:string"/>
+                            <s:element minOccurs="0" name="QuotationDate" type="s:date"/>
+                            <s:element minOccurs="0" name="QuotationTime" type="s:time"/>
+                            <s:element minOccurs="0" name="MajorCoverage" type="s:int"/>
+                            <s:element minOccurs="0" name="Income" type="s:decimal"/>
+                            <s:element minOccurs="0" name="ProductVersion" type="s:int"/>
+                            <s:element minOccurs="0" name="BenefitTerm" type="s:int"/>
+                            <s:element minOccurs="0" name="Rulebookid" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Rulebooktype" type="s:int"/>
+                            <s:element minOccurs="0" name="Rulebookprodver" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ImpItmPocPcmPolicyCommissions">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Style" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpWebserviceWebService">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="ServiceUserid" type="s:string"/>
+                <s:element minOccurs="0" name="TraceRates" type="s:int"/>
+                <s:element minOccurs="0" name="RecordImport" type="s:int"/>
+                <s:element minOccurs="0" name="Requote" type="s:int"/>
+                <s:element minOccurs="0" name="DiscountActivity" type="s:int"/>
+                <s:element minOccurs="0" name="QuoteCallOrigin" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpUserUsers">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="UsrId" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpAswcalcqAswcalcq">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="Comcalclvl" type="s:int"/>
+                <s:element minOccurs="0" name="Pcdate" type="s:date"/>
+                <s:element minOccurs="0" name="Srvtimings" type="s:int"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="getQuoteExport">
+        <s:sequence>
+          <s:element minOccurs="0" name="ExpGrpPremDetailsTot">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmPremdetTotPremiumDetails">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Premium" type="s:decimal"/>
+                            <s:element minOccurs="0" name="TotalPremium" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Year" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPremdetPrlTotProductLines">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PrlId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPremdetQrefTotWebService">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="QuoteRef" type="s:string"/>
+                            <s:element minOccurs="0" name="BenLine" type="s:string"/>
+                            <s:element minOccurs="0" name="Primaryprdid" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpPremDetails">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmPremdetPremiumDetails">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Premium" type="s:decimal"/>
+                            <s:element minOccurs="0" name="TotalPremium" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Year" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPremdetPrlProductLines">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PrlId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPremdetQrefWebService">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="QuoteRef" type="s:string"/>
+                            <s:element minOccurs="0" name="BenLine" type="s:string"/>
+                            <s:element minOccurs="0" name="Primaryprdid" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpFsaTot">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmFsaQuoteRefWebService">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="QuoteRef" type="s:string"/>
+                            <s:element minOccurs="0" name="BenLine" type="s:string"/>
+                            <s:element minOccurs="0" name="Primaryprdid" type="s:string"/>
+                            <s:element minOccurs="0" name="Contributions" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmFsaTotalPremiumPolicyPremiums">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="ModalPremium" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmFsaPrlPolicyCoverages">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="ProductLine" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpTotIndemnity">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmTotalNonimdemnityPolicyCommissions">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="TotalIce" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmTotalIndemnityPolicyCommissions">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="TotalIce" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmIndemPrlProductLines">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PrlId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmIndemQrefWebService">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="QuoteRef" type="s:string"/>
+                            <s:element minOccurs="0" name="BenLine" type="s:string"/>
+                            <s:element minOccurs="0" name="Primaryprdid" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpComTot">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmComEarningPeriodTotPolicyCommissions">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="InitialPeriodMonths" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmComIepTotPolicyCommissions">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="InitialPeriodMonths" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmComQrefTotWebService">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="QuoteRef" type="s:string"/>
+                            <s:element minOccurs="0" name="BenLine" type="s:string"/>
+                            <s:element minOccurs="0" name="Primaryprdid" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmComPrlTotPolicyCoverages">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="ProductLine" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmComRcTotAccountTransactions">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Amount" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmComIceTotPolicyCommissions">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="TotalIce" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpCliCprRtn">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmCprBlneRtnWebService">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="BenLine" type="s:string"/>
+                            <s:element minOccurs="0" name="Primaryprdid" type="s:string"/>
+                            <s:element minOccurs="0" name="QuoteRef" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmCprPrlRtnProductLines">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PrlId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmCprTypeRtnCliPolRelationships">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmCliRtnClients">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="DateOfBirth" type="s:date"/>
+                            <s:element minOccurs="0" name="Sex" type="s:int"/>
+                            <s:element minOccurs="0" name="Smoker" type="s:int"/>
+                            <s:element minOccurs="0" name="CliId" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpWarningMsg">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmWrnClirelCliPolRelationships">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                            <s:element minOccurs="0" name="Client" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmBlneWarnMsgWebService">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Primaryprdid" type="s:string"/>
+                            <s:element minOccurs="0" name="BenLine" type="s:string"/>
+                            <s:element minOccurs="0" name="QuoteRef" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmWarnPrlProductLines">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PrlId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmWrnmsgWindow">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="WinErrmsg" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmWarningCommunications">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="ErrorParameters" type="s:string"/>
+                            <s:element minOccurs="0" name="ErrorNo" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpPlcRtn">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmPlcRtnPolicyCvgLifeConditions">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Condition" type="s:string"/>
+                            <s:element minOccurs="0" name="ApplicabilityDate" type="s:date"/>
+                            <s:element minOccurs="0" name="EndOfApplicability" type="s:date"/>
+                            <s:element minOccurs="0" name="RateOrValue" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPlcCprtypeRtnCliPolRelationships">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPlcPrlRtnProductLines">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PrlId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPlcBlneRtnWebService">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="BenLine" type="s:string"/>
+                            <s:element minOccurs="0" name="Primaryprdid" type="s:string"/>
+                            <s:element minOccurs="0" name="QuoteRef" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpPrmSumByref">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmPrimAdjpremPolicyPremiums">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="ModalPremium" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPrimDiscountPolicyPremiums">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="ModalPremium" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPrmSumPrlidProductLines">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PrlId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPrmSumAswcalcq">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Sumpremium" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPsumQrefWebService">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="QuoteRef" type="s:string"/>
+                            <s:element minOccurs="0" name="BenLine" type="s:string"/>
+                            <s:element minOccurs="0" name="Primaryprdid" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpCvgs">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmMthsBrkvnWorkspace">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Integer1" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmCvgsPrlProductLines">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Type" type="s:int"/>
+                            <s:element minOccurs="0" name="PrimaryCoverage" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmCvgQuoteRefWebService">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="QuoteRef" type="s:string"/>
+                            <s:element minOccurs="0" name="BenLine" type="s:string"/>
+                            <s:element minOccurs="0" name="Contributions" type="s:int"/>
+                            <s:element minOccurs="0" name="Primaryprdid" type="s:string"/>
+                            <s:element minOccurs="0" name="FsatotalpremiumsYearly" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Fsatotalpremium" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPcpCvgsPolicyPremiums">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="ModalPremium" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Frequency" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPocCvgsPolicyCoverages">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="InitialSumAssured" type="s:decimal"/>
+                            <s:element minOccurs="0" name="ProductLine" type="s:string"/>
+                            <s:element minOccurs="0" name="QuotationDate" type="s:date"/>
+                            <s:element minOccurs="0" name="QuotationTime" type="s:time"/>
+                            <s:element minOccurs="0" name="Term" type="s:decimal"/>
+                            <s:element minOccurs="0" name="PttYrs" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Coverage" type="s:int"/>
+                            <s:element minOccurs="0" name="MajorCoverage" type="s:int"/>
+                            <s:element minOccurs="0" name="SoldBasis" type="s:int"/>
+                            <s:element minOccurs="0" name="CoverLevel" type="s:string"/>
+                            <s:element minOccurs="0" name="LivesType" type="s:int"/>
+                            <s:element minOccurs="0" name="TermAge" type="s:int"/>
+                            <s:element minOccurs="0" name="Valuation" type="s:decimal"/>
+                            <s:element minOccurs="0" name="PptAge" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Currency" type="s:string"/>
+                            <s:element minOccurs="0" name="ProductVersion" type="s:int"/>
+                            <s:element minOccurs="0" name="BenefitTerm" type="s:int"/>
+                            <s:element minOccurs="0" name="Rulebookid" type="s:decimal"/>
+                            <s:element minOccurs="0" name="Rulebooktype" type="s:int"/>
+                            <s:element minOccurs="0" name="Rulebookprodver" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPcmCvgsPolicyCommissions">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Style" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmPpcCvgsPolicyPremiumChanges">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="ChangeIndex" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpCommissions">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmComEarningPeriodPolicyCommissions">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="InitialPeriodMonths" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmComIepPolicyCommissions">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="InitialPeriodMonths" type="s:int"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmComQrefWebService">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="QuoteRef" type="s:string"/>
+                            <s:element minOccurs="0" name="BenLine" type="s:string"/>
+                            <s:element minOccurs="0" name="Primaryprdid" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmComPasPolicyAgentShares">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Agent" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmComPrlPolicyCoverages">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="ProductLine" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmComAmtAccountTransactions">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="Amount" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmComIcePolicyCommissions">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="TotalIce" type="s:decimal"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpGrpErrors">
+            <s:complexType>
+              <s:sequence>
+                <s:element maxOccurs="unbounded" minOccurs="0" name="row">
+                  <s:complexType>
+                    <s:sequence>
+                      <s:element minOccurs="0" name="ExpItmErrQrefWebService">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="QuoteRef" type="s:string"/>
+                            <s:element minOccurs="0" name="SuggestedValue" type="s:decimal"/>
+                            <s:element minOccurs="0" name="BenLine" type="s:string"/>
+                            <s:element minOccurs="0" name="Primaryprdid" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmErrPrlProductLines">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="PrlId" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmErrmsgWindow">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="WinErrmsg" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                      <s:element minOccurs="0" name="ExpItmErrorsCommunications">
+                        <s:complexType>
+                          <s:sequence>
+                            <s:element minOccurs="0" name="ErrorParameters" type="s:string"/>
+                            <s:element minOccurs="0" name="ErrorNo" type="s:string"/>
+                          </s:sequence>
+                        </s:complexType>
+                      </s:element>
+                    </s:sequence>
+                  </s:complexType>
+                </s:element>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Exception">
+        <s:sequence>
+          <s:element minOccurs="0" name="Exception" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getQuoteSoapOutput">
+    <wsdl:part name="parameters" element="tns:getQuoteResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="Exception">
+    <wsdl:part name="fault" element="tns:Exception"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getQuoteSoapInput">
+    <wsdl:part name="parameters" element="tns:getQuote"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="LissiaWS_getQuoteSoapPort">
+    <wsdl:operation name="getQuote">
+      <wsdl:input message="tns:getQuoteSoapInput"></wsdl:input>
+      <wsdl:output message="tns:getQuoteSoapOutput"></wsdl:output>
+      <wsdl:fault name="Exception" message="tns:Exception"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LissiaWS_getQuoteSoapPort" type="tns:LissiaWS_getQuoteSoapPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getQuote">
+      <soap:operation soapAction="http://tempuri.org/Wssquote/?http://LissiaWS_getQuote/LissiaWS_getQuote/"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LissiaWS_getQuote">
+    <wsdl:port name="LissiaWS_getQuoteSoapPort" binding="tns:LissiaWS_getQuoteSoapPort">
+      <soap:address location="http://10.0.0.29:7090/LissiaWS_getQuote/router"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.0.0.29:7090/LissiaWS_getQuote/router</con:endpoint></con:endpoints><con:operation id="708cdce5-ee46-4e23-8c36-b677ac3f6f6e" isOneWay="false" action="http://tempuri.org/Wssquote/?http://LissiaWS_getQuote/LissiaWS_getQuote/" name="getQuote" bindingOperationName="getQuote" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="bc4728dc-53c0-48f3-84b0-c64d456ee3f6" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.0.0.29:7090/LissiaWS_getQuote/router</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lis="http://LissiaWS_getQuote/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <lis:getQuote>\r
+         <lis:getQuoteImport>\r
+            <lis:ImpWebserviceWebService>\r
+               <lis:ServiceUserid/>\r
+               <lis:TraceRates>0</lis:TraceRates>\r
+               <lis:RecordImport>0</lis:RecordImport>\r
+               <lis:Requote>0</lis:Requote>\r
+               <lis:DiscountActivity>0</lis:DiscountActivity>\r
+               <lis:DiscountActivity/>\r
+            </lis:ImpWebserviceWebService>\r
+            <lis:ImpAswcalcqAswcalcq>\r
+               <lis:Comcalclvl>2</lis:Comcalclvl>\r
+               <lis:Pcdate>20180101</lis:Pcdate>\r
+               <lis:Srvtimings>0</lis:Srvtimings>\r
+            </lis:ImpAswcalcqAswcalcq>\r
+            <lis:ImpUserUsers>\r
+               <lis:UsrId/>\r
+            </lis:ImpUserUsers>\r
+            <lis:ImpPrlrqmWebService>\r
+               <lis:Prlrqm>2</lis:Prlrqm>\r
+            </lis:ImpPrlrqmWebService>\r
+            <lis:ImpGrpCvgs>\r
+               <lis:row>\r
+                  <lis:ImpItmQInstructionQuotation>\r
+                     <lis:QuoteInstruction>1</lis:QuoteInstruction>\r
+                  </lis:ImpItmQInstructionQuotation>\r
+                  <lis:ImpItmOverridePolicyCoverages>\r
+                     <lis:SumAssured>0</lis:SumAssured>\r
+                  </lis:ImpItmOverridePolicyCoverages>\r
+                  <lis:ImpItmTargetPremiumCvgsPolicyPremiums>\r
+                     <lis:ModalPremium>0</lis:ModalPremium>\r
+                     <lis:Frequency>0</lis:Frequency>\r
+                  </lis:ImpItmTargetPremiumCvgsPolicyPremiums>\r
+                  <lis:ImpItmCvgQrefWebService>\r
+                     <lis:QuoteRef>wsdl2</lis:QuoteRef>\r
+                     <lis:BenLine>1</lis:BenLine>\r
+                     <lis:Primaryprdid>rb1</lis:Primaryprdid>\r
+                     <lis:DiscountActivity>0</lis:DiscountActivity>\r
+                  </lis:ImpItmCvgQrefWebService>\r
+                  <lis:ImpItmPcpCvgsPolicyPremiums>\r
+                     <lis:Frequency>5</lis:Frequency>\r
+                     <lis:ContributionPercentage>0</lis:ContributionPercentage>\r
+                     <lis:ModalPremium>0</lis:ModalPremium>\r
+                  </lis:ImpItmPcpCvgsPolicyPremiums>\r
+                  <lis:ImpItmPocCvgsPolicyCoverages>\r
+                     <lis:ProductLine>IPL</lis:ProductLine>\r
+                     <lis:Currency>GBP</lis:Currency>\r
+                     <lis:InitialSumAssured>100000.00</lis:InitialSumAssured>\r
+                     <lis:SoldBasis>3</lis:SoldBasis>\r
+                     <lis:Multiplier>0</lis:Multiplier>\r
+                     <lis:CoverLevel/>\r
+                     <lis:LivesType>1</lis:LivesType>\r
+                     <lis:HoldingNo>0</lis:HoldingNo>\r
+                     <lis:Term>20</lis:Term>\r
+                     <lis:RetirementAge>0</lis:RetirementAge>\r
+                     <lis:TermAge>0</lis:TermAge>\r
+                     <lis:DateOfApplication>20181115</lis:DateOfApplication>\r
+                     <lis:DateOfReqCommencement>20180101</lis:DateOfReqCommencement>\r
+                     <lis:PptAge>0</lis:PptAge>\r
+                     <lis:InterestRate>0</lis:InterestRate>\r
+                     <lis:PttYrs>0</lis:PttYrs>\r
+                     <lis:DatePremiumTerm>20180101</lis:DatePremiumTerm>\r
+                     <lis:BenefitBasis/>\r
+                     <lis:QuotationDate>20180101</lis:QuotationDate>\r
+                     <lis:QuotationTime>00:00:00</lis:QuotationTime>\r
+                     <lis:MajorCoverage>0</lis:MajorCoverage>\r
+                     <lis:Income>0</lis:Income>\r
+                     <lis:ProductVersion>0</lis:ProductVersion>\r
+                     <lis:BenefitTerm>0</lis:BenefitTerm>\r
+                     <lis:Rulebookid>0</lis:Rulebookid>\r
+                  </lis:ImpItmPocCvgsPolicyCoverages>\r
+                  <lis:Rulebooktype>1</lis:Rulebooktype>\r
+                  <lis:Rulebookprodver>0</lis:Rulebookprodver>\r
+                  <lis:ImpItmPocPcmPolicyCommissions>\r
+                     <lis:Style>INDEM</lis:Style>\r
+                  </lis:ImpItmPocPcmPolicyCommissions>\r
+               </lis:row>\r
+            </lis:ImpGrpCvgs>\r
+            <lis:ImpGrpCliCpr>\r
+               <lis:row>\r
+                  <lis:ImpItmCliMxCeaseAgeProductValueLookup>\r
+                     <lis:Age1>26</lis:Age1>\r
+                  </lis:ImpItmCliMxCeaseAgeProductValueLookup>\r
+                  <lis:ImpItmCprQrefWebService>\r
+                     <lis:QuoteRef>wsdl2</lis:QuoteRef>\r
+                     <lis:BenLine>1</lis:BenLine>\r
+                     <lis:Primaryprdid>rb1</lis:Primaryprdid>\r
+                  </lis:ImpItmCprQrefWebService>\r
+                  <lis:ImpItmCliAgeProductValueLookup>\r
+                     <lis:Age1>26</lis:Age1>\r
+                     <lis:Age1Months>0</lis:Age1Months>\r
+                     <lis:ExpAge1>0</lis:ExpAge1>\r
+                  </lis:ImpItmCliAgeProductValueLookup>\r
+                  <lis:ImpItmPclLoadingsPolicyCvgLives>\r
+                     <lis:AgeRating>0</lis:AgeRating>\r
+                     <lis:AddnFactor>0</lis:AddnFactor>\r
+                     <lis:AddnRpm>0</lis:AddnRpm>\r
+                     <lis:RatingReason/>\r
+                     <lis:RatingTerm>0</lis:RatingTerm>\r
+                     <lis:UnderwriterRiskCategory/>\r
+                  </lis:ImpItmPclLoadingsPolicyCvgLives>\r
+                  <lis:ImpItmCprPrlProductLines>\r
+                     <lis:PrlId>IPL</lis:PrlId>\r
+                  </lis:ImpItmCprPrlProductLines>\r
+                  <lis:ImpItmCprTypeCliPolRelationships>\r
+                     <lis:TypeNumber>0</lis:TypeNumber>\r
+                     <lis:Type>4</lis:Type>\r
+                  </lis:ImpItmCprTypeCliPolRelationships>\r
+                  <lis:ImpItmCliClients>\r
+                     <lis:DateOfBirth>19801201</lis:DateOfBirth>\r
+                     <lis:Sex>2</lis:Sex>\r
+                     <lis:Smoker>3</lis:Smoker>\r
+                     <lis:RiskCat>1</lis:RiskCat>\r
+                     <lis:Weight>0</lis:Weight>\r
+                     <lis:Height>0</lis:Height>\r
+                     <lis:Nationality/>\r
+                     <lis:Type>4</lis:Type>\r
+                     <lis:LeisureRiskCat/>\r
+                     <lis:Classification/>\r
+                     <lis:CliId>0</lis:CliId>\r
+                     <lis:Salary>0</lis:Salary>\r
+                     <lis:SalaryCurrency>GBP</lis:SalaryCurrency>\r
+                  </lis:ImpItmCliClients>\r
+               </lis:row>\r
+            </lis:ImpGrpCliCpr>\r
+            <lis:ImpGrpPas>\r
+               <lis:row>\r
+                  <lis:ImpItmPasQrefWebService>\r
+                     <lis:QuoteRef>wsdl2</lis:QuoteRef>\r
+                     <lis:BenLine>1</lis:BenLine>\r
+                     <lis:Primaryprdid>rb1</lis:Primaryprdid>\r
+                  </lis:ImpItmPasQrefWebService>\r
+                  <lis:ImpItmPasPrlProductLines>\r
+                     <lis:PrlId>IPL</lis:PrlId>\r
+                  </lis:ImpItmPasPrlProductLines>\r
+                  <lis:ImpItmPasPolicyAgentShares>\r
+                     <lis:Status>0</lis:Status>\r
+                     <lis:Coverage>0</lis:Coverage>\r
+                     <lis:Agent>A00042</lis:Agent>\r
+                     <lis:PasId>0</lis:PasId>\r
+                     <lis:Percentage>100</lis:Percentage>\r
+                     <lis:Type>0</lis:Type>\r
+                     <lis:SpecificIce>0</lis:SpecificIce>\r
+                     <lis:SacrificeAmount>0</lis:SacrificeAmount>\r
+                     <lis:SacrificePercent>0</lis:SacrificePercent>\r
+                     <lis:PrimaryAgent>42</lis:PrimaryAgent>\r
+                     <lis:SacrificeType>0</lis:SacrificeType>\r
+                     <lis:RenewalSacrificePcg>2.5</lis:RenewalSacrificePcg>\r
+                  </lis:ImpItmPasPolicyAgentShares>\r
+                  <lis:ImpItmAgtAgents>\r
+                     <lis:AgtId>A00042</lis:AgtId>\r
+                  </lis:ImpItmAgtAgents>\r
+               </lis:row>\r
+            </lis:ImpGrpPas>\r
+            <lis:ImpGrpPlc>\r
+               <lis:row>\r
+                  <lis:ImpItmPlcPolicyCvgLifeConditions>\r
+                     <lis:Condition/>\r
+                     <lis:ApplicabilityDate>20181115</lis:ApplicabilityDate>\r
+                     <lis:EndOfApplicability>20180101</lis:EndOfApplicability>\r
+                     <lis:RateOrValue>1</lis:RateOrValue>\r
+                     <lis:Type>0</lis:Type>\r
+                  </lis:ImpItmPlcPolicyCvgLifeConditions>\r
+                  <lis:ImpItmPlcCprtypeCliPolRelationships>\r
+                     <lis:Type>0</lis:Type>\r
+                  </lis:ImpItmPlcCprtypeCliPolRelationships>\r
+                  <lis:ImpItmPlcPrlProductLines>\r
+                     <lis:PrlId/>\r
+                  </lis:ImpItmPlcPrlProductLines>\r
+                  <lis:ImpItmPlcQrefWebService>\r
+                     <lis:BenLine/>\r
+                     <lis:QuoteRef/>\r
+                     <lis:Primaryprdid/>\r
+                  </lis:ImpItmPlcQrefWebService>\r
+               </lis:row>\r
+            </lis:ImpGrpPlc>\r
+         </lis:getQuoteImport>\r
+      </lis:getQuote>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Wssquote/?http://LissiaWS_getQuote/LissiaWS_getQuote/"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="0aea8f64-13dd-4c7f-97e2-931421f49961" name="myTestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="94f2fb26-cf60-4125-bd1e-6b9b5129861c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="myTestCase" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Step1" id="8700f84d-89db-40fe-9ffe-1b962105c547"><con:settings/><con:config><script>def fileList = []
+def fileListNew = []
+def projectName
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+def projectDir = groovyUtils.projectPath
+def ProjectName= testRunner.testCase.testSuite.project.getName();
+def requestDir = context.get('projectDir') + "\\Request"
+
+new File(requestDir).eachFile
+{ f ->
+	if (f.isFile()&amp;&amp; f.name.endsWith('.xml'))
+		{
+	 	def filename = f.name[0..-1]
+	 	log.info filename 	
+	 	log.info filename.substring(0,filename.length()-4)
+	 	fileList.add(filename)
+	 	fileListNew.add(filename.substring(0,filename.length()-4))
+		}
+	}
+
+if (fileList.size() &lt;1)
+{
+	testRunner.fail("No request files found")
+}
+context.put('fileList',fileList)
+context.put('fileListNew',fileListNew)
+
+log.info context.get('projectDir')</script></con:config></con:testStep><con:testStep type="request" id="237ff447-cb8b-4df8-8a51-5abfa3d38028" name="Step2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LissiaWS_getQuoteSoapPort</con:interface><con:operation>getQuote</con:operation><con:request name="Step2" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="a1e03d0b-2a92-4274-8b61-100df23d5f47"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.0.0.29:7090/LissiaWS_getQuote/router</con:endpoint><con:request>${=new File(context.get('projectDir') + "\\Request\\" + (context.get('fileListNew')).last() + ".xml").text}</con:request><con:assertion type="SOAP Response" id="7b421005-fe7f-4219-ac7d-1f1a40b28401" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Wssquote/?http://LissiaWS_getQuote/LissiaWS_getQuote/"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Step3" id="b6e29ea2-78ed-46c1-b463-b5b90af7659a"><con:settings/><con:config><script>def fileList = context.get('fileListNew')
+
+def fileName = fileList.pop()
+def newname = fileName[0..-5]
+
+def response = context.expand( '${Step2#Response}' )
+def f = new File(context.get('projectDir') + "\\Response\\${fileName}_Response.xml")
+f.write(response, "UTF-8")
+
+if(fileList.size() >0)
+{
+testRunner.gotoStepByName("Step2")
+}</script></con:config></con:testStep><con:properties><con:property><con:name>Request</con:name><con:value><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lis="http://LissiaWS_getQuote/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <lis:getQuote>
+         <!--Optional:-->
+         <lis:getQuoteImport>
+            <!--Optional:-->
+            <lis:ImpPrlrqmWebService>
+               <!--Optional:-->
+               <lis:Prlrqm>2</lis:Prlrqm>
+            </lis:ImpPrlrqmWebService>
+            <!--Optional:-->
+            <lis:ImpGrpPlc>
+               <!--Zero or more repetitions:-->
+               <lis:row>
+                  <!--Optional:-->
+                  <lis:ImpItmPlcPolicyCvgLifeConditions>
+                     <!--Optional:-->
+                     <lis:Condition/>
+                     <!--Optional:-->
+                     <lis:ApplicabilityDate>20181115</lis:ApplicabilityDate>
+                     <!--Optional:-->
+                     <lis:EndOfApplicability>20180101</lis:EndOfApplicability>
+                     <!--Optional:-->
+                     <lis:RateOrValue>1</lis:RateOrValue>
+                     <!--Optional:-->
+                     <lis:Type>0</lis:Type>
+                  </lis:ImpItmPlcPolicyCvgLifeConditions>
+                  <!--Optional:-->
+                  <lis:ImpItmPlcCprtypeCliPolRelationships>
+                     <!--Optional:-->
+                     <lis:Type>0</lis:Type>
+                  </lis:ImpItmPlcCprtypeCliPolRelationships>
+                  <!--Optional:-->
+                  <lis:ImpItmPlcPrlProductLines>
+                     <!--Optional:-->
+                     <lis:PrlId/>
+                  </lis:ImpItmPlcPrlProductLines>
+                  <!--Optional:-->
+                  <lis:ImpItmPlcQrefWebService>
+                     <!--Optional:-->
+                     <lis:BenLine/>
+                     <!--Optional:-->
+                     <lis:QuoteRef/>
+                     <!--Optional:-->
+                     <lis:Primaryprdid/>
+                  </lis:ImpItmPlcQrefWebService>
+               </lis:row>
+            </lis:ImpGrpPlc>
+            <!--Optional:-->
+            <lis:ImpGrpPas>
+               <!--Zero or more repetitions:-->
+               <lis:row>
+                  <!--Optional:-->
+                  <lis:ImpItmPasQrefWebService>
+                     <!--Optional:-->
+                     <lis:QuoteRef>wsdl2</lis:QuoteRef>
+                     <!--Optional:-->
+                     <lis:BenLine>1</lis:BenLine>
+                     <!--Optional:-->
+                     <lis:Primaryprdid>rb1</lis:Primaryprdid>
+                  </lis:ImpItmPasQrefWebService>
+                  <!--Optional:-->
+                  <lis:ImpItmPasPrlProductLines>
+                     <!--Optional:-->
+                     <lis:PrlId>TALT</lis:PrlId>
+                  </lis:ImpItmPasPrlProductLines>
+                  <!--Optional:-->
+                  <lis:ImpItmPasPolicyAgentShares>
+                     <!--Optional:-->
+                     <lis:Status>0</lis:Status>
+                     <!--Optional:-->
+                     <lis:Coverage>0</lis:Coverage>
+                     <!--Optional:-->
+                     <lis:Agent>A00042</lis:Agent>
+                     <!--Optional:-->
+                     <lis:PasId>0.0</lis:PasId>
+                     <!--Optional:-->
+                     <lis:Percentage>100</lis:Percentage>
+                     <!--Optional:-->
+                     <lis:Type>0</lis:Type>
+                     <!--Optional:-->
+                     <lis:SpecificIce>0</lis:SpecificIce>
+                     <!--Optional:-->
+                     <lis:SacrificeAmount>0</lis:SacrificeAmount>
+                     <!--Optional:-->
+                     <lis:SacrificePercent>0</lis:SacrificePercent>
+                     <!--Optional:-->
+                     <lis:PrimaryAgent>42</lis:PrimaryAgent>
+                     <!--Optional:-->
+                     <lis:SacrificeType>0</lis:SacrificeType>
+                     <!--Optional:-->
+                     <lis:RenewalSacrificePcg>2.5</lis:RenewalSacrificePcg>
+                  </lis:ImpItmPasPolicyAgentShares>
+                  <!--Optional:-->
+                  <lis:ImpItmAgtAgents>
+                     <!--Optional:-->
+                     <lis:AgtId>A00042</lis:AgtId>
+                  </lis:ImpItmAgtAgents>
+               </lis:row>
+            </lis:ImpGrpPas>
+            <!--Optional:-->
+            <lis:ImpGrpCliCpr>
+               <!--Zero or more repetitions:-->
+               <lis:row>
+                  <!--Optional:-->
+                  <lis:ImpItmCliMxCeaseAgeProductValueLookup>
+                     <!--Optional:-->
+                     <lis:Age1>26</lis:Age1>
+                  </lis:ImpItmCliMxCeaseAgeProductValueLookup>
+                  <!--Optional:-->
+                  <lis:ImpItmCprQrefWebService>
+                     <!--Optional:-->
+                     <lis:QuoteRef>wsdl2</lis:QuoteRef>
+                     <!--Optional:-->
+                     <lis:BenLine>1</lis:BenLine>
+                     <!--Optional:-->
+                     <lis:Primaryprdid>rb1</lis:Primaryprdid>
+                  </lis:ImpItmCprQrefWebService>
+                  <!--Optional:-->
+                  <lis:ImpItmCliAgeProductValueLookup>
+                     <!--Optional:-->
+                     <lis:Age1>26</lis:Age1>
+                     <!--Optional:-->
+                     <lis:Age1Months>0</lis:Age1Months>
+                     <!--Optional:-->
+                     <lis:ExpAge1/>
+                  </lis:ImpItmCliAgeProductValueLookup>
+                  <!--Optional:-->
+                  <lis:ImpItmPclLoadingsPolicyCvgLives>
+                     <!--Optional:-->
+                     <lis:AgeRating>0</lis:AgeRating>
+                     <!--Optional:-->
+                     <lis:AddnFactor/>
+                     <!--Optional:-->
+                     <lis:AddnRpm/>
+                     <!--Optional:-->
+                     <lis:RatingReason/>
+                     <!--Optional:-->
+                     <lis:RatingTerm>0</lis:RatingTerm>
+                     <!--Optional:-->
+                     <lis:UnderwriterRiskCategory>?</lis:UnderwriterRiskCategory>
+                  </lis:ImpItmPclLoadingsPolicyCvgLives>
+                  <!--Optional:-->
+                  <lis:ImpItmCprPrlProductLines>
+                     <!--Optional:-->
+                     <lis:PrlId>TALT</lis:PrlId>
+                  </lis:ImpItmCprPrlProductLines>
+                  <!--Optional:-->
+                  <lis:ImpItmCprTypeCliPolRelationships>
+                     <!--Optional:-->
+                     <lis:TypeNumber>0</lis:TypeNumber>
+                     <!--Optional:-->
+                     <lis:Type>4</lis:Type>
+                  </lis:ImpItmCprTypeCliPolRelationships>
+                  <!--Optional:-->
+                  <lis:ImpItmCliClients>
+                     <!--Optional:-->
+                     <lis:DateOfBirth>19801201</lis:DateOfBirth>
+                     <!--Optional:-->
+                     <lis:Sex>2</lis:Sex>
+                     <!--Optional:-->
+                     <lis:Smoker>3</lis:Smoker>
+                     <!--Optional:-->
+                     <lis:RiskCat>1</lis:RiskCat>
+                     <!--Optional:-->
+                     <lis:Weight/>
+                     <!--Optional:-->
+                     <lis:Height>0</lis:Height>
+                     <!--Optional:-->
+                     <lis:Nationality/>
+                     <!--Optional:-->
+                     <lis:Type>4</lis:Type>
+                     <!--Optional:-->
+                     <lis:LeisureRiskCat/>
+                     <!--Optional:-->
+                     <lis:Classification/>
+                     <!--Optional:-->
+                     <lis:CliId>0</lis:CliId>
+                     <!--Optional:-->
+                     <lis:Salary>0</lis:Salary>
+                     <!--Optional:-->
+                     <lis:SalaryCurrency>GBP</lis:SalaryCurrency>
+                  </lis:ImpItmCliClients>
+               </lis:row>
+            </lis:ImpGrpCliCpr>
+            <!--Optional:-->
+            <lis:ImpGrpCvgs>
+               <!--Zero or more repetitions:-->
+               <lis:row>
+                  <!--Optional:-->
+                  <lis:ImpItmQInstructionQuotation>
+                     <!--Optional:-->
+                     <lis:QuoteInstruction>1</lis:QuoteInstruction>
+                  </lis:ImpItmQInstructionQuotation>
+                  <!--Optional:-->
+                  <lis:ImpItmOverridePolicyCoverages>
+                     <!--Optional:-->
+                     <lis:SumAssured/>
+                  </lis:ImpItmOverridePolicyCoverages>
+                  <!--Optional:-->
+                  <lis:ImpItmTargetPremiumCvgsPolicyPremiums>
+                     <!--Optional:-->
+                     <lis:ModalPremium/>
+                     <!--Optional:-->
+                     <lis:Frequency>0</lis:Frequency>
+                  </lis:ImpItmTargetPremiumCvgsPolicyPremiums>
+                  <!--Optional:-->
+                  <lis:ImpItmCvgQrefWebService>
+                     <!--Optional:-->
+                     <lis:QuoteRef>wsdl2</lis:QuoteRef>
+                     <!--Optional:-->
+                     <lis:BenLine>1</lis:BenLine>
+                     <!--Optional:-->
+                     <lis:Primaryprdid>rb1</lis:Primaryprdid>
+                     <!--Optional:-->
+                     <lis:DiscountActivity>0</lis:DiscountActivity>
+                  </lis:ImpItmCvgQrefWebService>
+                  <!--Optional:-->
+                  <lis:ImpItmPcpCvgsPolicyPremiums>
+                     <!--Optional:-->
+                     <lis:Frequency>5</lis:Frequency>
+                     <!--Optional:-->
+                     <lis:ContributionPercentage/>
+                     <!--Optional:-->
+                     <lis:ModalPremium/>
+                  </lis:ImpItmPcpCvgsPolicyPremiums>
+                  <!--Optional:-->
+                  <lis:ImpItmPocCvgsPolicyCoverages>
+                     <!--Optional:-->
+                     <lis:ProductLine>TALT</lis:ProductLine>
+                     <!--Optional:-->
+                     <lis:Currency>GBP</lis:Currency>
+                     <!--Optional:-->
+                     <lis:InitialSumAssured>100000.00</lis:InitialSumAssured>
+                     <!--Optional:-->
+                     <lis:SoldBasis>3</lis:SoldBasis>
+                     <!--Optional:-->
+                     <lis:Multiplier/>
+                     <!--Optional:-->
+                     <lis:CoverLevel/>
+                     <!--Optional:-->
+                     <lis:LivesType>1</lis:LivesType>
+                     <!--Optional:-->
+                     <lis:HoldingNo>0</lis:HoldingNo>
+                     <!--Optional:-->
+                     <lis:Term>20</lis:Term>
+                     <!--Optional:-->
+                     <lis:RetirementAge>0</lis:RetirementAge>
+                     <!--Optional:-->
+                     <lis:TermAge>0</lis:TermAge>
+                     <!--Optional:-->
+                     <lis:DateOfApplication/>
+                     <!--Optional:-->
+                     <lis:DateOfReqCommencement/>
+                     <!--Optional:-->
+                     <lis:PptAge/>
+                     <!--Optional:-->
+                     <lis:InterestRate/>
+                     <!--Optional:-->
+                     <lis:PttYrs/>
+                     <!--Optional:-->
+                     <lis:DatePremiumTerm/>
+                     <!--Optional:-->
+                     <lis:BenefitBasis/>
+                     <!--Optional:-->
+                     <lis:QuotationDate>20180101</lis:QuotationDate>
+                     <!--Optional:-->
+                     <lis:QuotationTime/>
+                     <!--Optional:-->
+                     <lis:MajorCoverage>0</lis:MajorCoverage>
+                     <!--Optional:-->
+                     <lis:Income/>
+                     <!--Optional:-->
+                     <lis:ProductVersion>0</lis:ProductVersion>
+                     <!--Optional:-->
+                     <lis:BenefitTerm/>
+                     <!--Optional:-->
+                     <lis:Rulebookid/>
+                     <!--Optional:-->
+                     <lis:Rulebooktype>1</lis:Rulebooktype>
+                     <!--Optional:-->
+                     <lis:Rulebookprodver/>
+                  </lis:ImpItmPocCvgsPolicyCoverages>
+                  <!--Optional:-->
+                  <lis:ImpItmPocPcmPolicyCommissions>
+                     <!--Optional:-->
+                     <lis:Style>INDEM</lis:Style>
+                  </lis:ImpItmPocPcmPolicyCommissions>
+               </lis:row>
+            </lis:ImpGrpCvgs>
+            <!--Optional:-->
+            <lis:ImpWebserviceWebService>
+               <!--Optional:-->
+               <lis:ServiceUserid/>
+               <!--Optional:-->
+               <lis:TraceRates>0</lis:TraceRates>
+               <!--Optional:-->
+               <lis:RecordImport>0</lis:RecordImport>
+               <!--Optional:-->
+               <lis:Requote>0</lis:Requote>
+               <!--Optional:-->
+               <lis:DiscountActivity>0</lis:DiscountActivity>
+               <!--Optional:-->
+               <lis:QuoteCallOrigin/>
+            </lis:ImpWebserviceWebService>
+            <!--Optional:-->
+            <lis:ImpUserUsers>
+               <!--Optional:-->
+               <lis:UsrId/>
+            </lis:ImpUserUsers>
+            <!--Optional:-->
+            <lis:ImpAswcalcqAswcalcq>
+               <!--Optional:-->
+               <lis:Comcalclvl>2</lis:Comcalclvl>
+               <!--Optional:-->
+               <lis:Pcdate></lis:Pcdate>
+               <!--Optional:-->
+               <lis:Srvtimings>0</lis:Srvtimings>
+            </lis:ImpAswcalcqAswcalcq>
+         </lis:getQuoteImport>
+      </lis:getQuote>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:value></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+
+
+
+
+
+
+

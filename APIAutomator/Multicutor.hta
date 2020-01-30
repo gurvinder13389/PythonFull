@@ -1,0 +1,1088 @@
+<HTML>
+	<HEAD>
+		<TITLE>MultiCutor</TITLE>
+		<SCRIPT LANGUAGE="JavaScript">
+			window.resizeTo (400, 315);
+			window.moveTo((screen.width - 400) / 2, (screen.height - 315) / 2);
+		</SCRIPT>
+		<HTA:APPLICATION
+			ID="multiCutor"
+			VERSION="0.1"
+			APPLICATIONNAME="Mutiple Executor"
+			SYSMENU="yes"
+			MAXIMIZEBUTTON="no"
+			MINIMIZEBUTTON="yes"
+			BORDER="thin"
+			INNERBORDER="no"
+			SCROLL="auto"
+			SINGLEINSTANCE="yes">
+	</HEAD>
+	
+	<STYLE> 
+		body {filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, 
+								StartColorStr='#9999FF', EndColorStr='#FFFFFF');font-family:Arial; 
+								font-size:12pt} 
+		.pgbar {filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, 
+										StartColorStr='#FFFFFF', EndColorStr='#9999FF')} 
+	</STYLE>
+	
+	<SCRIPT LANGUAGE="VBScript">
+		Sub Window_Onload
+			Set oFSO = CreateObject("Scripting.FileSystemObject")
+			Set objWScript = CreateObject("Wscript.Shell")
+			Set WshShell = CreateObject("WScript.Shell") 		   
+			strHtmlLocnVal = document.location.href 
+			strThisHTA = Replace(Right(strHtmlLocnVal, Len(strHtmlLocnVal) - 8), "/", "\") 
+			strThisHTA = UnEscape(strThisHTA)
+			Set objFolder = oFSO.GetFolder(CreateObject("Scripting.FileSystemObject").GetParentFolderName(strThisHTA))
+
+			'set Opt = document.createElement("Option")
+			'Opt.value = "No_Select"
+			'Opt.text = "Select Webservice"
+			'selectScript.Add Opt
+			For Each objSubFolder In objFolder.subfolders
+				strFilename = objSubFolder.Name
+				strFilePath = objSubFolder.Path
+				strFilePath = replace(strFilePath," ","$")
+				set Opt = document.createElement("Option")
+				Opt.value = strFilePath
+				Opt.text = strFilename
+				selectScript.Add Opt
+			Next
+
+			Set oFSO = Nothing
+			Set objFolder = Nothing
+			Set objSubFolder = Nothing			
+		End Sub
+		
+		Dim strProgressTitle,strSelectedValue,strMax,objIE1,oFSO,objFolder,objSubFolder,OptionValueList,selectedVal,objExcel, objWB, objWS, iNodeRowNumber, strExpSheetName, blnDataAdded, strTestCaseNameReponse, iDataRowPos, strTagPrefix, strResponseTag, blnTestCaseIdAtRowOne, strFullResponseXMLPath, blnSheetFound
+
+		Sub InitializeObjects(strWBPath)
+			Set objWB = objExcel.Workbooks.Open(strWBPath)
+		End Sub
+
+		Sub TearDown()
+			objWB.Save
+			objWB.Close						
+			Set objWB = Nothing	
+		End Sub
+
+		Sub ResponseRunner()
+			ClearResponseSheets
+			strResponseTag = Trim(objExcel.WorksheetFunction.Index(objWB.Worksheets("Base").Range("2:2"), objExcel.WorksheetFunction.Match("ResponseTag", objWB.Worksheets("Base").Range("1:1"), 0)))
+			Set fso = CreateObject("Scripting.FileSystemObject")
+			Set folder = fso.GetFolder(objWB.Path & "\Response")
+			iRow = 2
+			iResponseBarCount = 0
+			
+			Do while iRow <= objWB.Worksheets("Runner").UsedRange.Rows.Count
+				blnFound = False
+				If StrComp(LCase(Trim(objWB.Worksheets("Runner").Cells(iRow, 2).Value)), "n") <> 0 Then
+					strTCName = Trim(objWB.Worksheets("Runner").Cells(iRow, 1).Value)
+					fileCnt = 0
+					If StrComp(Trim(strTCName), "") = 0 Then
+						Exit Do
+					Else
+						intReponseFilesCount = folder.Files.Count
+						For Each file In folder.Files
+							fileCnt = fileCnt + 1
+							If Right(file.Name, 4) = ".xml" And InStr(1, file.Name, Left(objWB.Name, Len(objWB.Name) - 5) & "_" & strTCName & "_") > 0 Then
+								strFileName = file.Name								
+								arrTCName = Split(Left(strFileName, Len(strFileName) - 4), "_")
+								strTCName = arrTCName(UBound(arrTCName) - 1)
+								exportTagFlag = getResponse(file.Path, strTCName, iRow)
+
+								iResponseBarCount = iResponseBarCount + 1
+								JSProgressCounterSubTasks "Soap Response generated",3,4,"Response XML to Excel",Cstr(iResponseBarCount),Cstr(intReponseFilesCount)
+
+								If exportTagFlag Then
+									errorTestCaseFound = 0
+									For each sheet in objWB.Worksheets
+										If Instr(1, Trim(sheet.Name), "Err") > 0 Then
+											errSheetRow = 1
+											For iErrRow = 1 to sheet.UsedRange.Rows.Count
+												If Strcomp(Trim(sheet.Cells(iErrRow, 1).Value),strTCName) = 0 And iErrRow <=sheet.UsedRange.Rows.Count Then
+													errorTestCaseFound = errorTestCaseFound + 1
+												End If
+											Next
+										End If
+									Next					
+									
+									If errorTestCaseFound = 0 Then
+										objWB.Worksheets("Runner").Cells(iRow, 4).Value = "Response Captured successfully and Added to Excel"
+										objWB.Worksheets("Runner").Cells(iRow, 5).Value = "Pass"
+										objWB.Worksheets("Runner").Cells(iRow, 5).Interior.ColorIndex = 4
+									Else
+										objWB.Worksheets("Runner").Cells(iRow, 4).Value = "Response Captured With Errors and Added to Excel"
+										objWB.Worksheets("Runner").Cells(iRow, 5).Value = "Fail"
+										objWB.Worksheets("Runner").Cells(iRow, 5).Interior.ColorIndex = 3
+									End If
+									blnFound = True
+									Exit For
+								End If
+							End If
+						Next
+						
+						If fileCnt = 0 Then
+							objWB.Worksheets("Runner").Cells(iRow, 4).Value = "Response not generated from Request"
+							objWB.Worksheets("Runner").Cells(iRow, 5).Value = "Fail"
+							objWB.Worksheets("Runner").Cells(iRow, 5).Interior.ColorIndex = 3
+						End If
+					End If
+				End If
+				iRow = iRow + 1
+			Loop
+		End Sub
+
+		Sub ClearResponseSheets()
+			For Each wks In objWB.Worksheets
+				If Not (InStr(1, wks.Name, "Req_") = 1 Or StrComp(wks.Name, "Runner") = 0 Or StrComp(wks.Name, "Base") = 0 Or StrComp(wks.Name, "SheetMapper") = 0  Or StrComp(wks.Name, "Validation") = 0) Then
+					iTCRowNum = 1
+					Do while iTCRowNum <= wks.UsedRange.Rows.Count
+						If StrComp(wks.Cells(iTCRowNum, 1).Value, "TestCaseId") = 0 Then
+							Exit Do
+						End If
+						iTCRowNum = iTCRowNum + 1
+					Loop
+					
+					iUsedRowCount = wks.UsedRange.Rows.Count
+					iUsedColCount = wks.UsedRange.Columns.Count
+					
+					If iUsedRowCount > iTCRowNum Then
+						wks.Range("A" & CStr(iTCRowNum + 1) & ":" & ColumnLetter(iUsedColCount) & CStr(iUsedRowCount)).Delete
+					End If
+				End If
+			Next
+		End Sub
+
+		Sub ClearRunnerSheet()
+			If StrComp(objWB.Worksheets("Runner").Cells(1, 4).Value, "ResponseCaptured") = 0 And StrComp(objWB.Worksheets("Runner").Cells(1, 5).Value, "Status") = 0 Then
+				iRow = 2
+				Do While iRow <= objWB.Worksheets("Runner").UsedRange.Rows.Count
+					objWB.Worksheets("Runner").Cells(iRow, 4).Value = ""
+					objWB.Worksheets("Runner").Cells(iRow, 5).Clear
+					iRow = iRow + 1
+				Loop
+			End If
+		End Sub
+			
+		Function getResponse(strFilePath, sTestCaseNameReponse, iRow)
+			On error resume next
+			blnDataAdded = False
+			Set oXMLFile = CreateObject("Microsoft.XMLDOM")
+			oXMLFile.Load (strFilePath)
+			Set TitleNodes = oXMLFile.SelectNodes("//" & strResponseTag)
+			'--- need to fetch the name of the testcase from the response sheetname
+			strTestCaseNameReponse = sTestCaseNameReponse
+			Set rootNode = TitleNodes(0)
+			exportTagFound = False
+			
+			If Not(rootNode is nothing) Then
+				For i = 0 To (rootNode.ChildNodes.Length - 1)
+					Set childNode = rootNode.ChildNodes(i)
+					
+					If childNode.ChildNodes.Length > 0 Then
+						strMappedSheet = mappedSheet(childNode.BaseName)
+						addNodesAndData childNode, strMappedSheet
+					End If		
+				Next
+				exportTagFound = True
+			Else
+				objWB.Worksheets("Runner").Cells(iRow, 4).Value = "Response generated with fault exception/Without Export Tags"
+				objWB.Worksheets("Runner").Cells(iRow, 5).Value = "Fail"
+				objWB.Worksheets("Runner").Cells(iRow, 5).Interior.ColorIndex = 3
+				exportTagFound = False
+			End If
+			getResponse = exportTagFound
+		End Function
+
+		Sub addNodesAndData(oNode, sSheetName)
+			strExpSheetName = sSheetName
+			'---Added by Gurvinder
+			blnDataAdded = False
+			iNodeRowNumber = 1
+			iDataRowPos = 0
+			Set ChildNodes = oNode.ChildNodes     
+			
+			'----Calculating whether the hierarchy(Nodes) has only fields or complex elements
+			iTCRowNum = 1
+			Do while iTCRowNum <= objWB.Worksheets(sSheetName).UsedRange.Rows.Count
+				If StrComp(objWB.Worksheets(sSheetName).Cells(iTCRowNum, 1).Value, "TestCaseId") = 0 Then
+					Exit Do
+				End If
+				iTCRowNum = iTCRowNum + 1
+			Loop
+			
+			If iTCRowNum = 1 Then
+				blnTestCaseIdAtRowOne = True
+			Else
+				blnTestCaseIdAtRowOne = False
+			End If
+			
+			For Each oChildNode In ChildNodes
+				addData oChildNode
+				If Not (blnTestCaseIdAtRowOne) Then
+					If StrComp(sSheetName, oChildNode.ParentNode.BaseName) = 0 Then
+						blnDataAdded = False
+					End If
+				End If
+			Next   
+		End Sub
+
+		Sub addData(oNode)
+			If oNode.ChildNodes.Length > 0 Then
+				If (oNode.ChildNodes.Length = 1) And StrComp(CStr(oNode.ChildNodes(0).NodeName), "#text") = 0 Then
+					'strColumnName will have that node which has data
+					strColumnName = oNode.BaseName
+					'---Set Data
+					'Find TestCaseId col
+					iTCRowNum = 1
+					Do while iTCRowNum <= objWB.Worksheets(strExpSheetName).UsedRange.Rows.Count
+						If StrComp(objWB.Worksheets(strExpSheetName).Cells(iTCRowNum, 1).Value, "TestCaseId") = 0 Then
+							Exit Do
+						End If
+						iTCRowNum = iTCRowNum + 1
+					Loop
+					
+					iColCount = objExcel.WorksheetFunction.CountA(objWB.Worksheets(strExpSheetName).Range(CStr(iTCRowNum) & ":" & CStr(iTCRowNum)))
+					
+					For iCol = 1 To iColCount
+						If StrComp(objWB.Worksheets(strExpSheetName).Cells(iTCRowNum, iCol).Value, strColumnName) = 0 Then
+							iTempTCRowNum = iTCRowNum
+							Set oTempNode = oNode.ParentNode
+							Do
+								'-----New Code added to accomodate the case of no row
+								If iTempTCRowNum <> 1 Then
+									iTempTCRowNum = iTempTCRowNum - 1
+								End If
+								'---Get the parent name from merge area concept.
+								strParent = objWB.Worksheets(strExpSheetName).Range(ColumnLetter(iCol) & CStr(iTempTCRowNum)).MergeArea.Cells(1, 1).Value
+								'-----New Code added to accomodate the case of no row
+								If StrComp(strColumnName, strParent) = 0 Then
+									If Not (blnDataAdded) Then
+										'--- add the testcase name entry
+										'--- get the testcase name
+										iDataRowPos = objWB.Worksheets(strExpSheetName).UsedRange.Rows.Count + 1
+										objWB.Worksheets(strExpSheetName).Cells(iDataRowPos, 1).NumberFormat = "@"
+										objWB.Worksheets(strExpSheetName).Cells(iDataRowPos, 1).Value = strTestCaseNameReponse
+									End If
+									blnDataAdded = True
+									'Set the data
+									objWB.Worksheets(strExpSheetName).Cells(iDataRowPos, iCol).NumberFormat = "@"
+									objWB.Worksheets(strExpSheetName).Cells(iDataRowPos, iCol) = Trim(oNode.Text)
+									Exit Sub
+								End If
+								
+								'--- Code need to change
+								If StrComp(strParent, oTempNode.BaseName) = 0 Then
+									' check the parent if they are equal....till iTempTCRowNum is 1 then set the data
+									
+									If iTempTCRowNum = 1 Then
+										If Not (blnDataAdded) Then
+											'--- add the testcase name entry
+											'--- get the testcase name
+											iDataRowPos = objWB.Worksheets(strExpSheetName).UsedRange.Rows.Count + 1
+											objWB.Worksheets(strExpSheetName).Cells(iDataRowPos, 1).NumberFormat = "@"
+											objWB.Worksheets(strExpSheetName).Cells(iDataRowPos, 1).Value = strTestCaseNameReponse
+										End If
+										blnDataAdded = True
+										'Set the data
+										objWB.Worksheets(strExpSheetName).Cells(iDataRowPos, iCol).NumberFormat = "@"
+										objWB.Worksheets(strExpSheetName).Cells(iDataRowPos, iCol) = Trim(oNode.Text)
+										Exit Sub
+									End If
+								Else
+									Exit Do
+								End If
+								
+								Set oTempNode = oTempNode.ParentNode						
+							Loop
+						End If
+					Next
+				Else
+					For Each oChildNode In oNode.ChildNodes
+						 addData oChildNode
+					Next
+				End If
+			End If
+		End Sub
+
+		Sub Executor(FilePath, TestCaseName)
+			strFileNameWithPath = FilePath
+			Set objFSO = CreateObject("Scripting.FileSystemObject")
+			Set f = objFSO.OpenTextFile(strFileNameWithPath, 8)
+			iExecutorRow = 1
+			Do while iExecutorRow <= objWB.Worksheets("Base").UsedRange.Rows.Count
+				strVal = Trim(objWB.Worksheets("Base").Cells(iExecutorRow, 1).Value)
+				
+				If StrComp(strVal, "") = 0 Then
+					Exit Do
+				ElseIf StrComp(strVal, "Go") = 0 Then
+					f.Close
+					Set f = objFSO.OpenTextFile(strFileNameWithPath, 8)
+					CreateDynamicRequest f, TestCaseName
+				Else
+					f.Write strVal
+				End If
+				iExecutorRow = iExecutorRow + 1
+			Loop      
+			f.Close   
+		End Sub
+
+		Sub CreateDynamicRequest(ofile, TestCaseName)
+			For Each wks In objWB.Worksheets			
+				 If InStr(1, wks.Name, "Req_") = 1 Then
+					strMappedSheetNode = mappedNode(wks.Name)
+					CreateNodes ofile, strMappedSheetNode, TestCaseName
+				 End If
+			Next
+		End Sub
+
+		Sub CreateNodes(f, SheetName, TestCaseName)
+			'TestCaseName for TestData filteration
+			sheetNodeName = Mid(SheetName, 5)
+			SheetName = mappedSheet(SheetName)
+			
+			f.Write "<" & strTagPrefix & sheetNodeName & ">" & vbNewLine
+			
+			iTotalRows = objWB.Worksheets(SheetName).UsedRange.Rows.Count
+			Set Rng = objWB.Sheets(SheetName).Range("A1:A" & iTotalRows) 
+			
+			If IsNumeric(TestCaseName) Then
+				TestCaseName = CInt(TestCaseName)
+			End If
+			
+			iRNum = objExcel.WorksheetFunction.Match(TestCaseName, Rng, 0)
+			
+			strRowNums = ""
+			Do While iRNum <= iTotalRows
+				strTCNameTemp = Trim(objWB.Worksheets(SheetName).Cells(iRNum, 1).Value)
+				strRunMode = Trim(objWB.Worksheets(SheetName).Cells(iRNum, 2).Value)
+				
+				If StrComp(strTCNameTemp, TestCaseName) = 0 Then
+					If StrComp(strRunMode, "") = 0 Then
+						strRowNums = strRowNums & "," & CStr(iRNum)
+					End If
+				Else
+					Exit Do
+				End If
+				iRNum = iRNum + 1
+			Loop	
+			
+			'Exit for Null Data
+			arrRowNums = Split(Right(strRowNums, Len(strRowNums) - 1), ",")
+			'--- For all row numbers
+			For iRNums = 0 To UBound(arrRowNums)
+				iRowNumber = arrRowNums(iRNums)
+				strSheetName = SheetName
+				strHierarcy = ""
+				iRowNum = 1
+				' Loop to check the existance of 'TestCaseId'
+				Do while iRowNum <= objWB.Worksheets(strSheetName).UsedRange.Rows.Count
+					If StrComp(Trim(objWB.Worksheets(strSheetName).Cells(iRowNum, 1).Value), "TestCaseId") = 0 Then
+						Exit Do
+					Else
+						strHierarcy = strHierarcy & ","
+					End If
+					iRowNum = iRowNum + 1
+				Loop
+				
+				iHierarchyDepth = UBound(Split(strHierarcy, ","))
+				If iHierarchyDepth = -1 Then
+					iHierarchyDepth = 0
+				End If
+				iParamStartRow = iHierarchyDepth + 1
+					
+				iColCount = objExcel.WorksheetFunction.CountA(objWB.Worksheets(strSheetName).Range(CStr(iParamStartRow) & ":" & CStr(iParamStartRow)))
+			   
+				strXml = ""
+				'---- For deleting the last comma
+				If Len(strHierarcy) > 0 Then
+					strHierOld = Left(strHierarcy, Len(strHierarcy) - 1)
+				Else
+					strHierOld = ""
+				End If        
+				
+				For iCol = 3 To iColCount
+					strColumnName = objWB.Worksheets(strSheetName).Cells(iParamStartRow, iCol).Value
+					arrHierOld = Split(strHierOld, ",")
+					blnDataWrite = False
+					strHierNew = ""
+					For iHierRow = iHierarchyDepth To 1 Step -1
+						strParent = objWB.Worksheets(strSheetName).Range(ColumnLetter(iCol) & CStr(iHierRow)).MergeArea.Cells(1, 1).Value
+						strOldParent = arrHierOld(iHierRow - 1)
+						If StrComp(strParent, strOldParent) = 0 Then
+							If Not (blnDataWrite) Then
+								If Len(strHierNew) <> 0 Then
+									strHierNewTemp = Left(strHierNew, Len(strHierNew) - 1)
+									arrHierNewTemp = Split(strHierNewTemp, ",")
+									For iHierNewTemp = 0 To UBound(arrHierNewTemp)
+										strXml = strXml & "<" & strTagPrefix & arrHierNewTemp(iHierNewTemp) & ">" & vbNewLine
+									Next
+								End If
+								'---Data
+								Data = objWB.Worksheets(strSheetName).Cells(iRowNumber, iCol).Value
+								strXml = strXml & "<" & strTagPrefix & strColumnName & ">" & Data & "</" & strTagPrefix & strColumnName & ">" & vbNewLine
+								blnDataWrite = True
+							Else
+								blnDataWrite = True
+							End If
+							strHierNew = strParent & "," & strHierNew
+						Else
+							'---Adding New Tags and CLosing old one's
+							If StrComp(strOldParent, "") <> 0 Then
+								strXml = strXml & "</" & strTagPrefix & strOldParent & ">" & vbNewLine
+							End If
+							strHierNew = strParent & "," & strHierNew
+						End If
+					Next
+					
+					'--- If data is still not entered then firstly hierarchy needs to add
+					If Not (blnDataWrite) Then
+						If Len(strHierNew) > 0 Then
+							strHierNew = Left(strHierNew, Len(strHierNew) - 1)
+						End If
+						arrHierNew = Split(strHierNew, ",")
+						For iHierNew = 0 To UBound(arrHierNew)
+							strXml = strXml & "<" & strTagPrefix & arrHierNew(iHierNew) & ">" & vbNewLine
+						Next
+						'---Data
+						Data = objWB.Worksheets(strSheetName).Cells(iRowNumber, iCol).Value
+						strXml = strXml & "<" & strTagPrefix & strColumnName & ">" & Data & "</" & strTagPrefix & strColumnName & ">" & vbNewLine
+					End If
+					If StrComp(Right(strHierNew, 1), ",") = 0 Then
+						strHierNew = Left(strHierNew, Len(strHierNew) - 1)
+					End If
+					strHierOld = strHierNew
+					strHierNew = ""
+				Next
+				arrHierOldTemp = Split(strHierOld, ",")
+				For iHierOldTemp = UBound(arrHierOldTemp) To 0 Step -1
+					strXml = strXml & "</" & strTagPrefix & arrHierOldTemp(iHierOldTemp) & ">" & vbNewLine
+					'strXml = strXml & "/" & arrHierOldTemp(iHierOldTemp) & vbNewLine
+				Next
+				f.Write strXml
+			Next
+			
+			f.Write "</" & strTagPrefix & sheetNodeName & ">"
+		End Sub
+
+		Sub runBatchFile()
+			Set oWsh = CreateObject("WScript.Shell")
+			strCommand = Chr(34) & objWB.Path & "\runner.bat" & Chr(34)
+			oWsh.Run strCommand, 0
+			Set WshShell = Nothing
+		End Sub
+
+		Public Function ColumnLetter(ColumnNumber)
+			BlnDo = True
+			If IsNumeric(ColumnNumber) Then
+				ColumnNumber = CInt(ColumnNumber)
+			ElseIf ColumnNumber = "" Then
+				BlnDo = False
+			End If
+			If BlnDo Then
+				If ColumnNumber > 26 Then
+					' 1st character:  Subtract 1 to map the characters to 0-25,
+					'                 but you don't have to remap back to 1-26
+					'                 after the 'Int' operation since columns
+					'                 1-26 have no prefix letter
+
+					' 2nd character:  Subtract 1 to map the characters to 0-25,
+					'                 but then must remap back to 1-26 after
+					'                 the 'Mod' operation by adding 1 back in
+					'                 (included in the '65')
+
+					ColumnLetter = Chr(Int((ColumnNumber - 1) / 26) + 64) & _
+							   Chr(((ColumnNumber - 1) Mod 26) + 65)
+				Else
+					' Columns A-Z
+					ColumnLetter = Chr(ColumnNumber + 64)
+				End If
+			Else
+				ColumnLetter = ""
+			End If
+		End Function	 
+		  
+		Sub CreateProgressBar()
+			iLeft = cstr((screen.width - 350) / 2)
+			iTop = cstr((screen.height - 215) / 2)
+			Set objIE1 = window.Open("about:blank","ProgressWindow","left=" & iLeft & ",top=" & iTop & ",height=100,width=350,directories=no, status=no,titlebar=no,toolbar=no,menubar=no,location=no,scrollbars=no") 
+			
+			sbWait 2
+			objIE1.Document.Title = "PROGRESS - " & strSelectedValue & String(100," ")
+		End Sub
+
+		Sub UpdateTitle(strTitle)			
+			objIE1.Document.Title = "PROGRESS - " & strTitle & String(100," ")
+		End Sub
+		
+		Sub progressBar(strTitle,strVal,strMax)
+			'objIE1.Document.Title = "Progress:" & strSelectedValue & " - " & strTitle & String(100, " ")
+			objIE1.Document.Body.InnerHTML = strTitle & "<br><progress value='" & Cstr(strVal) & "' max='" & Cstr(strMax) & "'></progress>"
+		End Sub
+
+		Sub soapProgressBar(strTitle,strSubVal,strSubMax)	
+			objIE1.Document.Body.InnerHTML = strTitle & "<br><progress value='2' max='4'></progress><br><br>Requests(" & Cstr(strSubVal) & " of " & Cstr(strSubMax) & ")<br><progress value='" & Cstr(strSubVal) & "' max='" & Cstr(strSubMax) & "'></progress>"
+		End Sub
+
+		Sub JSProgressCounterSubTasks(strProcessName,strMin,strMax,strSubTask,subTaskMin,subTaskMax)
+			minPercentage = (cint(strMin)/cint(strMax))*100
+			objIE1.Document.Body.InnerHTML = "<div id='myProgress' style='width: 100%; background-color: #ddd'><div id='myBar' style='width: " & minPercentage & "%; height: 20px; background-color: #4CAF50;text-align: center;line-height: 20px;color: white;'>" & strProcessName & "</div></div>"
+			
+			subTaskMinPercentage = (cint(subTaskMin)/cint(subTaskMax))*100
+			strHtml = objIE1.Document.Body.InnerHTML
+			strHtml = strHtml & "<br>" & strSubTask & "(" & subTaskMin & "/" & subTaskMax & ")<br><div id='mySubTaskProgress' style='width: 100%; background-color: #ddd'><div id='mySubTaskBar' style='width: " & subTaskMinPercentage & "%; height: 20px; background-color: #4CAF50;text-align: center;line-height: 20px;color: white;'></div></div>"
+			objIE1.Document.Body.InnerHTML = strHtml
+		End Sub
+		
+		Sub soapProgess(strTitle)
+			Dim oSoapFso
+			CurrentDirectory = objWB.Path
+			
+			strRequestPath = CurrentDirectory & "\Request"
+			strResponsePath = CurrentDirectory & "\Response"
+			Set oSoapFso = CreateObject("Scripting.FileSystemObject")
+			Set objFolder = oSoapFso.GetFolder(strRequestPath)
+			Set colFiles = objFolder.Files
+			
+			iTotalFiles = colFiles.Count
+			Dim AbortTime
+			AbortTime = Now + TimeValue("0:00:30")   ' Wait for 30 seconds
+			Do
+				Set objFolder = oSoapFso.GetFolder(strResponsePath)
+				Set colFiles = objFolder.Files
+				'-----------------------
+				'----To check if no reponse generated within 30 seconds.Exit the Do loop
+				sbWait 2
+				If colFiles.Count = 0 And Now > AbortTime then
+					Exit Do
+				End If
+				'-----------------------
+				If colFiles.Count < iTotalFiles Then
+					JSProgressCounterSubTasks "Sending Soap Requests",2,4,"Requests",Cstr(colFiles.Count),Cstr(iTotalFiles)
+				Else
+					JSProgressCounterSubTasks "Sending Soap Requests",2,4,"Requests",Cstr(colFiles.Count),Cstr(iTotalFiles)
+					sbWait 2
+					Exit Do
+				End If
+			Loop
+		End Sub
+
+		Sub fileTransfer(strFtPath)
+			Dim StrNewFolderName
+			Set oFtFso = CreateObject("Scripting.FileSystemObject")
+			strReq = strFtPath & "\Request"
+			strRes = strFtPath & "\Response"
+				
+			Set objReqFolder = oFtFso.GetFolder(strReq)
+			Set colReqFiles = objReqFolder.Files
+			
+			Set objResFolder = oFtFso.GetFolder(strRes)
+			Set colResFiles = objResFolder.Files
+			blnFirst = True
+			StrNewFolderName = ""
+			'---Moving Request Files
+			For Each oFile In colReqFiles
+				If blnFirst Then
+					StrNewFolderName = Replace(Replace(Replace(CStr(CDate(oFile.DateLastModified)), " ", "_"), "/", "_"), ":", "_")
+					oFtFso.CreateFolder strReq & "\" & StrNewFolderName
+					oFtFso.CreateFolder strRes & "\" & StrNewFolderName
+				End If
+				blnFirst = False
+				
+				oFile.Move strReq & "\" & StrNewFolderName & "\"        
+			Next
+			
+			For Each oFile In colResFiles
+				If blnFirst Then
+					StrNewFolderName = Replace(Replace(Replace(CStr(CDate(oFile.DateLastModified)), " ", "_"), "/", "_"), ":", "_")
+					oFtFso.CreateFolder strReq & "\" & StrNewFolderName
+					oFtFso.CreateFolder strRes & "\" & StrNewFolderName
+				End If
+				blnFirst = False
+				oFile.Move strRes & "\" & StrNewFolderName & "\"
+			Next
+			
+			Set oFtFso = Nothing
+			Set objReqFolder = Nothing
+			Set colReqFiles = Nothing
+			Set objResFolder = Nothing
+			Set colResFiles = Nothing
+		End Sub
+		
+		Sub finalXMLFileTransfer(strFtPath, strWB)
+			Dim StrNewFolderName
+			Set oFtFso = CreateObject("Scripting.FileSystemObject")
+			strReq = strFtPath & "\Request"
+			strRes = strFtPath & "\Response"
+			
+			Set objReqFolder = oFtFso.GetFolder(strReq)
+			Set colReqFiles = objReqFolder.Files
+			
+			Set objResFolder = oFtFso.GetFolder(strRes)
+			Set colResFiles = objResFolder.Files
+			
+			blnFirst = True
+			StrNewFolderName = ""
+			sbWait 2
+			
+			'---Moving Request Files
+			For Each oFile In colReqFiles
+				If blnFirst Then
+					StrNewFolderName = Replace(Replace(Replace(CStr(CDate(oFile.DateLastModified)), " ", "_"), "/", "_"), ":", "_")
+					oFtFso.CreateFolder strReq & "\" & strWB & "_" & StrNewFolderName
+					oFtFso.CreateFolder strRes & "\" & strWB & "_" & StrNewFolderName
+					strFullResponseXMLPath = strRes & "\" & strWB & "_" & StrNewFolderName
+				End If
+				blnFirst = False
+				
+				If InStr(1, oFile.Name, strWB) > 0 Then
+					oFile.Move strReq & "\" & strWB & "_" & StrNewFolderName & "\" & oFile.Name
+				End If				      
+			Next
+			
+			For Each oFile In colResFiles
+				If InStr(1, oFile.Name, strWB) > 0 Then
+					oFile.Move strRes & "\" & strWB & "_" & StrNewFolderName & "\" & oFile.Name
+				End If
+			Next
+			
+			Set oFtFso = Nothing
+			Set objReqFolder = Nothing
+			Set colReqFiles = Nothing
+			Set objResFolder = Nothing
+			Set colResFiles = Nothing
+		End Sub
+
+		Function mappedNode(sheetName)
+			iRowNumTemp = 2
+			If InStr(1, sheetName, "Map_") > 0 Then
+				Do While iRowNumTemp <= objWB.Worksheets("SheetMapper").UsedRange.Rows.Count
+					If StrComp(Trim(objWB.Worksheets("SheetMapper").Cells(iRowNumTemp, 2).Value), sheetName) = 0 Then
+						Exit Do
+					End If
+					iRowNumTemp = iRowNumTemp + 1
+				Loop
+				sheetName = Trim(objWB.Worksheets("SheetMapper").Cells(iRowNumTemp, 1).Value)
+			End If
+			mappedNode = sheetName
+		End Function
+
+		Function mappedSheet(oNodeName)
+			iRowNumTemp = 2
+			mappedSheetFound = False
+			Do While iRowNumTemp <= objWB.Worksheets("SheetMapper").UsedRange.Rows.Count
+				If StrComp(Trim(objWB.Worksheets("SheetMapper").Cells(iRowNumTemp, 1).Value), oNodeName) = 0 Then
+					mappedSheetFound = True
+					Exit Do
+				End If
+				iRowNumTemp = iRowNumTemp + 1
+			Loop
+			
+			If mappedSheetFound Then
+				sheetName = Trim(objWB.Worksheets("SheetMapper").Cells(iRowNumTemp, 2).Value)
+			Else
+				sheetName = oNodeName
+			End If
+			mappedSheet = sheetName
+		End Function
+		
+		Sub initStart(selectedVal)
+			On Error Resume Next			
+			selectedVal = replace(selectedVal,"$"," ")
+
+			'----Moving the already present files in Request and Response folders
+			fileTransfer selectedVal
+
+			arrVal = split(selectedVal,"\")
+			strSelectedValue = arrVal(UBound(arrVal))
+			
+			Set objFSO = CreateObject("Scripting.FileSystemObject")
+			Set objFolder = objFSO.GetFolder(selectedVal)
+			Set colfiles = objFolder.Files
+			Dim CurrentDirectory
+			fileCounter = 0
+
+			For Each objFile In colfiles
+				If InStr(1, objFile.Name, strSelectedValue)> 0 And Strcomp(Right(objFile.Name, 4), "xlsx") = 0 Then
+					strWBPath = selectedVal & "\" & objFile.Name
+					InitializeObjects strWBPath
+					ClearRunnerSheet
+					strProgressTitle = Split(objFile.Name,".")(0)
+					
+					UpdateTitle strProgressTitle
+					'----Getting values from Base sheet
+					strTagPrefix = Trim(objExcel.WorksheetFunction.Index(objWB.Worksheets("Base").Range("2:2"), objExcel.WorksheetFunction.Match("RequestPrefix", objWB.Worksheets("Base").Range("1:1"), 0)))
+
+					CurrentDirectory = objWB.Path
+					strRequestPath = CurrentDirectory & "\Request"
+
+					If Not objFSO.FolderExists(strRequestPath) Then
+						objFSO.CreateFolder strRequestPath
+					End If
+
+					strFileName = ""
+					iRow = 2
+					
+					intTotalTestCases = cint(objExcel.WorksheetFunction.CountA(objWB.Worksheets("Runner").Range("A:A")))-1
+					intTotalYes = intTotalTestCases - cint(objExcel.WorksheetFunction.CountIf(objWB.Worksheets("Runner").Range("B:B"),"n"))
+					
+					'When the service template file has enabled test cases then this if should be executed
+					If intTotalYes <> 0 Then
+						JSProgressCounter "Request",1,4					
+						iRequestBarCount = 0
+						
+						Do
+							strTCName = ""
+							If StrComp(LCase(Trim(objWB.Worksheets("Runner").Cells(iRow, 2).Value)), "n") <> 0 Then
+								strFileName = Trim(objWB.Worksheets("Runner").Cells(iRow, 1).Value)
+								strTCName = Trim(objWB.Worksheets("Runner").Cells(iRow, 1).Value)
+								If StrComp(Trim(strFileName), "") = 0 Then
+									Exit Do
+								Else
+									'---Removing .xlsm from filename
+									strTempFileName = objWB.Name
+									strTempFileName = Mid(strTempFileName, 1, InStrRev(strTempFileName, ".") - 1)
+									strFileName = strTempFileName & "_" & strFileName
+								End If
+							   
+								strFileNameWithPath = strRequestPath & "\" & strFileName & ".xml"
+								objFSO.CreateTextFile strFileNameWithPath
+								Executor strFileNameWithPath, strTCName
+								
+								iRequestBarCount = iRequestBarCount + 1
+								JSProgressCounterSubTasks "Request",1,4,"Request Creation",Cstr(iRequestBarCount),Cstr(intTotalYes)
+							End If
+							iRow = iRow + 1
+						Loop
+						
+						JSProgressCounter "Sending Soap Requests",2,4
+						runBatchFile
+						'---Soap Progress-----------
+						soapProgess "Sending Soap Requests"
+						'---------------------------			
+						JSProgressCounter "Soap Response generated",3,4
+						sbWait 1
+						ResponseRunner			
+						JSProgressCounter "Soap Response Added to excel",4,4
+						sbWait 2
+						finalXMLFileTransfer selectedVal , Split(objFile.Name, ".")(0)
+						
+						'-----------Validation Code-----------------------------------
+						Set oXMLFile = CreateObject("Microsoft.XMLDOM")
+				
+						iTestCaseName = 1
+						iSheetName = 2
+						iFieldHierarchy = 3
+						iExpectedValue = 4
+						iActualValue = 5
+						iStatus = 6
+						iIteration = 7
+						
+						Set objValWS = objWB.Worksheets("Validation")
+						
+						For iRow = 2 To objValWS.UsedRange.Rows.Count
+							strTestCaseName = objValWS.Cells(iRow, iTestCaseName).Value
+							
+							strFN = Mid(objFile.Name, 1, InStrRev(objFile.Name, ".") - 1)
+							strFullFN = strFullResponseXMLPath & "\" & strFN & "_" & strTestCaseName & "_Response.xml"
+							oXMLFile.Load (strFullFN)
+							
+							blnSheetFound = True
+							iRowNodeCount = 1
+							
+							strSheetName = objValWS.Cells(iRow, iSheetName).Value
+							strHierarchy = objValWS.Cells(iRow, iFieldHierarchy).Value
+							strExpected = objValWS.Cells(iRow, iExpectedValue).Value
+							strIteration = objValWS.Cells(iRow, iIteration).Value
+							
+							if isnumeric(strIteration) then
+								strIteration = cint(strIteration)
+							End If
+							
+							Set oSheetNode = getNode(oXMLFile, strSheetName)
+							
+							arrHierarchy = Split(strHierarchy, ">")
+							
+							Set oHierarchyNode = oSheetNode
+							
+							strHierarchyData = ""
+							If strIteration <= oHierarchyNode.ChildNodes.Length Then
+								If StrComp(arrHierarchy(0), "row") = 0 Then
+									For Each oChildNode In oHierarchyNode.ChildNodes
+										If StrComp(LCase(oChildNode.BaseName), LCase("row")) = 0 Then
+											If strIteration = iRowNodeCount Then
+												Set oHierarchyNode = oChildNode
+												'----"following line will exclude 'row<' from the whole string to get the remaining string"
+												strHierarchy = Right(strHierarchy, Len(strHierarchy) - 4)
+												arrHierarchy = Split(strHierarchy, ">")
+												Exit For
+											End If
+											iRowNodeCount = iRowNodeCount + 1
+										End If
+									Next
+								End If
+								
+								For Each strVal In arrHierarchy
+									blnSheetFound = True
+									Set oHierarchyNode = getNode(oHierarchyNode, strVal)
+								Next
+								strHierarchyData = oHierarchyNode.Text
+							Else
+								strHierarchyData = "Not Found. Check the iteration number."
+							End If
+							
+							If Err.Number <> 0 Then
+								strHierarchyData = "Not Found. Check the Hierarchy or sheet Name."
+							End If
+							
+							Err.Clear
+							
+							
+							'For Each strVal In arrHierarchy
+							'	blnSheetFound = True
+							'	Set oHierarchyNode = getNode(oHierarchyNode, strVal)
+							'Next							
+							'msgbox oHierarchyNode.Text							
+							'objValWS.Cells(iRow, iActualValue).Value = oHierarchyNode.Text
+							
+							objValWS.Cells(iRow, iActualValue).NumberFormat = "@"
+							objValWS.Cells(iRow, iActualValue).Value = strHierarchyData
+							
+							If strcomp(objValWS.Cells(iRow, iExpectedValue).Value,objValWS.Cells(iRow, iActualValue).Value) = 0 then
+								objValWS.Cells(iRow, iStatus).Value = "Pass"
+								objValWS.Cells(iRow, iStatus).Interior.ColorIndex = 4
+							Else
+								objValWS.Cells(iRow, iStatus).Value = "Fail"
+								objValWS.Cells(iRow, iStatus).Interior.ColorIndex = 3
+							End If
+							
+						Next
+						
+						'-------------------------------------------------------------
+					End If	
+				End If
+				TearDown
+				fileCounter = fileCounter + 1
+			Next
+			
+			If fileCounter = 0 Then
+				msgbox "Input template FileName and Folder name mismatch!!!!"
+				msgbox "Input template FileName and Folder Name should be same."
+				''''' message saying file didn't present
+			End If
+		End Sub
+				
+		Function getNode(oNode, strSheetName)
+			If StrComp(LCase(oNode.BaseName), LCase(strSheetName)) = 0 Then
+				Set getNode = oNode
+				blnSheetFound = False
+			End If
+
+			If oNode.ChildNodes.Length > 0 Then
+				For Each oChildNode In oNode.ChildNodes
+					If blnSheetFound Then
+						Set getNode = getNode(oChildNode, strSheetName)
+					Else
+						Exit Function
+					End If
+				Next
+			Else
+				Set getNode = Nothing
+			End If
+		End Function
+		
+		Sub sbWait(iSeconds)
+			Dim oShell  : Set oShell = CreateObject("WScript.Shell")
+			oShell.run "cmd /c ping localhost -n " & iSeconds,0,True
+		End Sub
+		
+		Sub btnExecute_onclick
+			Set objExcel = CreateObject("Excel.Application")
+			spanMsg.innerHTML = ""
+			blnSelected = False
+			blnExecute = true
+			selectedVal = ""
+			blnFirst = true
+			
+			For Each objItem in selectScript.Options
+				If objItem.Selected Then
+					blnSelected = True
+					blnExecute = updateEndPoint(objItem.Text)
+					If blnExecute then
+						if blnFirst then
+							'Creating Progress bar
+							strMax = 4
+							CreateProgressBar
+							blnFirst = false
+						End If
+						initStart objItem.Value
+					Else
+						selectedVal = selectedVal & "," & objItem.Text
+					End If
+				End If
+			Next
+			
+			If len(selectedVal) > 0 then
+				selectedVal = Right(selectedVal,len(selectedVal)-1)
+			End If
+			
+			'''blnFirst is true only when execution not happened
+			if Not(blnFirst) then
+				If Not (IsEmpty(objIE1)) Then
+					If Not (objIE1 is Nothing) then
+						objIE1.Close
+					End If
+				End If
+				Set objIE1 = Nothing			
+			End If
+			
+			
+			If Not(blnSelected) then
+				spanMsg.innerHTML = "Select Webservice to Execute!!!"
+				spanMsg.style.color="red"
+			Else
+				If len(selectedVal)>0 then					
+					spanMsg.innerHTML = "Execution Completed with errors."
+					spanMsg.style.color="Orange"
+					sbWait 2
+					msgbox "Invalid END POINT or WSDL.txt file is missing for:" & vbNewLine & selectedVal
+				Else				
+					spanMsg.innerHTML = "Execution Completed!!!"	
+					spanMsg.style.color="green"
+				End If
+			End If
+
+			objExcel.quit
+			Set objExcel = Nothing
+		End Sub
+		
+		Sub btnClear_onclick
+			spanMsg.innerHTML = ""
+			For Each objItem in selectScript.Options
+				If objItem.Selected Then
+					objItem.Selected = False
+				End If
+			Next
+		End Sub
+		
+		Sub sbWait(iSeconds)
+			Dim oShell  : Set oShell = CreateObject("WScript.Shell")
+			oShell.run "cmd /c ping localhost -n " & iSeconds,0,True
+		End Sub
+				
+		Sub JSProgressCounter(strProcessName,strMin,strMax)
+			'objIE1.Document.Title=UCASE(strProcessName) & String(100, " ")
+			minPercentage = (cint(strMin)/cint(strMax))*100
+			objIE1.Document.Body.InnerHTML = "<div id='myProgress' style='width: 100%; background-color: #ddd'><div id='myBar' style='width: " & minPercentage & "%; height: 20px; background-color: #4CAF50;text-align: center;line-height: 20px;color: white;'>" & strProcessName & "</div></div>"
+		End Sub
+		
+		Sub JSProgressCounterSubTasks(strProcessName,strMin,strMax,strSubTask,subTaskMin,subTaskMax)
+			minPercentage = (cint(strMin)/cint(strMax))*100
+			objIE1.Document.Body.InnerHTML = "<div id='myProgress' style='width: 100%; background-color: #ddd'><div id='myBar' style='width: " & minPercentage & "%; height: 20px; background-color: #4CAF50;text-align: center;line-height: 20px;color: white;'>" & strProcessName & "</div></div>"
+			
+			subTaskMinPercentage = (cint(subTaskMin)/cint(subTaskMax))*100
+			strHtml = objIE1.Document.Body.InnerHTML
+			strHtml = strHtml & "<br>" & strSubTask & "(" & subTaskMin & "/" & subTaskMax & ")<br><div id='mySubTaskProgress' style='width: 100%; background-color: #ddd'><div id='mySubTaskBar' style='width: " & subTaskMinPercentage & "%; height: 20px; background-color: #4CAF50;text-align: center;line-height: 20px;color: white;'></div></div>"
+			objIE1.Document.Body.InnerHTML = strHtml
+		End Sub
+		
+		Function updateEndPoint(selectedValue)
+			blnUpdate = true
+			Const ForReading = 1
+			Const ForWriting = 2
+			
+			Set WshShell = CreateObject("WScript.Shell")
+			strCurDir = WshShell.CurrentDirectory
+			Set WshShell = Nothing
+			
+			Set objFSO = CreateObject("Scripting.FileSystemObject")
+			
+			Set objFolder = objFSO.GetFolder(strCurDir & "\" & selectedValue)
+			Set colfiles = objFolder.Files
+			strXmlPath = ""
+			strWsdlTextPath = ""
+			strNewString = ""
+			For Each objFile In colfiles
+				If StrComp(Right(objFile.Name, 3), "xml") = 0 Then
+					strXmlPath = strCurDir & "\" & selectedValue & "\" & objFile.Name
+				ElseIf StrComp(Right(objFile.Name, 3), "txt") = 0 Then
+					strWsdlTextPath = strCurDir & "\" & selectedValue & "\" & objFile.Name
+					Set objFile = objFSO.OpenTextFile(strWsdlTextPath, ForReading)
+					strWsdl = Trim(objFile.ReadLine)
+					If StrComp(LCase(Left(strWsdl, 4)), "http") = 0 Then
+						If StrComp(LCase(Right(strWsdl, 4)), "wsdl") = 0 Then 'wsdl / WSDL
+							strWsdl = Replace(strWsdl, "?wsdl", "")
+							strWsdl = Replace(strWsdl, "wsdl", "")
+							strWsdl = Replace(strWsdl, "?WSDL", "")
+							strWsdl = Replace(strWsdl, "WSDL", "")
+						End If
+						strNewString = strWsdl
+					Else						
+						blnUpdate = false
+						updateEndPoint = blnUpdate
+						Exit Function
+					End If
+				End If
+			Next
+			If strcomp(trim(strNewString),"") = 0 then
+				blnUpdate = false
+				updateEndPoint = blnUpdate
+				Exit Function
+			End If
+			
+			Set objFolder = Nothing
+			Set colfiles = Nothing
+			
+			Set objFile = objFSO.OpenTextFile(strXmlPath, ForReading)
+			
+			strText = objFile.ReadAll
+			
+			strPrefix = "<soap:address location="
+			intPrefix = InStr(1, strText, strPrefix)
+			intPrefix = intPrefix + Len(strPrefix) + 1
+			strSuffix = "/>"
+			intSuffix = InStr(intPrefix, strText, strSuffix) - 1
+			
+			strOldString = Mid(strText, intPrefix, intSuffix - intPrefix)			
+			objFile.Close
+			strNewText = Replace(strText, strOldString, strNewString)
+			Set objFile = objFSO.OpenTextFile(strXmlPath, ForWriting)
+			objFile.WriteLine strNewText
+			
+			objFile.Close
+			Set objFile = Nothing
+			Set objFSO = Nothing
+			updateEndPoint = blnUpdate
+		End Function
+	</SCRIPT>
+	
+	<body>
+		<table align="center">
+			<tbody>				
+				<tr>				
+					<td></td>
+					<td align="center"><span id="spanSelectScript">Select Scripts:</span></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td align="center"><select size="10" style="width:200px" id="selectScript" multiple/></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td/>
+					<td><input type="Submit" id="btnExecute" style="height:30px; width:90px" value="Execute"/>
+					<input type="Submit" id="btnClear" style="height:30px; width:90px" value="Clear"/></td>
+					<td/>
+				</tr>
+				<tr>
+					<td></td>
+					<td align="center"><span id="spanMsg" style="font-size: 15px;"></span></td>
+					<td></td>
+				</tr>	
+			</tbody>
+		</table>		
+	</body>
+</HTML>

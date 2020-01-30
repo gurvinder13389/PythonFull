@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="c79aca4c-86bd-447d-bd97-ae2f50d33c70" activeEnvironment="Default" name="maintainClaimPayments" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="f004fe45-462c-424d-9bab-eee0fc293c12" wsaVersion="NONE" name="LissiaWS_maintainClaimPaymentsSoapPort" type="wsdl" bindingName="{http://LissiaWS_maintainClaimPayments/}LissiaWS_maintainClaimPaymentsSoapPort" soapVersion="1_1" anonymous="optional" definition="http://10.0.0.29:7090/LissiaWS_maintainClaimPayments/router?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://10.0.0.29:7090/LissiaWS_maintainClaimPayments/router?WSDL"><con:part><con:url>http://10.0.0.29:7090/LissiaWS_maintainClaimPayments/router?WSDL</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.8-b13937 svn-revision#13942.-->
+<wsdl:definitions name="LissiaWS_maintainClaimPayments" targetNamespace="http://LissiaWS_maintainClaimPayments/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textmatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://LissiaWS_maintainClaimPayments/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:documentation>Copyright (c) 2015 IET. All rights reserved.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://LissiaWS_maintainClaimPayments/">
+      <s:element name="Exception" type="tns:Exception"/>
+      <s:element name="maintainClaimPayments" type="tns:maintainClaimPayments"/>
+      <s:element name="maintainClaimPaymentsResponse" type="tns:maintainClaimPaymentsResponse"/>
+      <s:complexType name="maintainClaimPayments">
+        <s:sequence>
+          <s:element minOccurs="0" name="maintainClaimPaymentsImport" type="tns:maintainClaimPaymentsImport"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="maintainClaimPaymentsResponse">
+        <s:sequence>
+          <s:element minOccurs="0" name="maintainClaimPaymentsExport" type="tns:maintainClaimPaymentsExport"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="maintainClaimPaymentsImport">
+        <s:sequence>
+          <s:element minOccurs="0" name="IcommsCommunications">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="User" type="s:string"/>
+                <s:element minOccurs="0" name="CallFunction" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpClpClaimPayments">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="ClpId" type="s:int"/>
+                <s:element minOccurs="0" name="PrimaryAmount" type="s:decimal"/>
+                <s:element minOccurs="0" name="Percentage" type="s:decimal"/>
+                <s:element minOccurs="0" name="PaymentAmount" type="s:decimal"/>
+                <s:element minOccurs="0" name="Beneficiary" type="s:int"/>
+                <s:element minOccurs="0" name="EffectiveDate" type="s:date"/>
+                <s:element minOccurs="0" name="Reason" type="s:int"/>
+                <s:element minOccurs="0" name="Status" type="s:int"/>
+                <s:element minOccurs="0" name="Type" type="s:int"/>
+                <s:element minOccurs="0" name="SaDeductible" type="s:int"/>
+                <s:element minOccurs="0" name="TrnId" type="s:int"/>
+                <s:element minOccurs="0" name="InterestRate" type="s:decimal"/>
+                <s:element minOccurs="0" name="ExpenseReason" type="s:int"/>
+                <s:element minOccurs="0" name="BankId" type="s:int"/>
+                <s:element minOccurs="0" name="Currency" type="s:string"/>
+                <s:element minOccurs="0" name="BankCharges" type="s:decimal"/>
+                <s:element minOccurs="0" name="AuthorisedBy" type="s:string"/>
+                <s:element minOccurs="0" name="AuthorisedTime" type="s:time"/>
+                <s:element minOccurs="0" name="AuthorisedDate" type="s:date"/>
+                <s:element minOccurs="0" name="RecoverableExpense" type="s:int"/>
+                <s:element minOccurs="0" name="InterestAmount" type="s:decimal"/>
+                <s:element minOccurs="0" name="MaximumAmount" type="s:decimal"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpCmlClaimLines">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="CmlId" type="s:int"/>
+                <s:element minOccurs="0" name="Claim" type="s:int"/>
+                <s:element minOccurs="0" name="Line" type="s:int"/>
+                <s:element minOccurs="0" name="Coverage" type="s:int"/>
+                <s:element minOccurs="0" name="ClientNo" type="s:int"/>
+                <s:element minOccurs="0" name="IncidentDate" type="s:date"/>
+                <s:element minOccurs="0" name="NotificationDate" type="s:date"/>
+                <s:element minOccurs="0" name="DecisionReferredFos" type="s:string"/>
+                <s:element minOccurs="0" name="Status" type="s:int"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpClmClaims">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="ClmId" type="s:int"/>
+                <s:element minOccurs="0" name="Policy" type="s:string"/>
+                <s:element minOccurs="0" name="Details" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpPonGeneralNotes">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="Details" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpPocPolicyCoverages">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="PocId" type="s:string"/>
+                <s:element minOccurs="0" name="Policy" type="s:string"/>
+                <s:element minOccurs="0" name="Coverage" type="s:int"/>
+                <s:element minOccurs="0" name="ProductLine" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ImpAuthLevelWindow">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="Enable2" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="maintainClaimPaymentsExport">
+        <s:sequence>
+          <s:element minOccurs="0" name="EcommsCommunications">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="User" type="s:string"/>
+                <s:element minOccurs="0" name="Language" type="s:int"/>
+                <s:element minOccurs="0" name="ErrorNo" type="s:string"/>
+                <s:element minOccurs="0" name="PrimaryClient" type="s:string"/>
+                <s:element minOccurs="0" name="ReleaseVersion" type="s:string"/>
+                <s:element minOccurs="0" name="PrimaryServer" type="s:string"/>
+                <s:element minOccurs="0" name="SecondaryServer" type="s:string"/>
+                <s:element minOccurs="0" name="CallFunction" type="s:string"/>
+                <s:element minOccurs="0" name="RecordsUpdated" type="s:int"/>
+                <s:element minOccurs="0" name="SystemName" type="s:string"/>
+                <s:element minOccurs="0" name="RecordsFound" type="s:int"/>
+                <s:element minOccurs="0" name="SystemDate" type="s:date"/>
+                <s:element minOccurs="0" name="ErrorParameters" type="s:string"/>
+                <s:element minOccurs="0" name="DocumentsCreated" type="s:int"/>
+                <s:element minOccurs="0" name="DisplayUserName" type="s:string"/>
+                <s:element minOccurs="0" name="SystemDateDisplay" type="s:string"/>
+                <s:element minOccurs="0" name="ErrorPrl" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpTotalClaimPayments">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="PaymentAmount" type="s:decimal"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpPonGeneralNotes">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="Details" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpClpDispClaimPayments">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="ClpId" type="s:int"/>
+                <s:element minOccurs="0" name="PrimaryAmount" type="s:decimal"/>
+                <s:element minOccurs="0" name="Percentage" type="s:decimal"/>
+                <s:element minOccurs="0" name="PaymentAmount" type="s:decimal"/>
+                <s:element minOccurs="0" name="Beneficiary" type="s:int"/>
+                <s:element minOccurs="0" name="EffectiveDate" type="s:date"/>
+                <s:element minOccurs="0" name="Reason" type="s:int"/>
+                <s:element minOccurs="0" name="Status" type="s:int"/>
+                <s:element minOccurs="0" name="Type" type="s:int"/>
+                <s:element minOccurs="0" name="SaDeductible" type="s:int"/>
+                <s:element minOccurs="0" name="TrnId" type="s:int"/>
+                <s:element minOccurs="0" name="InterestRate" type="s:decimal"/>
+                <s:element minOccurs="0" name="CreatedBy" type="s:string"/>
+                <s:element minOccurs="0" name="CreatedTime" type="s:time"/>
+                <s:element minOccurs="0" name="CreatedDate" type="s:date"/>
+                <s:element minOccurs="0" name="ExpenseReason" type="s:int"/>
+                <s:element minOccurs="0" name="BankId" type="s:int"/>
+                <s:element minOccurs="0" name="Currency" type="s:string"/>
+                <s:element minOccurs="0" name="BankCharges" type="s:decimal"/>
+                <s:element minOccurs="0" name="AuthorisedBy" type="s:string"/>
+                <s:element minOccurs="0" name="AuthorisedTime" type="s:time"/>
+                <s:element minOccurs="0" name="AuthorisedDate" type="s:date"/>
+                <s:element minOccurs="0" name="RecoverableExpense" type="s:int"/>
+                <s:element minOccurs="0" name="InterestAmount" type="s:decimal"/>
+                <s:element minOccurs="0" name="MaximumAmount" type="s:decimal"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpBasePolicyCoverages">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="SumAssured" type="s:decimal"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpSaClaimPayments">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="PrimaryAmount" type="s:decimal"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" name="ExpErrmsgWindow">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" name="WinErrmsg" type="s:string"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Exception">
+        <s:sequence>
+          <s:element minOccurs="0" name="Exception" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="maintainClaimPaymentsSoapOutput">
+    <wsdl:part name="parameters" element="tns:maintainClaimPaymentsResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="Exception">
+    <wsdl:part name="fault" element="tns:Exception"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="maintainClaimPaymentsSoapInput">
+    <wsdl:part name="parameters" element="tns:maintainClaimPayments"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="LissiaWS_maintainClaimPaymentsSoapPort">
+    <wsdl:operation name="maintainClaimPayments">
+      <wsdl:input message="tns:maintainClaimPaymentsSoapInput"></wsdl:input>
+      <wsdl:output message="tns:maintainClaimPaymentsSoapOutput"></wsdl:output>
+      <wsdl:fault name="Exception" message="tns:Exception"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LissiaWS_maintainClaimPaymentsSoapPort" type="tns:LissiaWS_maintainClaimPaymentsSoapPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="maintainClaimPayments">
+      <soap:operation soapAction="http://tempuri.org/Wsscpyfm/?http://LissiaWS_maintainClaimPayments/LissiaWS_maintainClaimPayments/"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LissiaWS_maintainClaimPayments">
+    <wsdl:port name="LissiaWS_maintainClaimPaymentsSoapPort" binding="tns:LissiaWS_maintainClaimPaymentsSoapPort">
+      <soap:address location="http://10.0.0.29:7090/LissiaWS_maintainClaimPayments/router"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.0.0.29:7090/LissiaWS_maintainClaimPayments/router</con:endpoint></con:endpoints><con:operation id="dbbb6187-f836-4308-8f16-a9bd42a21b07" isOneWay="false" action="http://tempuri.org/Wsscpyfm/?http://LissiaWS_maintainClaimPayments/LissiaWS_maintainClaimPayments/" name="maintainClaimPayments" bindingOperationName="maintainClaimPayments" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="be26be25-0e43-49ad-9d8c-981dc27215bd" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.0.0.29:7090/LissiaWS_maintainClaimPayments/router</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lis="http://LissiaWS_maintainClaimPayments/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <lis:maintainClaimPayments>\r
+         <!--Optional:-->\r
+         <lis:maintainClaimPaymentsImport>\r
+            <!--Optional:-->\r
+            <lis:IcommsCommunications>\r
+               <!--Optional:-->\r
+               <lis:User>?</lis:User>\r
+               <!--Optional:-->\r
+               <lis:CallFunction>?</lis:CallFunction>\r
+            </lis:IcommsCommunications>\r
+            <!--Optional:-->\r
+            <lis:ImpClpClaimPayments>\r
+               <!--Optional:-->\r
+               <lis:ClpId>?</lis:ClpId>\r
+               <!--Optional:-->\r
+               <lis:PrimaryAmount>?</lis:PrimaryAmount>\r
+               <!--Optional:-->\r
+               <lis:Percentage>?</lis:Percentage>\r
+               <!--Optional:-->\r
+               <lis:PaymentAmount>?</lis:PaymentAmount>\r
+               <!--Optional:-->\r
+               <lis:Beneficiary>?</lis:Beneficiary>\r
+               <!--Optional:-->\r
+               <lis:EffectiveDate>?</lis:EffectiveDate>\r
+               <!--Optional:-->\r
+               <lis:Reason>?</lis:Reason>\r
+               <!--Optional:-->\r
+               <lis:Status>?</lis:Status>\r
+               <!--Optional:-->\r
+               <lis:Type>?</lis:Type>\r
+               <!--Optional:-->\r
+               <lis:SaDeductible>?</lis:SaDeductible>\r
+               <!--Optional:-->\r
+               <lis:TrnId>?</lis:TrnId>\r
+               <!--Optional:-->\r
+               <lis:InterestRate>?</lis:InterestRate>\r
+               <!--Optional:-->\r
+               <lis:ExpenseReason>?</lis:ExpenseReason>\r
+               <!--Optional:-->\r
+               <lis:BankId>?</lis:BankId>\r
+               <!--Optional:-->\r
+               <lis:Currency>?</lis:Currency>\r
+               <!--Optional:-->\r
+               <lis:BankCharges>?</lis:BankCharges>\r
+               <!--Optional:-->\r
+               <lis:AuthorisedBy>?</lis:AuthorisedBy>\r
+               <!--Optional:-->\r
+               <lis:AuthorisedTime>?</lis:AuthorisedTime>\r
+               <!--Optional:-->\r
+               <lis:AuthorisedDate>?</lis:AuthorisedDate>\r
+               <!--Optional:-->\r
+               <lis:RecoverableExpense>?</lis:RecoverableExpense>\r
+               <!--Optional:-->\r
+               <lis:InterestAmount>?</lis:InterestAmount>\r
+               <!--Optional:-->\r
+               <lis:MaximumAmount>?</lis:MaximumAmount>\r
+            </lis:ImpClpClaimPayments>\r
+            <!--Optional:-->\r
+            <lis:ImpCmlClaimLines>\r
+               <!--Optional:-->\r
+               <lis:CmlId>?</lis:CmlId>\r
+               <!--Optional:-->\r
+               <lis:Claim>?</lis:Claim>\r
+               <!--Optional:-->\r
+               <lis:Line>?</lis:Line>\r
+               <!--Optional:-->\r
+               <lis:Coverage>?</lis:Coverage>\r
+               <!--Optional:-->\r
+               <lis:ClientNo>?</lis:ClientNo>\r
+               <!--Optional:-->\r
+               <lis:IncidentDate>?</lis:IncidentDate>\r
+               <!--Optional:-->\r
+               <lis:NotificationDate>?</lis:NotificationDate>\r
+               <!--Optional:-->\r
+               <lis:DecisionReferredFos>?</lis:DecisionReferredFos>\r
+               <!--Optional:-->\r
+               <lis:Status>?</lis:Status>\r
+            </lis:ImpCmlClaimLines>\r
+            <!--Optional:-->\r
+            <lis:ImpClmClaims>\r
+               <!--Optional:-->\r
+               <lis:ClmId>?</lis:ClmId>\r
+               <!--Optional:-->\r
+               <lis:Policy>?</lis:Policy>\r
+               <!--Optional:-->\r
+               <lis:Details>?</lis:Details>\r
+            </lis:ImpClmClaims>\r
+            <!--Optional:-->\r
+            <lis:ImpPonGeneralNotes>\r
+               <!--Optional:-->\r
+               <lis:Details>?</lis:Details>\r
+            </lis:ImpPonGeneralNotes>\r
+            <!--Optional:-->\r
+            <lis:ImpPocPolicyCoverages>\r
+               <!--Optional:-->\r
+               <lis:PocId>?</lis:PocId>\r
+               <!--Optional:-->\r
+               <lis:Policy>?</lis:Policy>\r
+               <!--Optional:-->\r
+               <lis:Coverage>?</lis:Coverage>\r
+               <!--Optional:-->\r
+               <lis:ProductLine>?</lis:ProductLine>\r
+            </lis:ImpPocPolicyCoverages>\r
+            <!--Optional:-->\r
+            <lis:ImpAuthLevelWindow>\r
+               <!--Optional:-->\r
+               <lis:Enable2>?</lis:Enable2>\r
+            </lis:ImpAuthLevelWindow>\r
+         </lis:maintainClaimPaymentsImport>\r
+      </lis:maintainClaimPayments>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Wsscpyfm/?http://LissiaWS_maintainClaimPayments/LissiaWS_maintainClaimPayments/"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="0aea8f64-13dd-4c7f-97e2-931421f49961" name="myTestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="94f2fb26-cf60-4125-bd1e-6b9b5129861c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="myTestCase" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Step1" id="8700f84d-89db-40fe-9ffe-1b962105c547"><con:settings/><con:config><script>def fileList = []
+def fileListNew = []
+def projectName
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+def projectDir = groovyUtils.projectPath
+def ProjectName= testRunner.testCase.testSuite.project.getName();
+def requestDir = context.get('projectDir') + "\\Request"
+
+new File(requestDir).eachFile
+{ f ->
+if (f.isFile()&amp;&amp; f.name.endsWith('.xml'))
+	{
+	 	def filename = f.name[0..-1]
+		log.info filename 	
+		log.info filename.substring(0,filename.length()-4)
+		fileList.add(filename)
+		fileListNew.add(filename.substring(0,filename.length()-4))
+	}
+}
+
+if (fileList.size() &lt;1)
+{
+testRunner.fail("No request files found")
+}
+context.put('fileList',fileList)
+context.put('fileListNew',fileListNew)</script></con:config></con:testStep><con:testStep type="request" id="f351a19e-3de1-4149-a0ea-c84edf2865f5" name="Step2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LissiaWS_maintainClaimPaymentsSoapPort</con:interface><con:operation>maintainClaimPayments</con:operation><con:request name="Step2" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="109e0c05-3d0e-48a0-abc3-bec4ab5816a8"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.0.0.29:7090/LissiaWS_maintainClaimPayments/router</con:endpoint><con:request>${=new File(context.get('projectDir') + "\\Request\\" + (context.get('fileListNew')).last() + ".xml").text}</con:request><con:assertion type="SOAP Response" id="522d7edd-2edd-4d49-ad82-700728b9a93d" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Wsscpyfm/?http://LissiaWS_maintainClaimPayments/LissiaWS_maintainClaimPayments/"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Step3" id="b6e29ea2-78ed-46c1-b463-b5b90af7659a"><con:settings/><con:config><script>
+def fileList = context.get('fileListNew')
+
+def fileName = fileList.pop()
+def newname = fileName[0..-5]
+
+def response = context.expand( '${Step2#Response}' )
+def f = new File(context.get('projectDir') + "\\Response\\${fileName}_Response.xml")
+f.write(response, "UTF-8")
+
+if(fileList.size() >0)
+{
+testRunner.gotoStepByName("Step2")
+}</script></con:config></con:testStep><con:properties><con:property><con:name>Request</con:name><con:value><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lis="http://LissiaWS_getQuote/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <lis:getQuote>
+         <!--Optional:-->
+         <lis:getQuoteImport>
+            <!--Optional:-->
+            <lis:ImpPrlrqmWebService>
+               <!--Optional:-->
+               <lis:Prlrqm>2</lis:Prlrqm>
+            </lis:ImpPrlrqmWebService>
+            <!--Optional:-->
+            <lis:ImpGrpPlc>
+               <!--Zero or more repetitions:-->
+               <lis:row>
+                  <!--Optional:-->
+                  <lis:ImpItmPlcPolicyCvgLifeConditions>
+                     <!--Optional:-->
+                     <lis:Condition/>
+                     <!--Optional:-->
+                     <lis:ApplicabilityDate>20181115</lis:ApplicabilityDate>
+                     <!--Optional:-->
+                     <lis:EndOfApplicability>20180101</lis:EndOfApplicability>
+                     <!--Optional:-->
+                     <lis:RateOrValue>1</lis:RateOrValue>
+                     <!--Optional:-->
+                     <lis:Type>0</lis:Type>
+                  </lis:ImpItmPlcPolicyCvgLifeConditions>
+                  <!--Optional:-->
+                  <lis:ImpItmPlcCprtypeCliPolRelationships>
+                     <!--Optional:-->
+                     <lis:Type>0</lis:Type>
+                  </lis:ImpItmPlcCprtypeCliPolRelationships>
+                  <!--Optional:-->
+                  <lis:ImpItmPlcPrlProductLines>
+                     <!--Optional:-->
+                     <lis:PrlId/>
+                  </lis:ImpItmPlcPrlProductLines>
+                  <!--Optional:-->
+                  <lis:ImpItmPlcQrefWebService>
+                     <!--Optional:-->
+                     <lis:BenLine/>
+                     <!--Optional:-->
+                     <lis:QuoteRef/>
+                     <!--Optional:-->
+                     <lis:Primaryprdid/>
+                  </lis:ImpItmPlcQrefWebService>
+               </lis:row>
+            </lis:ImpGrpPlc>
+            <!--Optional:-->
+            <lis:ImpGrpPas>
+               <!--Zero or more repetitions:-->
+               <lis:row>
+                  <!--Optional:-->
+                  <lis:ImpItmPasQrefWebService>
+                     <!--Optional:-->
+                     <lis:QuoteRef>wsdl2</lis:QuoteRef>
+                     <!--Optional:-->
+                     <lis:BenLine>1</lis:BenLine>
+                     <!--Optional:-->
+                     <lis:Primaryprdid>rb1</lis:Primaryprdid>
+                  </lis:ImpItmPasQrefWebService>
+                  <!--Optional:-->
+                  <lis:ImpItmPasPrlProductLines>
+                     <!--Optional:-->
+                     <lis:PrlId>TALT</lis:PrlId>
+                  </lis:ImpItmPasPrlProductLines>
+                  <!--Optional:-->
+                  <lis:ImpItmPasPolicyAgentShares>
+                     <!--Optional:-->
+                     <lis:Status>0</lis:Status>
+                     <!--Optional:-->
+                     <lis:Coverage>0</lis:Coverage>
+                     <!--Optional:-->
+                     <lis:Agent>A00042</lis:Agent>
+                     <!--Optional:-->
+                     <lis:PasId>0.0</lis:PasId>
+                     <!--Optional:-->
+                     <lis:Percentage>100</lis:Percentage>
+                     <!--Optional:-->
+                     <lis:Type>0</lis:Type>
+                     <!--Optional:-->
+                     <lis:SpecificIce>0</lis:SpecificIce>
+                     <!--Optional:-->
+                     <lis:SacrificeAmount>0</lis:SacrificeAmount>
+                     <!--Optional:-->
+                     <lis:SacrificePercent>0</lis:SacrificePercent>
+                     <!--Optional:-->
+                     <lis:PrimaryAgent>42</lis:PrimaryAgent>
+                     <!--Optional:-->
+                     <lis:SacrificeType>0</lis:SacrificeType>
+                     <!--Optional:-->
+                     <lis:RenewalSacrificePcg>2.5</lis:RenewalSacrificePcg>
+                  </lis:ImpItmPasPolicyAgentShares>
+                  <!--Optional:-->
+                  <lis:ImpItmAgtAgents>
+                     <!--Optional:-->
+                     <lis:AgtId>A00042</lis:AgtId>
+                  </lis:ImpItmAgtAgents>
+               </lis:row>
+            </lis:ImpGrpPas>
+            <!--Optional:-->
+            <lis:ImpGrpCliCpr>
+               <!--Zero or more repetitions:-->
+               <lis:row>
+                  <!--Optional:-->
+                  <lis:ImpItmCliMxCeaseAgeProductValueLookup>
+                     <!--Optional:-->
+                     <lis:Age1>26</lis:Age1>
+                  </lis:ImpItmCliMxCeaseAgeProductValueLookup>
+                  <!--Optional:-->
+                  <lis:ImpItmCprQrefWebService>
+                     <!--Optional:-->
+                     <lis:QuoteRef>wsdl2</lis:QuoteRef>
+                     <!--Optional:-->
+                     <lis:BenLine>1</lis:BenLine>
+                     <!--Optional:-->
+                     <lis:Primaryprdid>rb1</lis:Primaryprdid>
+                  </lis:ImpItmCprQrefWebService>
+                  <!--Optional:-->
+                  <lis:ImpItmCliAgeProductValueLookup>
+                     <!--Optional:-->
+                     <lis:Age1>26</lis:Age1>
+                     <!--Optional:-->
+                     <lis:Age1Months>0</lis:Age1Months>
+                     <!--Optional:-->
+                     <lis:ExpAge1/>
+                  </lis:ImpItmCliAgeProductValueLookup>
+                  <!--Optional:-->
+                  <lis:ImpItmPclLoadingsPolicyCvgLives>
+                     <!--Optional:-->
+                     <lis:AgeRating>0</lis:AgeRating>
+                     <!--Optional:-->
+                     <lis:AddnFactor/>
+                     <!--Optional:-->
+                     <lis:AddnRpm/>
+                     <!--Optional:-->
+                     <lis:RatingReason/>
+                     <!--Optional:-->
+                     <lis:RatingTerm>0</lis:RatingTerm>
+                     <!--Optional:-->
+                     <lis:UnderwriterRiskCategory>?</lis:UnderwriterRiskCategory>
+                  </lis:ImpItmPclLoadingsPolicyCvgLives>
+                  <!--Optional:-->
+                  <lis:ImpItmCprPrlProductLines>
+                     <!--Optional:-->
+                     <lis:PrlId>TALT</lis:PrlId>
+                  </lis:ImpItmCprPrlProductLines>
+                  <!--Optional:-->
+                  <lis:ImpItmCprTypeCliPolRelationships>
+                     <!--Optional:-->
+                     <lis:TypeNumber>0</lis:TypeNumber>
+                     <!--Optional:-->
+                     <lis:Type>4</lis:Type>
+                  </lis:ImpItmCprTypeCliPolRelationships>
+                  <!--Optional:-->
+                  <lis:ImpItmCliClients>
+                     <!--Optional:-->
+                     <lis:DateOfBirth>19801201</lis:DateOfBirth>
+                     <!--Optional:-->
+                     <lis:Sex>2</lis:Sex>
+                     <!--Optional:-->
+                     <lis:Smoker>3</lis:Smoker>
+                     <!--Optional:-->
+                     <lis:RiskCat>1</lis:RiskCat>
+                     <!--Optional:-->
+                     <lis:Weight/>
+                     <!--Optional:-->
+                     <lis:Height>0</lis:Height>
+                     <!--Optional:-->
+                     <lis:Nationality/>
+                     <!--Optional:-->
+                     <lis:Type>4</lis:Type>
+                     <!--Optional:-->
+                     <lis:LeisureRiskCat/>
+                     <!--Optional:-->
+                     <lis:Classification/>
+                     <!--Optional:-->
+                     <lis:CliId>0</lis:CliId>
+                     <!--Optional:-->
+                     <lis:Salary>0</lis:Salary>
+                     <!--Optional:-->
+                     <lis:SalaryCurrency>GBP</lis:SalaryCurrency>
+                  </lis:ImpItmCliClients>
+               </lis:row>
+            </lis:ImpGrpCliCpr>
+            <!--Optional:-->
+            <lis:ImpGrpCvgs>
+               <!--Zero or more repetitions:-->
+               <lis:row>
+                  <!--Optional:-->
+                  <lis:ImpItmQInstructionQuotation>
+                     <!--Optional:-->
+                     <lis:QuoteInstruction>1</lis:QuoteInstruction>
+                  </lis:ImpItmQInstructionQuotation>
+                  <!--Optional:-->
+                  <lis:ImpItmOverridePolicyCoverages>
+                     <!--Optional:-->
+                     <lis:SumAssured/>
+                  </lis:ImpItmOverridePolicyCoverages>
+                  <!--Optional:-->
+                  <lis:ImpItmTargetPremiumCvgsPolicyPremiums>
+                     <!--Optional:-->
+                     <lis:ModalPremium/>
+                     <!--Optional:-->
+                     <lis:Frequency>0</lis:Frequency>
+                  </lis:ImpItmTargetPremiumCvgsPolicyPremiums>
+                  <!--Optional:-->
+                  <lis:ImpItmCvgQrefWebService>
+                     <!--Optional:-->
+                     <lis:QuoteRef>wsdl2</lis:QuoteRef>
+                     <!--Optional:-->
+                     <lis:BenLine>1</lis:BenLine>
+                     <!--Optional:-->
+                     <lis:Primaryprdid>rb1</lis:Primaryprdid>
+                     <!--Optional:-->
+                     <lis:DiscountActivity>0</lis:DiscountActivity>
+                  </lis:ImpItmCvgQrefWebService>
+                  <!--Optional:-->
+                  <lis:ImpItmPcpCvgsPolicyPremiums>
+                     <!--Optional:-->
+                     <lis:Frequency>5</lis:Frequency>
+                     <!--Optional:-->
+                     <lis:ContributionPercentage/>
+                     <!--Optional:-->
+                     <lis:ModalPremium/>
+                  </lis:ImpItmPcpCvgsPolicyPremiums>
+                  <!--Optional:-->
+                  <lis:ImpItmPocCvgsPolicyCoverages>
+                     <!--Optional:-->
+                     <lis:ProductLine>TALT</lis:ProductLine>
+                     <!--Optional:-->
+                     <lis:Currency>GBP</lis:Currency>
+                     <!--Optional:-->
+                     <lis:InitialSumAssured>100000.00</lis:InitialSumAssured>
+                     <!--Optional:-->
+                     <lis:SoldBasis>3</lis:SoldBasis>
+                     <!--Optional:-->
+                     <lis:Multiplier/>
+                     <!--Optional:-->
+                     <lis:CoverLevel/>
+                     <!--Optional:-->
+                     <lis:LivesType>1</lis:LivesType>
+                     <!--Optional:-->
+                     <lis:HoldingNo>0</lis:HoldingNo>
+                     <!--Optional:-->
+                     <lis:Term>20</lis:Term>
+                     <!--Optional:-->
+                     <lis:RetirementAge>0</lis:RetirementAge>
+                     <!--Optional:-->
+                     <lis:TermAge>0</lis:TermAge>
+                     <!--Optional:-->
+                     <lis:DateOfApplication/>
+                     <!--Optional:-->
+                     <lis:DateOfReqCommencement/>
+                     <!--Optional:-->
+                     <lis:PptAge/>
+                     <!--Optional:-->
+                     <lis:InterestRate/>
+                     <!--Optional:-->
+                     <lis:PttYrs/>
+                     <!--Optional:-->
+                     <lis:DatePremiumTerm/>
+                     <!--Optional:-->
+                     <lis:BenefitBasis/>
+                     <!--Optional:-->
+                     <lis:QuotationDate>20180101</lis:QuotationDate>
+                     <!--Optional:-->
+                     <lis:QuotationTime/>
+                     <!--Optional:-->
+                     <lis:MajorCoverage>0</lis:MajorCoverage>
+                     <!--Optional:-->
+                     <lis:Income/>
+                     <!--Optional:-->
+                     <lis:ProductVersion>0</lis:ProductVersion>
+                     <!--Optional:-->
+                     <lis:BenefitTerm/>
+                     <!--Optional:-->
+                     <lis:Rulebookid/>
+                     <!--Optional:-->
+                     <lis:Rulebooktype>1</lis:Rulebooktype>
+                     <!--Optional:-->
+                     <lis:Rulebookprodver/>
+                  </lis:ImpItmPocCvgsPolicyCoverages>
+                  <!--Optional:-->
+                  <lis:ImpItmPocPcmPolicyCommissions>
+                     <!--Optional:-->
+                     <lis:Style>INDEM</lis:Style>
+                  </lis:ImpItmPocPcmPolicyCommissions>
+               </lis:row>
+            </lis:ImpGrpCvgs>
+            <!--Optional:-->
+            <lis:ImpWebserviceWebService>
+               <!--Optional:-->
+               <lis:ServiceUserid/>
+               <!--Optional:-->
+               <lis:TraceRates>0</lis:TraceRates>
+               <!--Optional:-->
+               <lis:RecordImport>0</lis:RecordImport>
+               <!--Optional:-->
+               <lis:Requote>0</lis:Requote>
+               <!--Optional:-->
+               <lis:DiscountActivity>0</lis:DiscountActivity>
+               <!--Optional:-->
+               <lis:QuoteCallOrigin/>
+            </lis:ImpWebserviceWebService>
+            <!--Optional:-->
+            <lis:ImpUserUsers>
+               <!--Optional:-->
+               <lis:UsrId/>
+            </lis:ImpUserUsers>
+            <!--Optional:-->
+            <lis:ImpAswcalcqAswcalcq>
+               <!--Optional:-->
+               <lis:Comcalclvl>2</lis:Comcalclvl>
+               <!--Optional:-->
+               <lis:Pcdate></lis:Pcdate>
+               <!--Optional:-->
+               <lis:Srvtimings>0</lis:Srvtimings>
+            </lis:ImpAswcalcqAswcalcq>
+         </lis:getQuoteImport>
+      </lis:getQuote>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:value></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+
+
+
+
+
+
+
